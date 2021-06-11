@@ -10,4 +10,4 @@
 - Keep your code organized
 - Make shure you have no errors before pushing your commits
 
-Happy coding
+Happy coding 🙂
