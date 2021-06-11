@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13DCA7CC26737304000F3E76 /* Experience.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13DCA7CB26737304000F3E76 /* Experience.xcassets */; };
+		13DCA7CE26737320000F3E76 /* Profile.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13DCA7CD26737320000F3E76 /* Profile.xcassets */; };
 		2BED752F267258D300C49853 /* inspireApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BED752E267258D300C49853 /* inspireApp.swift */; };
 		2BED7531267258D300C49853 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BED7530267258D300C49853 /* ContentView.swift */; };
 		2BED7533267258D600C49853 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BED7532267258D600C49853 /* Assets.xcassets */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		13DCA7CB26737304000F3E76 /* Experience.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Experience.xcassets; sourceTree = "<group>"; };
+		13DCA7CD26737320000F3E76 /* Profile.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Profile.xcassets; sourceTree = "<group>"; };
 		2BED752B267258D300C49853 /* inspire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = inspire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BED752E267258D300C49853 /* inspireApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inspireApp.swift; sourceTree = "<group>"; };
 		2BED7530267258D300C49853 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -39,6 +43,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13DCA7CA267372F1000F3E76 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				13DCA7CB26737304000F3E76 /* Experience.xcassets */,
+				13DCA7CD26737320000F3E76 /* Profile.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		2BED7522267258D300C49853 = {
 			isa = PBXGroup;
 			children = (
@@ -58,11 +71,12 @@
 		2BED752D267258D300C49853 /* inspire */ = {
 			isa = PBXGroup;
 			children = (
+				13DCA7CA267372F1000F3E76 /* Resources */,
 				2BED752E267258D300C49853 /* inspireApp.swift */,
 				2BED7530267258D300C49853 /* ContentView.swift */,
 				2BED75432672591F00C49853 /* views */,
-				2BED7532267258D600C49853 /* Assets.xcassets */,
 				2BED7537267258D600C49853 /* Persistence.swift */,
+				2BED7532267258D600C49853 /* Assets.xcassets */,
 				2BED753C267258D600C49853 /* Info.plist */,
 				2BED7539267258D600C49853 /* inspire.xcdatamodeld */,
 				2BED7534267258D600C49853 /* Preview Content */,
@@ -143,6 +157,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13DCA7CC26737304000F3E76 /* Experience.xcassets in Resources */,
+				13DCA7CE26737320000F3E76 /* Profile.xcassets in Resources */,
 				2BED7536267258D600C49853 /* Preview Assets.xcassets in Resources */,
 				2BED7533267258D600C49853 /* Assets.xcassets in Resources */,
 			);
