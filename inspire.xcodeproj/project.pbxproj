@@ -13,6 +13,7 @@
 		2BED7536267258D600C49853 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BED7535267258D600C49853 /* Preview Assets.xcassets */; };
 		2BED7538267258D600C49853 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BED7537267258D600C49853 /* Persistence.swift */; };
 		2BED753B267258D600C49853 /* inspire.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2BED7539267258D600C49853 /* inspire.xcdatamodeld */; };
+		2BED754626725B0600C49853 /* filterTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BED754526725B0600C49853 /* filterTag.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		2BED7537267258D600C49853 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		2BED753A267258D600C49853 /* inspire.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = inspire.xcdatamodel; sourceTree = "<group>"; };
 		2BED753C267258D600C49853 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BED754526725B0600C49853 /* filterTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = filterTag.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				2BED752E267258D300C49853 /* inspireApp.swift */,
 				2BED7530267258D300C49853 /* ContentView.swift */,
+				2BED75432672591F00C49853 /* views */,
 				2BED7532267258D600C49853 /* Assets.xcassets */,
 				2BED7537267258D600C49853 /* Persistence.swift */,
 				2BED753C267258D600C49853 /* Info.plist */,
@@ -73,6 +76,14 @@
 				2BED7535267258D600C49853 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2BED75432672591F00C49853 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				2BED754526725B0600C49853 /* filterTag.swift */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +158,7 @@
 				2BED7538267258D600C49853 /* Persistence.swift in Sources */,
 				2BED7531267258D300C49853 /* ContentView.swift in Sources */,
 				2BED753B267258D600C49853 /* inspire.xcdatamodeld in Sources */,
+				2BED754626725B0600C49853 /* filterTag.swift in Sources */,
 				2BED752F267258D300C49853 /* inspireApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
