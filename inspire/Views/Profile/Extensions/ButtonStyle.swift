@@ -31,7 +31,7 @@ struct ButtonConnexionViewModifier: ViewModifier {
         // on pourrait meme definir la shape que l'on veut dans le l'object style //ex: Capsule, Rectangle, Circle etc...
         content
             .foregroundColor(style.foregroundColor)
-            .frame(width: 150, height: 50, alignment: .center)
+//            .frame(width: 150, height: 50, alignment: .center)
             .background(style.backgroundColor)
             .clipShape(Capsule())
     }

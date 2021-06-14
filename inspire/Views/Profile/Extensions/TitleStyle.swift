@@ -11,7 +11,7 @@ protocol TitleViewStyle {
     var foregroundColor: Color { get }
 }
 struct TitleViewStyleGray: TitleViewStyle {
-    let foregroundColor: Color = .white
+    let foregroundColor: Color = .gray
 }
 extension View {
     func titleViewStyle(style: TitleViewStyle) -> some View {
@@ -25,5 +25,6 @@ struct TitleViewModifier: ViewModifier {
         // on pourrait meme definir la shape que l'on veut dans le l'object style //ex: Capsule, Rectangle, Circle etc...
         content
             .foregroundColor(style.foregroundColor)
+            .font(.largeTitle)
     }
 }

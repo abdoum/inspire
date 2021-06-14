@@ -18,6 +18,9 @@ struct SignIn: View {
     var body: some View {
         NavigationView {
             VStack {
+                TitleView(title: "Identification")
+                    .titleViewStyle(style: TitleViewStyleGray())
+                    .offset(y: -50)
                 EmailTextFieldView(email: $email)
                 PasswordTextFieldView(password: $password)
                 ButtonView(labelButton: "Mot de passe oublié ?", action: {signIn.toggle()})

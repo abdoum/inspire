@@ -22,6 +22,9 @@ struct SignUp: View {
     var body: some View {
         NavigationView {
             VStack {
+                TitleView(title: "Inscription")
+                    .titleViewStyle(style: TitleViewStyleGray())
+                    .offset(y: -50)
                 Spacer()
                 OtherTextFieldView(fullName: $fullName, birthdate: $birthdate, address: $address, city: $city, zipCode: $zipCode)
                 
