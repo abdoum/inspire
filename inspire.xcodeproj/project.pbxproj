@@ -12,8 +12,26 @@
 		138AE4F926773F6500F3826F /* ButtonSignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138AE4F826773F6500F3826F /* ButtonSignInWithApple.swift */; };
 		13DCA7CC26737304000F3E76 /* Experience.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13DCA7CB26737304000F3E76 /* Experience.xcassets */; };
 		13DCA7CE26737320000F3E76 /* Profile.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13DCA7CD26737320000F3E76 /* Profile.xcassets */; };
+		2B1E500C26776587002B7E43 /* PageTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E500B26776587002B7E43 /* PageTitle.swift */; };
+		2B1E500F26776612002B7E43 /* ThemeColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E500E26776612002B7E43 /* ThemeColors.swift */; };
+		2B1E501326776968002B7E43 /* SectionTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E501226776968002B7E43 /* SectionTitle.swift */; };
 		2B3FF5912673963400932E90 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3FF5902673963400932E90 /* Home.swift */; };
 		2B3FF5942673966200932E90 /* ExperienceCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3FF5932673966200932E90 /* ExperienceCard.swift */; };
+		2BE1E8672677704700E4C55D /* QuizTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE1E8662677704700E4C55D /* QuizTitle.swift */; };
+		2BE1E86B2677712500E4C55D /* Categorie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE1E86A2677712500E4C55D /* Categorie.swift */; };
+		2BE1E86E26777D2700E4C55D /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE1E86D26777D2700E4C55D /* Step.swift */; };
+		2BE1E87126777D4400E4C55D /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE1E87026777D4400E4C55D /* Quiz.swift */; };
+		2BE1E87426777DA100E4C55D /* ExperienceCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE1E87326777DA100E4C55D /* ExperienceCategories.swift */; };
+		2BE1E87726777F9C00E4C55D /* LocationMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE1E87626777F9C00E4C55D /* LocationMode.swift */; };
+		2BE1E87A2677808F00E4C55D /* ParticipationMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE1E8792677808F00E4C55D /* ParticipationMode.swift */; };
+		2BE1E87F267782BB00E4C55D /* Experiences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE1E87E267782BB00E4C55D /* Experiences.swift */; };
+		2BE1E882267782DC00E4C55D /* Experience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE1E881267782DC00E4C55D /* Experience.swift */; };
+		2BE1E8852677866900E4C55D /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE1E8842677866900E4C55D /* Review.swift */; };
+		2BE1E888267786C700E4C55D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE1E887267786C700E4C55D /* User.swift */; };
+		2BE1E88B267789AA00E4C55D /* UserRole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE1E88A267789AA00E4C55D /* UserRole.swift */; };
+		2BE1E88E267789E300E4C55D /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE1E88D267789E300E4C55D /* Address.swift */; };
+		2BE1E89126778A9300E4C55D /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE1E89026778A9300E4C55D /* Session.swift */; };
+		2BE1E8942677979600E4C55D /* CategoriesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE1E8932677979600E4C55D /* CategoriesList.swift */; };
 		2BED752F267258D300C49853 /* inspireApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BED752E267258D300C49853 /* inspireApp.swift */; };
 		2BED7531267258D300C49853 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BED7530267258D300C49853 /* ContentView.swift */; };
 		2BED7533267258D600C49853 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BED7532267258D600C49853 /* Assets.xcassets */; };
@@ -29,8 +47,26 @@
 		138AE4F826773F6500F3826F /* ButtonSignInWithApple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ButtonSignInWithApple.swift; path = Components/ButtonSignInWithApple.swift; sourceTree = SOURCE_ROOT; };
 		13DCA7CB26737304000F3E76 /* Experience.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Experience.xcassets; sourceTree = "<group>"; };
 		13DCA7CD26737320000F3E76 /* Profile.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Profile.xcassets; sourceTree = "<group>"; };
+		2B1E500B26776587002B7E43 /* PageTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTitle.swift; sourceTree = "<group>"; };
+		2B1E500E26776612002B7E43 /* ThemeColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColors.swift; sourceTree = "<group>"; };
+		2B1E501226776968002B7E43 /* SectionTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTitle.swift; sourceTree = "<group>"; };
 		2B3FF5902673963400932E90 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		2B3FF5932673966200932E90 /* ExperienceCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceCard.swift; sourceTree = "<group>"; };
+		2BE1E8662677704700E4C55D /* QuizTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTitle.swift; sourceTree = "<group>"; };
+		2BE1E86A2677712500E4C55D /* Categorie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categorie.swift; sourceTree = "<group>"; };
+		2BE1E86D26777D2700E4C55D /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
+		2BE1E87026777D4400E4C55D /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
+		2BE1E87326777DA100E4C55D /* ExperienceCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceCategories.swift; sourceTree = "<group>"; };
+		2BE1E87626777F9C00E4C55D /* LocationMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMode.swift; sourceTree = "<group>"; };
+		2BE1E8792677808F00E4C55D /* ParticipationMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipationMode.swift; sourceTree = "<group>"; };
+		2BE1E87E267782BB00E4C55D /* Experiences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experiences.swift; sourceTree = "<group>"; };
+		2BE1E881267782DC00E4C55D /* Experience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experience.swift; sourceTree = "<group>"; };
+		2BE1E8842677866900E4C55D /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		2BE1E887267786C700E4C55D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2BE1E88A267789AA00E4C55D /* UserRole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRole.swift; sourceTree = "<group>"; };
+		2BE1E88D267789E300E4C55D /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		2BE1E89026778A9300E4C55D /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		2BE1E8932677979600E4C55D /* CategoriesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesList.swift; sourceTree = "<group>"; };
 		2BED752B267258D300C49853 /* inspire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = inspire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BED752E267258D300C49853 /* inspireApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inspireApp.swift; sourceTree = "<group>"; };
 		2BED7530267258D300C49853 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -83,6 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				2B3FF5932673966200932E90 /* ExperienceCard.swift */,
+				2B1E500B26776587002B7E43 /* PageTitle.swift */,
+				2B1E501226776968002B7E43 /* SectionTitle.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -98,6 +136,16 @@
 		2B3FF56B2673922900932E90 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2BE1E87326777DA100E4C55D /* ExperienceCategories.swift */,
+				2BE1E881267782DC00E4C55D /* Experience.swift */,
+				2BE1E8842677866900E4C55D /* Review.swift */,
+				2BE1E887267786C700E4C55D /* User.swift */,
+				2BE1E89026778A9300E4C55D /* Session.swift */,
+				2BE1E88D267789E300E4C55D /* Address.swift */,
+				2BE1E88A267789AA00E4C55D /* UserRole.swift */,
+				2BE1E8792677808F00E4C55D /* ParticipationMode.swift */,
+				2BE1E87626777F9C00E4C55D /* LocationMode.swift */,
+				2BE1E87E267782BB00E4C55D /* Experiences.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -205,6 +253,8 @@
 		2B3FF577267395A600932E90 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2BE1E86D26777D2700E4C55D /* Step.swift */,
+				2BE1E8932677979600E4C55D /* CategoriesList.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -212,6 +262,8 @@
 		2B3FF57A267395B100932E90 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				2BE1E8662677704700E4C55D /* QuizTitle.swift */,
+				2BE1E86A2677712500E4C55D /* Categorie.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -219,6 +271,7 @@
 		2B3FF57B267395B100932E90 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2BE1E87026777D4400E4C55D /* Quiz.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -438,6 +491,7 @@
 				13DCA7CA267372F1000F3E76 /* Resources */,
 				2BED752E267258D300C49853 /* inspireApp.swift */,
 				2BED7530267258D300C49853 /* ContentView.swift */,
+				2B1E500E26776612002B7E43 /* ThemeColors.swift */,
 				2B3FF56B2673922900932E90 /* Model */,
 				2BED75432672591F00C49853 /* Views */,
 				2BED7537267258D600C49853 /* Persistence.swift */,
@@ -547,12 +601,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BED7538267258D600C49853 /* Persistence.swift in Sources */,
+				2BE1E88B267789AA00E4C55D /* UserRole.swift in Sources */,
+				2BE1E88E267789E300E4C55D /* Address.swift in Sources */,
+				2BE1E882267782DC00E4C55D /* Experience.swift in Sources */,
+				2BE1E86E26777D2700E4C55D /* Step.swift in Sources */,
 				2BED7531267258D300C49853 /* ContentView.swift in Sources */,
+				2B1E500C26776587002B7E43 /* PageTitle.swift in Sources */,
 				138AE4EF26773D0100F3826F /* MasterProfileView.swift in Sources */,
 				2B3FF5912673963400932E90 /* Home.swift in Sources */,
+				2BE1E8852677866900E4C55D /* Review.swift in Sources */,
+				2B1E500F26776612002B7E43 /* ThemeColors.swift in Sources */,
+				2BE1E86B2677712500E4C55D /* Categorie.swift in Sources */,
 				138AE4F926773F6500F3826F /* ButtonSignInWithApple.swift in Sources */,
+				2BE1E87426777DA100E4C55D /* ExperienceCategories.swift in Sources */,
+				2BE1E87A2677808F00E4C55D /* ParticipationMode.swift in Sources */,
+				2BE1E87726777F9C00E4C55D /* LocationMode.swift in Sources */,
 				138AE4F726773DBD00F3826F /* test04.swift in Sources */,
+				2BE1E8942677979600E4C55D /* CategoriesList.swift in Sources */,
+				2BE1E8672677704700E4C55D /* QuizTitle.swift in Sources */,
+				2BE1E87F267782BB00E4C55D /* Experiences.swift in Sources */,
 				2BED753B267258D600C49853 /* inspire.xcdatamodeld in Sources */,
+				2B1E501326776968002B7E43 /* SectionTitle.swift in Sources */,
+				2BE1E87126777D4400E4C55D /* Quiz.swift in Sources */,
+				2BE1E89126778A9300E4C55D /* Session.swift in Sources */,
+				2BE1E888267786C700E4C55D /* User.swift in Sources */,
 				2BED754626725B0600C49853 /* FilterTag.swift in Sources */,
 				2B3FF5942673966200932E90 /* ExperienceCard.swift in Sources */,
 				2BED752F267258D300C49853 /* inspireApp.swift in Sources */,

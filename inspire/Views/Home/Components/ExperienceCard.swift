@@ -10,6 +10,9 @@ import SwiftUI
 struct ExperienceCard: View {
     var body: some View {
         Text("Image this as an experience card!")
+            .font(.title)
+            .fontWeight(.heavy)
+            .foregroundColor(.customPrimary)
     }
 }
 
