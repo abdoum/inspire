@@ -9,29 +9,59 @@ import SwiftUI
 
 struct ButtonView: View {
     
-    let labelButton: String
+    let label: String
     let action: () -> Void
     
-    func button(label: String) -> some View {
-        Button(action: action, label: {
-            Text(label)
+    var body: some View {
+        Button(action: action ,label: {
+            ZStack {
+                Capsule()
+                    .frame(height: 50)
+                    .foregroundColor(Color.customPrimary)
+                Text(label)
+                    .foregroundColor(.white)
+                    .fontWeight(.bold)
+                
+            }
         })
-        .padding()
-        .frame(maxWidth: .infinity, alignment: .center)
-        .buttonStyle(PlainButtonStyle())
-    }
+        }
+}
+
+struct TextLink: View {
+    
+    let label: String
+    let action: () -> Void
     
     var body: some View {
-        VStack {
-        button(label: labelButton)
-        }
+        Button(action: action, label: {
+            Text(label)
+                .underline()
+                .foregroundColor(.black)
+                .font(.headline)
+        })
     }
 }
 
 struct ButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonView(labelButton: "Connexion") {
-            print("")
-        }
+        TextLink(label: "Connexion", action: {})
     }
 }
+
+//    let labelButton: String
+//    let action: () -> Void
+//
+//    func button(label: String) -> some View {
+//        Button(action: action, label: {
+//            Text(label)
+//        })
+//        .padding()
+//        .frame(maxWidth: .infinity, alignment: .center)
+//        .buttonStyle(PlainButtonStyle())
+//    }
+//
+//    var body: some View {
+//        VStack {
+//        button(label: labelButton)
+//        }
+//    }

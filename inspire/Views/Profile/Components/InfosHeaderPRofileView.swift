@@ -8,17 +8,22 @@
 import SwiftUI
 
 struct InfosHeaderPRofileView: View {
+    
+    let imageName: String
+    let fullName: String
+    let job: String
+    
     var body: some View {
         HStack {
-            Image("maria_lopez")
+            Image(imageName)
                 .resizable()
                 .frame(width: 110, height: 110)
                 .aspectRatio(contentMode: .fit)
                 .clipShape(Circle())
             VStack {
-                Text("Maria Lopez")
+                Text(fullName)
                     .font(.title.bold())
-                Text("Serveuse")
+                Text(job)
                     .font(.subheadline)
                     .padding(.trailing, 90)
                     .padding(.top, 1)
@@ -39,6 +44,6 @@ struct InfosHeaderPRofileView: View {
 
 struct InfosHeaderPRofileView_Previews: PreviewProvider {
     static var previews: some View {
-        InfosHeaderPRofileView()
+        InfosHeaderPRofileView(imageName: "maria_lopez", fullName: "Maria Lopez", job: "Serveuse")
     }
 }

@@ -37,10 +37,10 @@ struct SignUp: View {
                     .autocapitalization(.none)
                     .disableAutocorrection(true)
                 
-                ButtonView(labelButton: "S'inscrire", action: {})
+                ButtonView(label: "S'inscrire", action: {})
                     .buttonConnexionViewStyle(style: ButtonConnexionViewStyleBlack())
                 Spacer()
-                ButtonView(labelButton: "Déjà un compte ?", action: {signIn.toggle()})
+                TextLink(label: "Déjà un compte ?", action: {signIn.toggle()})
                 
             }
             .padding()

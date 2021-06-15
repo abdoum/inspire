@@ -20,10 +20,10 @@ struct ResetPassword: View {
                 EmailTextFieldView(email: $email)
                     .padding(.bottom)
                     
-                ButtonView(labelButton: "Confirmer", action: {})
-                    .buttonConnexionViewStyle(style: ButtonConnexionViewStyleBlack())
+                ButtonView(label: "Confirmer", action: {})
                     .offset(y: 25)
-                ButtonView(labelButton: "Annuler", action: {signIn.toggle()})
+                TextLink(label: "Annuler", action: {signIn.toggle()})
+                    .padding(.top)
                     .offset(y: 25)
             }
             .padding()

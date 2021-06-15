@@ -14,12 +14,9 @@ struct Profile: View {
     var body: some View {
         ScrollView {
             VStack {
-                InfosHeaderPRofileView()
+                InfosHeaderPRofileView(imageName: "maria_lopez", fullName: "Maria Lopez", job: "Serveuse")
                     .padding()
-                ButtonView(labelButton: "Créer une expérience", action: {})
-                    .background(Color.customPrimary)
-                    .foregroundColor(.white)
-                    .clipShape(Capsule())
+                ButtonView(label: "Créer une expérience", action: {})
                 InfosProfileView()
                     .hasScrollEnabled(false)
                 ButtonSettingsProfileView(imageName: "checkmark.shield", label: " Mon compte est vérifié", editName: "Modifier", action: {})
