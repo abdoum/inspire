@@ -13,6 +13,8 @@ struct TitleView: View {
     
     var body: some View {
         Text(title)
+            .foregroundColor(.black)
+            .font(.largeTitle)
     }
 }
 

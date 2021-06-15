@@ -15,7 +15,6 @@ struct ResetPassword: View {
     var body: some View {
         VStack {
             TitleView(title: "Récupérer mot de passe")
-                .titleViewStyle(style: TitleViewStyleGray())
                 .offset(y: -50)
             VStack {
                 EmailTextFieldView(email: $email)

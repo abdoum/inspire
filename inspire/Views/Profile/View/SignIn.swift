@@ -19,7 +19,6 @@ struct SignIn: View {
         NavigationView {
             VStack {
                 TitleView(title: "Identification")
-                    .titleViewStyle(style: TitleViewStyleGray())
                     .offset(y: -50)
                 EmailTextFieldView(email: $email)
                 PasswordTextFieldView(password: $password)
@@ -33,7 +32,7 @@ struct SignIn: View {
                 ButtonView(labelButton: "Créer un compte", action: {signUp.toggle()})
                     .sheet(isPresented: $signUp, content: {
                         SignUp(signIn: $signUp)
-                    }).offset(y: 250)
+                    }).offset(y: 200)
 //                Text("Ou")
 //                    .padding(.top)
                 

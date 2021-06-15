@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SignUp: View {
     
+    
     @State private var fullName: String = ""
     @State private var birthdate: String = ""
     @State private var address: String = ""
@@ -23,7 +24,6 @@ struct SignUp: View {
         NavigationView {
             VStack {
                 TitleView(title: "Inscription")
-                    .titleViewStyle(style: TitleViewStyleGray())
                     .offset(y: -50)
                 Spacer()
                 OtherTextFieldView(fullName: $fullName, birthdate: $birthdate, address: $address, city: $city, zipCode: $zipCode)
