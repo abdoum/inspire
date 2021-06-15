@@ -7,9 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		138AE4EF26773D0100F3826F /* MasterProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138AE4EE26773D0100F3826F /* MasterProfileView.swift */; };
 		138AE4F726773DBD00F3826F /* test04.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138AE4F626773DBD00F3826F /* test04.swift */; };
-		138AE4F926773F6500F3826F /* ButtonSignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138AE4F826773F6500F3826F /* ButtonSignInWithApple.swift */; };
+		138AE5182677BA2100F3826F /* OtherTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138AE5132677BA2000F3826F /* OtherTextFieldView.swift */; };
+		138AE5192677BA2100F3826F /* PasswordTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138AE5142677BA2100F3826F /* PasswordTextFieldView.swift */; };
+		138AE51A2677BA2100F3826F /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138AE5152677BA2100F3826F /* ButtonView.swift */; };
+		138AE51B2677BA2100F3826F /* EmailTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138AE5162677BA2100F3826F /* EmailTextFieldView.swift */; };
+		138AE51C2677BA2100F3826F /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138AE5172677BA2100F3826F /* TitleView.swift */; };
+		138AE5222677BA5800F3826F /* ResetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138AE51D2677BA5800F3826F /* ResetPassword.swift */; };
+		138AE5232677BA5800F3826F /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138AE51E2677BA5800F3826F /* Profile.swift */; };
+		138AE5242677BA5800F3826F /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138AE51F2677BA5800F3826F /* SignIn.swift */; };
+		138AE5252677BA5800F3826F /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138AE5202677BA5800F3826F /* SignUp.swift */; };
+		138AE5262677BA5800F3826F /* MasterLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138AE5212677BA5800F3826F /* MasterLogin.swift */; };
+		138AE5292677BAE000F3826F /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138AE5282677BAE000F3826F /* ButtonStyle.swift */; };
+		138AE52B2677BBE900F3826F /* TitleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138AE52A2677BBE900F3826F /* TitleStyle.swift */; };
 		13DCA7CC26737304000F3E76 /* Experience.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13DCA7CB26737304000F3E76 /* Experience.xcassets */; };
 		13DCA7CE26737320000F3E76 /* Profile.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13DCA7CD26737320000F3E76 /* Profile.xcassets */; };
 		2B1E500C26776587002B7E43 /* ComponentMix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E500B26776587002B7E43 /* ComponentMix.swift */; };
@@ -50,9 +60,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		138AE4EE26773D0100F3826F /* MasterProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MasterProfileView.swift; path = View/MasterProfileView.swift; sourceTree = SOURCE_ROOT; };
 		138AE4F626773DBD00F3826F /* test04.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = test04.swift; path = inspire/test04.swift; sourceTree = SOURCE_ROOT; };
-		138AE4F826773F6500F3826F /* ButtonSignInWithApple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ButtonSignInWithApple.swift; path = Components/ButtonSignInWithApple.swift; sourceTree = SOURCE_ROOT; };
+		138AE5132677BA2000F3826F /* OtherTextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherTextFieldView.swift; sourceTree = "<group>"; };
+		138AE5142677BA2100F3826F /* PasswordTextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordTextFieldView.swift; sourceTree = "<group>"; };
+		138AE5152677BA2100F3826F /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		138AE5162677BA2100F3826F /* EmailTextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailTextFieldView.swift; sourceTree = "<group>"; };
+		138AE5172677BA2100F3826F /* TitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		138AE51D2677BA5800F3826F /* ResetPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPassword.swift; sourceTree = "<group>"; };
+		138AE51E2677BA5800F3826F /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		138AE51F2677BA5800F3826F /* SignIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
+		138AE5202677BA5800F3826F /* SignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
+		138AE5212677BA5800F3826F /* MasterLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterLogin.swift; sourceTree = "<group>"; };
+		138AE5282677BAE000F3826F /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
+		138AE52A2677BBE900F3826F /* TitleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleStyle.swift; sourceTree = "<group>"; };
 		13DCA7CB26737304000F3E76 /* Experience.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Experience.xcassets; sourceTree = "<group>"; };
 		13DCA7CD26737320000F3E76 /* Profile.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Profile.xcassets; sourceTree = "<group>"; };
 		2B1E500B26776587002B7E43 /* ComponentMix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentMix.swift; sourceTree = "<group>"; };
@@ -105,6 +125,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		138AE5272677BAD100F3826F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				138AE5282677BAE000F3826F /* ButtonStyle.swift */,
+				138AE52A2677BBE900F3826F /* TitleStyle.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		13DCA7CA267372F1000F3E76 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +208,7 @@
 		2B3FF56D2673925600932E90 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				138AE5272677BAD100F3826F /* Extensions */,
 				2B3FF57E267395BA00932E90 /* Components */,
 				2B3FF57D267395BA00932E90 /* Model */,
 				2B3FF57C267395BA00932E90 /* View */,
@@ -302,7 +332,11 @@
 		2B3FF57C267395BA00932E90 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				138AE4EE26773D0100F3826F /* MasterProfileView.swift */,
+				138AE5212677BA5800F3826F /* MasterLogin.swift */,
+				138AE51E2677BA5800F3826F /* Profile.swift */,
+				138AE51D2677BA5800F3826F /* ResetPassword.swift */,
+				138AE51F2677BA5800F3826F /* SignIn.swift */,
+				138AE5202677BA5800F3826F /* SignUp.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -317,7 +351,11 @@
 		2B3FF57E267395BA00932E90 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				138AE4F826773F6500F3826F /* ButtonSignInWithApple.swift */,
+				138AE5152677BA2100F3826F /* ButtonView.swift */,
+				138AE5162677BA2100F3826F /* EmailTextFieldView.swift */,
+				138AE5132677BA2000F3826F /* OtherTextFieldView.swift */,
+				138AE5142677BA2100F3826F /* PasswordTextFieldView.swift */,
+				138AE5172677BA2100F3826F /* TitleView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -625,8 +663,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B26141E267892CB00C48BC2 /* BackButton.swift in Sources */,
+				138AE5292677BAE000F3826F /* ButtonStyle.swift in Sources */,
 				2BED7538267258D600C49853 /* Persistence.swift in Sources */,
 				2BE1E88B267789AA00E4C55D /* UserRole.swift in Sources */,
+				138AE5222677BA5800F3826F /* ResetPassword.swift in Sources */,
+				138AE5262677BA5800F3826F /* MasterLogin.swift in Sources */,
+				138AE5182677BA2100F3826F /* OtherTextFieldView.swift in Sources */,
 				2BE1E88E267789E300E4C55D /* Address.swift in Sources */,
 				2B90CC562677D4D000B5EC2E /* StepTwo.swift in Sources */,
 				2BE1E882267782DC00E4C55D /* Experience.swift in Sources */,
@@ -636,6 +678,10 @@
 				2B26141B2678915F00C48BC2 /* StepThree.swift in Sources */,
 				138AE4EF26773D0100F3826F /* MasterProfileView.swift in Sources */,
 				2B2614212678933D00C48BC2 /* SkipQuizButton.swift in Sources */,
+				138AE5192677BA2100F3826F /* PasswordTextFieldView.swift in Sources */,
+				138AE5252677BA5800F3826F /* SignUp.swift in Sources */,
+				138AE51C2677BA2100F3826F /* TitleView.swift in Sources */,
+			
 				2B3FF5912673963400932E90 /* Home.swift in Sources */,
 				2BE1E8852677866900E4C55D /* Review.swift in Sources */,
 				2B1E500F26776612002B7E43 /* ThemeColors.swift in Sources */,
@@ -644,6 +690,7 @@
 				2BE1E87426777DA100E4C55D /* ExperienceCategories.swift in Sources */,
 				2BE1E87A2677808F00E4C55D /* ParticipationMode.swift in Sources */,
 				2B26142D2678A38C00C48BC2 /* Suggestion.swift in Sources */,
+				138AE5242677BA5800F3826F /* SignIn.swift in Sources */,
 				2BE1E87726777F9C00E4C55D /* LocationMode.swift in Sources */,
 				138AE4F726773DBD00F3826F /* test04.swift in Sources */,
 				2B26142A2678A35D00C48BC2 /* Suggestions.swift in Sources */,
@@ -658,8 +705,12 @@
 				2BE1E888267786C700E4C55D /* User.swift in Sources */,
 				2BED754626725B0600C49853 /* FilterTag.swift in Sources */,
 				2B26142426789B0500C48BC2 /* RandomCategory.swift in Sources */,
+				138AE51A2677BA2100F3826F /* ButtonView.swift in Sources */,
+				138AE5232677BA5800F3826F /* Profile.swift in Sources */,
+				138AE52B2677BBE900F3826F /* TitleStyle.swift in Sources */,
 				2B3FF5942673966200932E90 /* ExperienceCard.swift in Sources */,
 				2BED752F267258D300C49853 /* inspireApp.swift in Sources */,
+				138AE51B2677BA2100F3826F /* EmailTextFieldView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
