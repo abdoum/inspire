@@ -7,15 +7,20 @@
 
 import Foundation
 
-struct Quiz {
-    var isFirstTimeUser : Bool
-    var steps = [1...4]
-    let existingMainExperienceCategories =  EXPERIENCE_CATEGORIES
+struct QuizParams   {
+    var isFirstTimeUser : Bool = true
+    var steps = [1 : "Que cherchez-vous ?", 2: "Lieu ?", 3: "Vous préférez ?", 4 : "Quelques suggestions"]
+    let existingExperienceCategories =  EXPERIENCE_CATEGORIES
+    var preferedExperienceCategorie = ""
     var skipQuiz : Bool = false
     var currentStep : Int = 1
     let existingExperienceLocationModes : [String] = LocationMode.allLocationModes
-    let preferedLocationMode : LocationMode = .all
+    var preferedExperienceLocationMode : LocationMode = .all
     let existingExperienceParticipationModes : [String] = ParticipationMode.allParticipationModes
-    let preferedParticipationModes : ParticipationMode = .all
+    var preferedExperienceParticipationMode : ParticipationMode = .all
     let suggestions : [Experience] = []
+}
+
+class Quiz: ObservableObject {
+    @Published var params = QuizParams()
 }

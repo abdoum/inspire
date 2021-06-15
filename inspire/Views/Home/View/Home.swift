@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ExperiencesHome: View {
+struct Home: View {
     var body: some View {
         ExperienceCard()
     }
@@ -15,6 +15,6 @@ struct ExperiencesHome: View {
 
 struct ExperiencesHome_Previews: PreviewProvider {
     static var previews: some View {
-        ExperiencesHome()
+        Home()
     }
 }

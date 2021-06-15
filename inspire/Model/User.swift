@@ -18,7 +18,7 @@ struct User: Identifiable {
     var biography : String = ""
     var spokenLanguages : [Locale] = [.current]
     var avatar : String = "https://via.placeholder.com/150/92c952"
-//    var bookedSessions : [Session] = []
+    var bookedSessions : [Session] = []
     var location : CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 22.9108638, longitude: 43.2045436)
     var address : Address? = nil
     var isVerified : Bool = false

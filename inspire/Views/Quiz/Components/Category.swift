@@ -7,16 +7,19 @@
 
 import SwiftUI
 
-struct Categorie: View {
+struct Category: View {
     let title : String
     let numberOfExistingExperiences : Int
+    let image : String
     var body: some View {
         ZStack {
-            Image("rempotage")
+            Image(image)
                 .resizable()
                 .scaledToFill()
                 .frame(width: 157, height: 140, alignment: .center)
+                .overlay(Color(.black).opacity(0.3))
                 .cornerRadius(14)
+            
             VStack(alignment: .leading){
                 Text(title)
                     .font(.system(size: 18))
@@ -24,7 +27,6 @@ struct Categorie: View {
                     .foregroundColor(.white)
                     .padding(.vertical)
                 
-                    
                 RoundedRectangle(cornerRadius: 6)
                     .frame(width: 80, height: 26, alignment: .center)
                     .foregroundColor(.white)
@@ -34,15 +36,14 @@ struct Categorie: View {
                             .fontWeight(.bold)
                             .foregroundColor(.customPrimary)
                     )
-                    
             }.alignmentGuide(HorizontalAlignment.leading) { _ in  80 }
         }
     }
 }
 
-struct Categorie_Previews: PreviewProvider {
+struct Category_Previews: PreviewProvider {
     static var previews: some View {
-        Categorie(title: "Saisonnier", numberOfExistingExperiences: 103)
+        Category(title: "Saisonnier", numberOfExistingExperiences: 103, image: "boulanger")
             .previewLayout(.sizeThatFits)
             .padding()
     }

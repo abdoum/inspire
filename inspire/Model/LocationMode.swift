@@ -7,13 +7,13 @@
 
 import Foundation
 
-enum LocationMode:String, CaseIterable {
+enum LocationMode : String, CaseIterable {
     case country,
          proximity,
          worldwide,
          all
     
     static var allLocationModes: [String] {
-        return ParticipationMode.allCases.map { $0.rawValue }
+        return LocationMode.allCases.map { $0.rawValue }
       }
 }

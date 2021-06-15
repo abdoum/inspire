@@ -12,14 +12,22 @@
 		138AE4F926773F6500F3826F /* ButtonSignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138AE4F826773F6500F3826F /* ButtonSignInWithApple.swift */; };
 		13DCA7CC26737304000F3E76 /* Experience.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13DCA7CB26737304000F3E76 /* Experience.xcassets */; };
 		13DCA7CE26737320000F3E76 /* Profile.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13DCA7CD26737320000F3E76 /* Profile.xcassets */; };
-		2B1E500C26776587002B7E43 /* PageTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E500B26776587002B7E43 /* PageTitle.swift */; };
+		2B1E500C26776587002B7E43 /* ComponentMix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E500B26776587002B7E43 /* ComponentMix.swift */; };
 		2B1E500F26776612002B7E43 /* ThemeColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E500E26776612002B7E43 /* ThemeColors.swift */; };
 		2B1E501326776968002B7E43 /* SectionTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E501226776968002B7E43 /* SectionTitle.swift */; };
+		2B26141B2678915F00C48BC2 /* StepThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B26141A2678915F00C48BC2 /* StepThree.swift */; };
+		2B26141E267892CB00C48BC2 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B26141D267892CB00C48BC2 /* BackButton.swift */; };
+		2B2614212678933D00C48BC2 /* SkipQuizButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2614202678933D00C48BC2 /* SkipQuizButton.swift */; };
+		2B26142426789B0500C48BC2 /* RandomCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B26142326789B0500C48BC2 /* RandomCategory.swift */; };
+		2B26142A2678A35D00C48BC2 /* Suggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2614292678A35D00C48BC2 /* Suggestions.swift */; };
+		2B26142D2678A38C00C48BC2 /* Suggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B26142C2678A38C00C48BC2 /* Suggestion.swift */; };
+		2B2614302678A65000C48BC2 /* ExperienceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B26142F2678A65000C48BC2 /* ExperienceDetail.swift */; };
 		2B3FF5912673963400932E90 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3FF5902673963400932E90 /* Home.swift */; };
 		2B3FF5942673966200932E90 /* ExperienceCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3FF5932673966200932E90 /* ExperienceCard.swift */; };
+		2B90CC562677D4D000B5EC2E /* StepTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B90CC552677D4D000B5EC2E /* StepTwo.swift */; };
 		2BE1E8672677704700E4C55D /* QuizTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE1E8662677704700E4C55D /* QuizTitle.swift */; };
-		2BE1E86B2677712500E4C55D /* Categorie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE1E86A2677712500E4C55D /* Categorie.swift */; };
-		2BE1E86E26777D2700E4C55D /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE1E86D26777D2700E4C55D /* Step.swift */; };
+		2BE1E86B2677712500E4C55D /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE1E86A2677712500E4C55D /* Category.swift */; };
+		2BE1E86E26777D2700E4C55D /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE1E86D26777D2700E4C55D /* Flow.swift */; };
 		2BE1E87126777D4400E4C55D /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE1E87026777D4400E4C55D /* Quiz.swift */; };
 		2BE1E87426777DA100E4C55D /* ExperienceCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE1E87326777DA100E4C55D /* ExperienceCategories.swift */; };
 		2BE1E87726777F9C00E4C55D /* LocationMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE1E87626777F9C00E4C55D /* LocationMode.swift */; };
@@ -31,7 +39,7 @@
 		2BE1E88B267789AA00E4C55D /* UserRole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE1E88A267789AA00E4C55D /* UserRole.swift */; };
 		2BE1E88E267789E300E4C55D /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE1E88D267789E300E4C55D /* Address.swift */; };
 		2BE1E89126778A9300E4C55D /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE1E89026778A9300E4C55D /* Session.swift */; };
-		2BE1E8942677979600E4C55D /* CategoriesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE1E8932677979600E4C55D /* CategoriesList.swift */; };
+		2BE1E8942677979600E4C55D /* StepOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE1E8932677979600E4C55D /* StepOne.swift */; };
 		2BED752F267258D300C49853 /* inspireApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BED752E267258D300C49853 /* inspireApp.swift */; };
 		2BED7531267258D300C49853 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BED7530267258D300C49853 /* ContentView.swift */; };
 		2BED7533267258D600C49853 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BED7532267258D600C49853 /* Assets.xcassets */; };
@@ -47,14 +55,22 @@
 		138AE4F826773F6500F3826F /* ButtonSignInWithApple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ButtonSignInWithApple.swift; path = Components/ButtonSignInWithApple.swift; sourceTree = SOURCE_ROOT; };
 		13DCA7CB26737304000F3E76 /* Experience.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Experience.xcassets; sourceTree = "<group>"; };
 		13DCA7CD26737320000F3E76 /* Profile.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Profile.xcassets; sourceTree = "<group>"; };
-		2B1E500B26776587002B7E43 /* PageTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTitle.swift; sourceTree = "<group>"; };
+		2B1E500B26776587002B7E43 /* ComponentMix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentMix.swift; sourceTree = "<group>"; };
 		2B1E500E26776612002B7E43 /* ThemeColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColors.swift; sourceTree = "<group>"; };
 		2B1E501226776968002B7E43 /* SectionTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTitle.swift; sourceTree = "<group>"; };
+		2B26141A2678915F00C48BC2 /* StepThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepThree.swift; sourceTree = SOURCE_ROOT; };
+		2B26141D267892CB00C48BC2 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		2B2614202678933D00C48BC2 /* SkipQuizButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkipQuizButton.swift; sourceTree = "<group>"; };
+		2B26142326789B0500C48BC2 /* RandomCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomCategory.swift; sourceTree = "<group>"; };
+		2B2614292678A35D00C48BC2 /* Suggestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suggestions.swift; sourceTree = "<group>"; };
+		2B26142C2678A38C00C48BC2 /* Suggestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suggestion.swift; sourceTree = "<group>"; };
+		2B26142F2678A65000C48BC2 /* ExperienceDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExperienceDetail.swift; path = inspire/Views/Quiz/Components/ExperienceDetail.swift; sourceTree = SOURCE_ROOT; };
 		2B3FF5902673963400932E90 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		2B3FF5932673966200932E90 /* ExperienceCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceCard.swift; sourceTree = "<group>"; };
+		2B90CC552677D4D000B5EC2E /* StepTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepTwo.swift; sourceTree = "<group>"; };
 		2BE1E8662677704700E4C55D /* QuizTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTitle.swift; sourceTree = "<group>"; };
-		2BE1E86A2677712500E4C55D /* Categorie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categorie.swift; sourceTree = "<group>"; };
-		2BE1E86D26777D2700E4C55D /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
+		2BE1E86A2677712500E4C55D /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		2BE1E86D26777D2700E4C55D /* Flow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flow.swift; sourceTree = "<group>"; };
 		2BE1E87026777D4400E4C55D /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		2BE1E87326777DA100E4C55D /* ExperienceCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceCategories.swift; sourceTree = "<group>"; };
 		2BE1E87626777F9C00E4C55D /* LocationMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMode.swift; sourceTree = "<group>"; };
@@ -66,7 +82,7 @@
 		2BE1E88A267789AA00E4C55D /* UserRole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRole.swift; sourceTree = "<group>"; };
 		2BE1E88D267789E300E4C55D /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		2BE1E89026778A9300E4C55D /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
-		2BE1E8932677979600E4C55D /* CategoriesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesList.swift; sourceTree = "<group>"; };
+		2BE1E8932677979600E4C55D /* StepOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepOne.swift; sourceTree = "<group>"; };
 		2BED752B267258D300C49853 /* inspire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = inspire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BED752E267258D300C49853 /* inspireApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inspireApp.swift; sourceTree = "<group>"; };
 		2BED7530267258D300C49853 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -119,7 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				2B3FF5932673966200932E90 /* ExperienceCard.swift */,
-				2B1E500B26776587002B7E43 /* PageTitle.swift */,
+				2B1E500B26776587002B7E43 /* ComponentMix.swift */,
 				2B1E501226776968002B7E43 /* SectionTitle.swift */,
 			);
 			path = Components;
@@ -253,8 +269,11 @@
 		2B3FF577267395A600932E90 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2BE1E86D26777D2700E4C55D /* Step.swift */,
-				2BE1E8932677979600E4C55D /* CategoriesList.swift */,
+				2B26141A2678915F00C48BC2 /* StepThree.swift */,
+				2BE1E86D26777D2700E4C55D /* Flow.swift */,
+				2B2614292678A35D00C48BC2 /* Suggestions.swift */,
+				2B90CC552677D4D000B5EC2E /* StepTwo.swift */,
+				2BE1E8932677979600E4C55D /* StepOne.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -263,7 +282,11 @@
 			isa = PBXGroup;
 			children = (
 				2BE1E8662677704700E4C55D /* QuizTitle.swift */,
-				2BE1E86A2677712500E4C55D /* Categorie.swift */,
+				2B26141D267892CB00C48BC2 /* BackButton.swift */,
+				2B2614202678933D00C48BC2 /* SkipQuizButton.swift */,
+				2BE1E86A2677712500E4C55D /* Category.swift */,
+				2B26142326789B0500C48BC2 /* RandomCategory.swift */,
+				2B26142C2678A38C00C48BC2 /* Suggestion.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -365,6 +388,7 @@
 		2B3FF59D267396D300932E90 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2B26142F2678A65000C48BC2 /* ExperienceDetail.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -600,24 +624,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B26141E267892CB00C48BC2 /* BackButton.swift in Sources */,
 				2BED7538267258D600C49853 /* Persistence.swift in Sources */,
 				2BE1E88B267789AA00E4C55D /* UserRole.swift in Sources */,
 				2BE1E88E267789E300E4C55D /* Address.swift in Sources */,
+				2B90CC562677D4D000B5EC2E /* StepTwo.swift in Sources */,
 				2BE1E882267782DC00E4C55D /* Experience.swift in Sources */,
-				2BE1E86E26777D2700E4C55D /* Step.swift in Sources */,
+				2BE1E86E26777D2700E4C55D /* Flow.swift in Sources */,
 				2BED7531267258D300C49853 /* ContentView.swift in Sources */,
-				2B1E500C26776587002B7E43 /* PageTitle.swift in Sources */,
+				2B1E500C26776587002B7E43 /* ComponentMix.swift in Sources */,
+				2B26141B2678915F00C48BC2 /* StepThree.swift in Sources */,
 				138AE4EF26773D0100F3826F /* MasterProfileView.swift in Sources */,
+				2B2614212678933D00C48BC2 /* SkipQuizButton.swift in Sources */,
 				2B3FF5912673963400932E90 /* Home.swift in Sources */,
 				2BE1E8852677866900E4C55D /* Review.swift in Sources */,
 				2B1E500F26776612002B7E43 /* ThemeColors.swift in Sources */,
-				2BE1E86B2677712500E4C55D /* Categorie.swift in Sources */,
+				2BE1E86B2677712500E4C55D /* Category.swift in Sources */,
 				138AE4F926773F6500F3826F /* ButtonSignInWithApple.swift in Sources */,
 				2BE1E87426777DA100E4C55D /* ExperienceCategories.swift in Sources */,
 				2BE1E87A2677808F00E4C55D /* ParticipationMode.swift in Sources */,
+				2B26142D2678A38C00C48BC2 /* Suggestion.swift in Sources */,
 				2BE1E87726777F9C00E4C55D /* LocationMode.swift in Sources */,
 				138AE4F726773DBD00F3826F /* test04.swift in Sources */,
-				2BE1E8942677979600E4C55D /* CategoriesList.swift in Sources */,
+				2B26142A2678A35D00C48BC2 /* Suggestions.swift in Sources */,
+				2BE1E8942677979600E4C55D /* StepOne.swift in Sources */,
+				2B2614302678A65000C48BC2 /* ExperienceDetail.swift in Sources */,
 				2BE1E8672677704700E4C55D /* QuizTitle.swift in Sources */,
 				2BE1E87F267782BB00E4C55D /* Experiences.swift in Sources */,
 				2BED753B267258D600C49853 /* inspire.xcdatamodeld in Sources */,
@@ -626,6 +657,7 @@
 				2BE1E89126778A9300E4C55D /* Session.swift in Sources */,
 				2BE1E888267786C700E4C55D /* User.swift in Sources */,
 				2BED754626725B0600C49853 /* FilterTag.swift in Sources */,
+				2B26142426789B0500C48BC2 /* RandomCategory.swift in Sources */,
 				2B3FF5942673966200932E90 /* ExperienceCard.swift in Sources */,
 				2BED752F267258D300C49853 /* inspireApp.swift in Sources */,
 			);
