@@ -31,7 +31,7 @@ struct SignIn: View {
                 ButtonView(label: "Connexion", action: {isLog = true})
                 TextLink(label: "Créer un compte", action: {signUp.toggle()})
                     .sheet(isPresented: $signUp, content: {
-                        SignUp(signIn: $signUp)
+                        SignUp(signUpUser: .empty, signIn: $signUp)
                     }).offset(y: 200)
             }.padding()
         }

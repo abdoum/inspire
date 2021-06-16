@@ -24,7 +24,7 @@ struct ButtonView: View {
                 
             }
         })
-        }
+    }
 }
 
 struct TextLink: View {
