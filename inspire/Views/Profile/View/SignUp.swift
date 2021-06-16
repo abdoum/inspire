@@ -19,7 +19,7 @@ struct SignUp: View {
             List {
                 Section (header: title){
                     Spacer()
-                    OtherTextFieldView(firstName: $signUpUser.firstname, lastName: $signUpUser.lastname, birthdate: $signUpUser.birthDate, address: $signUpUser.address, city: $signUpUser.city, zipCode: $signUpUser.zipCode)
+                    OtherTextFieldView(firstName: $signUpUser.firstname, lastName: $signUpUser.lastname)
                     
                     EmailTextFieldView(email: $signUpUser.email)
                     

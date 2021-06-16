@@ -21,13 +21,15 @@ struct StepTwo: View {
                     
                     Label(
                         title: {
-                            if mode == "all" {
-                                Text("Tous")
-                                    .font(.system(size: 22))
-                            } else if mode == "visio" {
+                            switch (mode){
+                            case "solo":
+                                Text("En présenciel, seul")
+                            case "visio":
                                 Text("En ligne")
-                            }else if mode == "face2face"{
-                                Text("En présenciel")
+                            case "group":
+                                Text("En présenciel, groupe")
+                            default:
+                                Text("Tous")
                             }
                         },
                         icon: {

@@ -13,7 +13,7 @@ struct QuizTitle: View {
         Text(content)
             .font(.system(size: 34))
             .fontWeight(.heavy)
-            .foregroundColor(.white)
+            .foregroundColor(.customPrimary)
     }
 }
 

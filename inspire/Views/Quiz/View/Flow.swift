@@ -51,7 +51,6 @@ struct Flow: View {
                     }
                     Spacer()
                 }
-                .background(Color(#colorLiteral(red: 0, green: 0.5882688165, blue: 0.5607096553, alpha: 1)))
                 .edgesIgnoringSafeArea(.all)
             }else{
                 Home()
