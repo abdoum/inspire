@@ -19,4 +19,5 @@ struct Experience : Identifiable {
     var description : String
     var creationDate : Date = Date()
     var reviews : [Review] = []
+    var isFavorite : Bool = false
 }

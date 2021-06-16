@@ -18,7 +18,7 @@ struct SuggestionCard: View {
                     .aspectRatio(contentMode: .fit)
                     .clipped()
                 
-                if experince.isFavorite {
+                if experience.isFavorite {
                     Image(systemName: "star.fill")
                         .foregroundColor(.red)                }
                 
