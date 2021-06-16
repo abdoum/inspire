@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		138AE4F726773DBD00F3826F /* test04.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138AE4F626773DBD00F3826F /* test04.swift */; };
 		138AE5182677BA2100F3826F /* OtherTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138AE5132677BA2000F3826F /* OtherTextFieldView.swift */; };
 		138AE5192677BA2100F3826F /* PasswordTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138AE5142677BA2100F3826F /* PasswordTextFieldView.swift */; };
 		138AE51A2677BA2100F3826F /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138AE5152677BA2100F3826F /* ButtonView.swift */; };
@@ -46,7 +45,6 @@
 		2BE1E87426777DA100E4C55D /* ExperienceCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE1E87326777DA100E4C55D /* ExperienceCategories.swift */; };
 		2BE1E87726777F9C00E4C55D /* LocationMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE1E87626777F9C00E4C55D /* LocationMode.swift */; };
 		2BE1E87A2677808F00E4C55D /* ParticipationMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE1E8792677808F00E4C55D /* ParticipationMode.swift */; };
-		2BE1E87F267782BB00E4C55D /* Experiences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE1E87E267782BB00E4C55D /* Experiences.swift */; };
 		2BE1E882267782DC00E4C55D /* Experience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE1E881267782DC00E4C55D /* Experience.swift */; };
 		2BE1E8852677866900E4C55D /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE1E8842677866900E4C55D /* Review.swift */; };
 		2BE1E888267786C700E4C55D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE1E887267786C700E4C55D /* User.swift */; };
@@ -71,7 +69,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		138AE4F626773DBD00F3826F /* test04.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = test04.swift; path = inspire/test04.swift; sourceTree = SOURCE_ROOT; };
 		138AE5132677BA2000F3826F /* OtherTextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherTextFieldView.swift; sourceTree = "<group>"; };
 		138AE5142677BA2100F3826F /* PasswordTextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordTextFieldView.swift; sourceTree = "<group>"; };
 		138AE5152677BA2100F3826F /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
@@ -110,7 +107,6 @@
 		2BE1E87326777DA100E4C55D /* ExperienceCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceCategories.swift; sourceTree = "<group>"; };
 		2BE1E87626777F9C00E4C55D /* LocationMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMode.swift; sourceTree = "<group>"; };
 		2BE1E8792677808F00E4C55D /* ParticipationMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipationMode.swift; sourceTree = "<group>"; };
-		2BE1E87E267782BB00E4C55D /* Experiences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experiences.swift; sourceTree = "<group>"; };
 		2BE1E881267782DC00E4C55D /* Experience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experience.swift; sourceTree = "<group>"; };
 		2BE1E8842677866900E4C55D /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		2BE1E887267786C700E4C55D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -211,7 +207,6 @@
 				2BE1E88A267789AA00E4C55D /* UserRole.swift */,
 				2BE1E8792677808F00E4C55D /* ParticipationMode.swift */,
 				2BE1E87626777F9C00E4C55D /* LocationMode.swift */,
-				2BE1E87E267782BB00E4C55D /* Experiences.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -575,7 +570,6 @@
 		2BED752D267258D300C49853 /* inspire */ = {
 			isa = PBXGroup;
 			children = (
-				138AE4F626773DBD00F3826F /* test04.swift */,
 				13DCA7CA267372F1000F3E76 /* Resources */,
 				2BED752E267258D300C49853 /* inspireApp.swift */,
 				2BED7530267258D300C49853 /* ContentView.swift */,
@@ -745,13 +739,11 @@
 				2B26142D2678A38C00C48BC2 /* Suggestion.swift in Sources */,
 				138AE5242677BA5800F3826F /* SignIn.swift in Sources */,
 				2BE1E87726777F9C00E4C55D /* LocationMode.swift in Sources */,
-				138AE4F726773DBD00F3826F /* test04.swift in Sources */,
 				2B26142A2678A35D00C48BC2 /* Suggestions.swift in Sources */,
 				2BE1E8942677979600E4C55D /* StepOne.swift in Sources */,
 				2B2614302678A65000C48BC2 /* ExperienceDetail.swift in Sources */,
 				13F18E9B2678F8810095B184 /* InfosHeaderPRofileView.swift in Sources */,
 				2BE1E8672677704700E4C55D /* QuizTitle.swift in Sources */,
-				2BE1E87F267782BB00E4C55D /* Experiences.swift in Sources */,
 				2BED753B267258D600C49853 /* inspire.xcdatamodeld in Sources */,
 				383D1F13267A02D40079823A /* UserNeeds.swift in Sources */,
 				2B1E501326776968002B7E43 /* SectionTitle.swift in Sources */,
