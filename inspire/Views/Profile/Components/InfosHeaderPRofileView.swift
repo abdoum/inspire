@@ -22,7 +22,8 @@ struct InfosHeaderPRofileView: View {
                 .clipShape(Circle())
             VStack {
                 Text(fullName)
-                    .font(.title.bold())
+                    .font(.title)
+                    .bold()
                 Text(job)
                     .font(.subheadline)
                     .padding(.trailing, 90)

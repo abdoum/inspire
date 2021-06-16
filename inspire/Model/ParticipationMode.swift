@@ -9,7 +9,8 @@ import Foundation
 
 enum ParticipationMode: String, CaseIterable {
     case visio,
-         face2face,
+         solo,
+         group,
          all
     
     static var allParticipationModes: [String] {

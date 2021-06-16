@@ -6,18 +6,21 @@
 //
 
 import Foundation
+import CoreLocation
 
 struct Experience : Identifiable {
     let id : UUID = UUID()
     let author : User
     var duration : Double
+    // TODO: make function to calculate price based on pariticipation mode
     var price : Double
-    var currency : String = "€"
     var category : [ExperienceCategory] = EXPERIENCE_CATEGORIES
     var participationMode : ParticipationMode = .visio
     var title : String
     var description : String
+    var guestPrerequisites : [String] = []
     var creationDate : Date = Date()
     var reviews : [Review] = []
     var isFavorite : Bool = false
+    var location : CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 22.9108638, longitude: 43.2045436)
 }

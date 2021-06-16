@@ -8,6 +8,7 @@
 import Foundation
 
 struct Review {
+    let id = UUID()
     let comment : String?
     let rate : Int
     let author : User

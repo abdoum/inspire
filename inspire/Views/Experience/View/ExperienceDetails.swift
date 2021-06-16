@@ -30,73 +30,70 @@ struct ExperienceDetails: View {
     //var prerequisites: [String] = ["dsfgdf"]
     //  var accumulatedReservations: sum(sessions.guests)
     
-    
-    
-    
     var body: some View {
-                ZStack {
-                    VStack {
-                        List {
-                        Image("SculpteurSurPierre")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .listRowInsets(EdgeInsets())
-                        AuthorMainInfos()                     
-                            .listRowInsets(EdgeInsets())
-                        ExperienceContact()
-                        ExperienceProgram()
-                        UserNeeds()
-
-                        ExperienceReviews()
-                    }
-                    ExperiencePriceDates()
-                        
-                    }
-                    VStack {
-                        HStack {
-                            Button(action: {}) {
-                                ZStack {
-                                    Image(systemName: "circle.fill")
-                                        .foregroundColor(.black)
-                                        .opacity(0.5)
-                                    Image(systemName: "xmark.circle.fill")
-                                        .foregroundColor(.white)
-                                }.font(.system(size: 30))
-                            }
-                            .padding()
-                            
-                            Spacer()
-                            
-                            Button(action: {}) {
-                                ZStack {
-                                    Image(systemName: "circle.fill")
-                                        .foregroundColor(.black)
-                                        .opacity(0.5)
-                                    Image(systemName: "paperplane.circle.fill")
-                                        .foregroundColor(.white)
-                                }.font(.system(size: 30))
-                            }
-                            .padding()
-                            
-                            Button(action: {}) {
-                                ZStack {
-                                    Image(systemName: "circle.fill")
-                                        .foregroundColor(.white)
-                                        .font(.system(size: 30))
-                                    Image(systemName: "heart")
-                                        .foregroundColor(.black)
-                                        .opacity(0.8)
-                                        .font(.system(size: 18))
-                                }
-                            }
-                            .padding()
-                        }
-                        .padding(.top,40)
-                        Spacer()
-                    }
-                } .edgesIgnoringSafeArea(.all)
+        ZStack {
+            VStack {
+                List {
+                    Image("SculpteurSurPierre")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .listRowInsets(EdgeInsets())
+                    AuthorMainInfos()
+                        .listRowInsets(EdgeInsets())
+                    ExperienceContact()
+                    ExperienceProgram()
+                    UserNeeds()
+                    
+                    ExperienceReviews()
+                }
+                ExperiencePriceDates()
+                
             }
-            
+            VStack {
+                HStack {
+                    Button(action: {}) {
+                        ZStack {
+                            Image(systemName: "circle.fill")
+                                .foregroundColor(.black)
+                                .opacity(0.5)
+                            Image(systemName: "xmark.circle.fill")
+                                .foregroundColor(.white)
+                        }.font(.system(size: 30))
+                    }
+                    .padding()
+                    
+                    Spacer()
+                    
+                    Button(action: {}) {
+                        ZStack {
+                            Image(systemName: "circle.fill")
+                                .foregroundColor(.black)
+                                .opacity(0.5)
+                            Image(systemName: "paperplane.circle.fill")
+                                .foregroundColor(.white)
+                        }.font(.system(size: 30))
+                    }
+                    .padding()
+                    
+                    Button(action: {}) {
+                        ZStack {
+                            Image(systemName: "circle.fill")
+                                .foregroundColor(.white)
+                                .font(.system(size: 30))
+                            Image(systemName: "heart")
+                                .foregroundColor(.black)
+                                .opacity(0.8)
+                                .font(.system(size: 18))
+                        }
+                    }
+                    .padding()
+                }
+                .padding(.top,40)
+                Spacer()
+            }
+        } .edgesIgnoringSafeArea(.all)
+    }
+    
 }
 
 struct ExperienceDetails_Previews: PreviewProvider {
