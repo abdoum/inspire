@@ -14,7 +14,7 @@ struct Profile: View {
     var body: some View {
         ScrollView {
             VStack {
-                InfosHeaderPRofileView(imageName: "maria_lopez", fullName: "Maria Lopez", job: "Serveuse")
+                InfosHeaderPRofileView(imageName: "maria_lopez", fullName: "Professionel", job: "Chef de projet")
                     .padding()
                 ButtonView(label: "Créer une expérience", action: {})
                 InfosProfileView()
@@ -24,6 +24,7 @@ struct Profile: View {
                 ButtonSettingsProfileView(imageName: "gearshape", label: "Paramètres", editName: "Modifier", action: {})
                 DescriptionProfileView()
                     .padding(.top)
+                ButtonView(label: "Se déconnecter", action: {isLog = false}).buttonConnexionViewStyle(style: ButtonConnexionViewStyleBlack())
             }.padding()
         }
     }
@@ -34,4 +35,3 @@ struct Profile_Previews: PreviewProvider {
         Profile(isLog: .constant(true))
     }
 }
-//ButtonView(labelButton: "Se déconnecter", action: {isLog = false}).buttonConnexionViewStyle(style: ButtonConnexionViewStyleBlack())

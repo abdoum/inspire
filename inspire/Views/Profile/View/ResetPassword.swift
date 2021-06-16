@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ResetPassword: View {
     
-    @State private var email: String = ""
+    @State var signUpUser: SignUpUser
     @Binding var signIn: Bool
     
     var body: some View {
@@ -17,7 +17,7 @@ struct ResetPassword: View {
             TitleView(title: "Récupérer mot de passe")
                 .offset(y: -50)
             VStack {
-                EmailTextFieldView(email: $email)
+                EmailTextFieldView(email: $signUpUser.email)
                     .padding(.bottom)
                     
                 ButtonView(label: "Confirmer", action: {})
@@ -33,6 +33,6 @@ struct ResetPassword: View {
 
 struct ResetPassword_Previews: PreviewProvider {
     static var previews: some View {
-        ResetPassword(signIn: .constant(false))
+        ResetPassword(signUpUser: .empty, signIn: .constant(false))
     }
 }

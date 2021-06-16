@@ -15,7 +15,7 @@ struct MasterLogin: View {
         if isLog {
             Profile(isLog: $isLog)
         } else {
-            SignIn(isLog: $isLog)
+            SignIn(signUpUser: .empty, isLog: $isLog)
         }
     }
 }
