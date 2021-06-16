@@ -15,11 +15,12 @@ struct Flow: View {
         
         VStack {
             if !quiz.params.skipQuiz {
+                
                 VStack{
                     HStack {
                         QuizTitle(content: quiz.params.steps[quiz.params.currentStep] ?? "")
                             .padding()
-                            .frame(width: 210, height: 200, alignment: .leading)
+                            .frame(width: 220, height: 200, alignment: .leading)
                         Spacer()
                         if quiz.params.currentStep < 4 {
                             QuizTitle(content: "\(quiz.params.currentStep)/\(steps.count - 1)")
@@ -40,18 +41,19 @@ struct Flow: View {
                         }
                     case 2:
                         StepTwo()
+                        
                     case 3:
                         StepThree()
+                    case 4:
+                        Suggestions()
                     default:
-                        EmptyView()
+                        Home()
                     }
-                    HStack{
-                        BackButton()
-                            .padding()
-                        Spacer()
-                    }
+                    Spacer()
                 }
-            } else {
+                .background(Color(#colorLiteral(red: 0, green: 0.5882688165, blue: 0.5607096553, alpha: 1)))
+                .edgesIgnoringSafeArea(.all)
+            }else{
                 Home()
             }
         }

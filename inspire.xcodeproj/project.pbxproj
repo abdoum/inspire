@@ -163,7 +163,6 @@
 		2B3FF569267391ED00932E90 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				2B3FF5932673966200932E90 /* ExperienceCard.swift */,
 				2B1E500B26776587002B7E43 /* ComponentMix.swift */,
 				2B1E501226776968002B7E43 /* SectionTitle.swift */,
 			);
@@ -317,6 +316,7 @@
 				2BE1E86A2677712500E4C55D /* Category.swift */,
 				2B26142326789B0500C48BC2 /* RandomCategory.swift */,
 				2B26142C2678A38C00C48BC2 /* Suggestion.swift */,
+				2B3FF5932673966200932E90 /* ExperienceCard.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -676,17 +676,14 @@
 				2BED7531267258D300C49853 /* ContentView.swift in Sources */,
 				2B1E500C26776587002B7E43 /* ComponentMix.swift in Sources */,
 				2B26141B2678915F00C48BC2 /* StepThree.swift in Sources */,
-				138AE4EF26773D0100F3826F /* MasterProfileView.swift in Sources */,
 				2B2614212678933D00C48BC2 /* SkipQuizButton.swift in Sources */,
 				138AE5192677BA2100F3826F /* PasswordTextFieldView.swift in Sources */,
 				138AE5252677BA5800F3826F /* SignUp.swift in Sources */,
 				138AE51C2677BA2100F3826F /* TitleView.swift in Sources */,
-			
 				2B3FF5912673963400932E90 /* Home.swift in Sources */,
 				2BE1E8852677866900E4C55D /* Review.swift in Sources */,
 				2B1E500F26776612002B7E43 /* ThemeColors.swift in Sources */,
 				2BE1E86B2677712500E4C55D /* Category.swift in Sources */,
-				138AE4F926773F6500F3826F /* ButtonSignInWithApple.swift in Sources */,
 				2BE1E87426777DA100E4C55D /* ExperienceCategories.swift in Sources */,
 				2BE1E87A2677808F00E4C55D /* ParticipationMode.swift in Sources */,
 				2B26142D2678A38C00C48BC2 /* Suggestion.swift in Sources */,

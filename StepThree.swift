@@ -14,6 +14,7 @@ struct StepThree: View {
         
         VStack(spacing: 26) {
             ForEach(choices, id: \.self){mode in
+                
                 Button(action: {
                     quiz.params.preferedExperienceLocationMode = LocationMode(rawValue: mode) ?? .all
                     quiz.params.currentStep += 1
@@ -31,7 +32,7 @@ struct StepThree: View {
                             }
                         },
                         icon: {
-                            if quiz.params.preferedExperienceLocationMode.rawValue == mode {
+                            if (quiz.params.preferedExperienceLocationMode != nil) && (quiz.params.preferedExperienceLocationMode!.rawValue == mode) {
                                 Image(systemName: "checkmark.circle.fill")
                                     .font(.system(size: 22))
                             } else {
@@ -41,10 +42,10 @@ struct StepThree: View {
                             }
                         }
                     )
-                    .foregroundColor(quiz.params.preferedExperienceLocationMode.rawValue == mode ? Color.customPrimary : Color.customSecondary)
+                    .foregroundColor((quiz.params.preferedExperienceLocationMode != nil) && (quiz.params.preferedExperienceLocationMode!.rawValue == mode) ? Color.customPrimary : Color.customSecondary)
                     .frame(width: 335, height: 86, alignment: .center)
-                    .border(quiz.params.preferedExperienceLocationMode.rawValue == mode ? Color.customPrimary : Color.customSecondaryLight, width: 2)
-                    .background(quiz.params.preferedExperienceLocationMode.rawValue == mode ? Color.customSecondaryLight : Color.white)
+                    .border((quiz.params.preferedExperienceLocationMode != nil) && (quiz.params.preferedExperienceLocationMode!.rawValue == mode) ? Color.customPrimary : Color.customSecondaryLight, width: 2)
+                    .background((quiz.params.preferedExperienceLocationMode != nil) && (quiz.params.preferedExperienceLocationMode!.rawValue == mode) ? Color.customSecondaryLight : Color.white)
                     .cornerRadius(14)
                 })
             }

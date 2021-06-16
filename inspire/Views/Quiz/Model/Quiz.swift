@@ -9,15 +9,16 @@ import Foundation
 
 struct QuizParams   {
     var isFirstTimeUser : Bool = true
-    var steps = [1 : "Que cherchez-vous ?", 2: "Lieu ?", 3: "Vous préférez ?", 4 : "Quelques suggestions"]
+    var steps = [1 : "Que cherchez-vous ?", 2: "Vous préférez ?", 3: "Lieu ?", 4 : "Quelques suggestions"]
     let existingExperienceCategories =  EXPERIENCE_CATEGORIES
-    var preferedExperienceCategorie = ""
+    var preferedExperienceCategorie : String? = nil
     var skipQuiz : Bool = false
+    var isPresented : Bool = true
     var currentStep : Int = 1
     let existingExperienceLocationModes : [String] = LocationMode.allLocationModes
-    var preferedExperienceLocationMode : LocationMode = .all
+    var preferedExperienceLocationMode : LocationMode? = nil
     let existingExperienceParticipationModes : [String] = ParticipationMode.allParticipationModes
-    var preferedExperienceParticipationMode : ParticipationMode = .all
+    var preferedExperienceParticipationMode : ParticipationMode? = nil
     let suggestions : [Experience] = []
 }
 
