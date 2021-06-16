@@ -21,6 +21,7 @@ struct Experience : Identifiable {
     var guestPrerequisites : [String] = []
     var creationDate : Date = Date()
     var reviews : [Review] = []
+    var averageRate : Double // TODO: calculate average rate from reviews.rate
     var isFavorite : Bool = false
-    var location : CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 22.9108638, longitude: 43.2045436)
+    var location : CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 22.9108638, longitude: 43.2045436) // TODO: retreive coordinates using coreLocation
 }

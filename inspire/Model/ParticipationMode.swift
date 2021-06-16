@@ -10,7 +10,6 @@ import Foundation
 enum ParticipationMode: String, CaseIterable {
     case visio,
          solo,
-         group,
          all
     
     static var allParticipationModes: [String] {

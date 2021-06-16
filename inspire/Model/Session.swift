@@ -9,8 +9,7 @@ import Foundation
 
 struct Session {
     var date : Date
-    var guests : [User] = []
-    var maxGuests : Int
+    var guest : User
     var mode : ParticipationMode
     let experience : Experience
     var isFull : Bool = false

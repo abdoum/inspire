@@ -8,8 +8,7 @@
 import Foundation
 
 enum LocationMode : String, CaseIterable {
-    case country,
-         proximity,
+    case france,
          worldwide,
          all
     
