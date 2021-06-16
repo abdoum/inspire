@@ -19,24 +19,20 @@ struct SignIn: View {
         NavigationView {
             VStack {
                 TitleView(title: "Identification")
-                    .titleViewStyle(style: TitleViewStyleGray())
                     .offset(y: -50)
                 EmailTextFieldView(email: $email)
                 PasswordTextFieldView(password: $password)
-                ButtonView(labelButton: "Mot de passe oublié ?", action: {signIn.toggle()})
+                TextLink(label: "Mot de passe oublié ?", action: {signIn.toggle()})
                     .offset(x: 100)
+                    .padding()
                     .sheet(isPresented: $signIn, content: {
                         ResetPassword(signIn: $signIn)
                     })
-                ButtonView(labelButton: "Connexion", action: {isLog = true})
-                    .buttonConnexionViewStyle(style: ButtonConnexionViewStyleBlack())
-                ButtonView(labelButton: "Créer un compte", action: {signUp.toggle()})
+                ButtonView(label: "Connexion", action: {isLog = true})
+                TextLink(label: "Créer un compte", action: {signUp.toggle()})
                     .sheet(isPresented: $signUp, content: {
-                        SignUp(signIn: $signUp)
-                    }).offset(y: 250)
-//                Text("Ou")
-//                    .padding(.top)
-                
+                        SignUp(signUpUser: .empty, signIn: $signUp)
+                    }).offset(y: 200)
             }.padding()
         }
     }

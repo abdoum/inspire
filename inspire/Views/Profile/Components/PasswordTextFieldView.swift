@@ -12,11 +12,14 @@ struct PasswordTextFieldView: View {
     @Binding var password: String
     
     var body: some View {
-        SecureField("Mot de passe", text: $password)
-            .textFieldStyle(RoundedBorderTextFieldStyle())
-            .autocapitalization(.none)
-            .disableAutocorrection(true)
-
+        VStack {
+            Text("Mot de passe")
+            SecureField("Mot de passe", text: $password)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .autocapitalization(.none)
+                .disableAutocorrection(true)
+        }
+        
     }
 }
 

@@ -9,47 +9,42 @@ import SwiftUI
 
 struct SignUp: View {
     
-    @State private var fullName: String = ""
-    @State private var birthdate: String = ""
-    @State private var address: String = ""
-    @State private var city: String = ""
-    @State private var zipCode: String = ""
-    @State private var password: String = ""
-    @State private var confirmPassword: String = ""
-    @State private var email: String = ""
+    @State var signUpUser: SignUpUser
     @Binding var signIn: Bool
+    var title: some View {
+        TitleView(title: "Inscription")
+    }
     
     var body: some View {
-        NavigationView {
-            VStack {
-                TitleView(title: "Inscription")
-                    .titleViewStyle(style: TitleViewStyleGray())
-                    .offset(y: -50)
-                Spacer()
-                OtherTextFieldView(fullName: $fullName, birthdate: $birthdate, address: $address, city: $city, zipCode: $zipCode)
-                
-                EmailTextFieldView(email: $email)
-                
-                PasswordTextFieldView(password: $password)
-                
-                SecureField("Confirmer mot de passe", text: $confirmPassword)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .autocapitalization(.none)
-                    .disableAutocorrection(true)
-                
-                ButtonView(labelButton: "S'inscrire", action: {})
+            List {
+                Section (header: title){
+                    Spacer()
+                    OtherTextFieldView(firstName: $signUpUser.firstname, lastName: $signUpUser.lastname, birthdate: $signUpUser.birthDate, address: $signUpUser.address, city: $signUpUser.city, zipCode: $signUpUser.zipCode)
+                    
+                    EmailTextFieldView(email: $signUpUser.email)
+                    
+                    PasswordTextFieldView(password: $signUpUser.password)
+                    
+                    SecureField("Confirmer mot de passe", text: $signUpUser.confirmPassword)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .autocapitalization(.none)
+                        .disableAutocorrection(true)
+                    
+                    ButtonView(label: "S'inscrire", action: {
+                        let user = User(user: signUpUser)
+                        print(user)
+                    })
                     .buttonConnexionViewStyle(style: ButtonConnexionViewStyleBlack())
-                Spacer()
-                ButtonView(labelButton: "Déjà un compte ?", action: {signIn.toggle()})
-                
+                    Spacer()
+                    TextLink(label: "Déjà un compte ?", action: {signIn.toggle()})
+                }
             }
             .padding()
-        }
     }
 }
 
 struct SignUp_Previews: PreviewProvider {
     static var previews: some View {
-        SignUp(signIn: .constant(false))
+        SignUp(signUpUser: .empty, signIn: .constant(false))
     }
 }

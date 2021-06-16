@@ -15,7 +15,7 @@ protocol ButtonConnexionViewStyle {
 // On peut creer autant de style que l'on veut, avec un nom approprier
 struct ButtonConnexionViewStyleBlack: ButtonConnexionViewStyle {
     let foregroundColor: Color = .white
-    let backgroundColor: Color = .black
+    let backgroundColor: Color = .customPrimary
 }
 
 // Custom view modifier
@@ -31,7 +31,6 @@ struct ButtonConnexionViewModifier: ViewModifier {
         // on pourrait meme definir la shape que l'on veut dans le l'object style //ex: Capsule, Rectangle, Circle etc...
         content
             .foregroundColor(style.foregroundColor)
-//            .frame(width: 150, height: 50, alignment: .center)
             .background(style.backgroundColor)
             .clipShape(Capsule())
     }

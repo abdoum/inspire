@@ -14,6 +14,8 @@ struct EmailTextFieldView: View {
     
     var body: some View {
         HStack {
+            VStack {
+                Text("Adresse Email")
             TextField("Email", text: $email) { changed in
                 print(changed)
             } onCommit: {
@@ -26,6 +28,7 @@ struct EmailTextFieldView: View {
             .disableAutocorrection(true)
             .textContentType(.emailAddress)
             .keyboardType(.emailAddress)
+            }
             
             Spacer()
             

@@ -32,31 +32,46 @@ struct CardView: View {
     }
 }
 
-struct ExperienceCard: View {
-    var colors = [Color.red.opacity(0.3),Color.yellow.opacity(0.3),
-                   Color.green.opacity(0.3),Color.blue.opacity(0.3),
-                   Color.purple.opacity(0.3),Color.red.opacity(0.3),
-                   Color.yellow.opacity(0.3),Color.green.opacity(0.3),
-                   Color.blue.opacity(0.3),Color.purple.opacity(0.3)]
-    var body: some View {
-        GeometryReader { geometry in
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: geometry.size.width/2) {
-                            ForEach(0..<self.colors.count, id: \.self) { index in
-                                CardView(currentPage: index+1, color: self.colors[index])
-                            }
-                        }.padding(.horizontal,geometry.frame(in: .global).maxX/2)
-                    }
-                }
-        Text("Image this as an experience card!")
-            .font(.title)
-            .fontWeight(.heavy)
-            .foregroundColor(.customPrimary)
-    }
-}
 
-struct ExperienceCard_Previews: PreviewProvider {
+
+/* struct ExperienceCard: View {
+ var experience : Experience
+ var body: some View {
+     VStack(alignment: .center) {
+        
+        ZStack {
+         Image("experience.imageName")
+             .resizable()
+             .aspectRatio(contentMode: .fit)
+             .clipped()
+ 
+ if experince.isFavorite {
+                 Image(systemName: "star.fill")
+                     .foregroundColor(.red)                }
+ 
+         VStack(alignment: .leading) {
+             Text("experience.reviews")
+                 .frame(maxWidth: .infinity, alignment: .leading)
+                 .padding(1)
+             Text("experience.title")
+                 .padding(1)
+                 .foregroundColor(.gray)
+             Text("experience.price +  €")
+                 .padding(1)
+         }
+         .padding(.horizontal, 20)
+
+         Spacer()
+     }
+     .foregroundColor(.black)
+
+     .padding(.bottom, 30)
+ }
+} */
+/*
+ struct ExperienceCard_Previews: PreviewProvider {
     static var previews: some View {
-        ExperienceCard()
+        ExperienceCard(experience: <#Experience#>)
     }
 }
+ */

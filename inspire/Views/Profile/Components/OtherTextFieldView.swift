@@ -9,33 +9,51 @@ import SwiftUI
 
 struct OtherTextFieldView: View {
     
-    @Binding var fullName: String
+    @Binding var firstName: String
+    @Binding var lastName: String
     @Binding var birthdate: String
     @Binding var address: String
     @Binding var city: String
     @Binding var zipCode: String
     
-    func informations(fullName: String, birthDate: String, address: String, city: String, zipCode: String) -> some View {
+    func informations(firstName: TextFieldInfos, lastName: TextFieldInfos, birthDate: TextFieldInfos, address: TextFieldInfos, city: TextFieldInfos, zipCode: TextFieldInfos) -> some View {
         VStack {
-            TextField(fullName, text: .constant(""))
-            TextField(birthDate, text: .constant(""))
-            TextField(address, text: .constant(""))
-            TextField(city, text: .constant(""))
-            TextField(zipCode, text: .constant(""))
-
+            textField(firstName, text: $firstName)
+            textField(lastName, text: $lastName)
+            textField(birthDate, text: $birthdate)
+            textField(address, text: $address)
+            textField(city, text: $city)
+            textField(zipCode, text: $zipCode)
+        }
+    }
+    func textField(_ textFieldInfo: TextFieldInfos, text: Binding<String>) -> some View {
+        Group {
+            Text(textFieldInfo.label)
+            TextField(textFieldInfo.placeHolder, text: text)
         }
     }
     
     var body: some View {
         VStack {
-            informations(fullName: "Nom Prénom", birthDate: "Date de naissance", address: "Adresse", city: "Ville", zipCode: "Code postale")
+            informations(firstName: .init("Prénom"), lastName: .init("Nom"), birthDate: .init("Date de naissance", placeHolder: "DD-MM-YYYY"), address: .init("Adresse"), city: .init("Ville"), zipCode: .init("Code postale"))
                 .textFieldStyle(RoundedBorderTextFieldStyle())
         }
     }
 }
 
+struct TextFieldInfos {
+    
+    let label: String
+    let placeHolder: String
+    
+    init(_ label: String, placeHolder: String? = nil) {
+        self.label = label
+        self.placeHolder = placeHolder ?? label
+    }
+}
+
 struct OtherTextFieldView_Previews: PreviewProvider {
     static var previews: some View {
-        OtherTextFieldView(fullName: .constant(""), birthdate: .constant(""), address: .constant(""), city: .constant(""), zipCode: .constant(""))
+        OtherTextFieldView(firstName: .constant(""), lastName: .constant(""), birthdate: .constant(""), address: .constant(""), city: .constant(""), zipCode: .constant(""))
     }
 }
