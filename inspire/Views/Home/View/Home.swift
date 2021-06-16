@@ -9,7 +9,8 @@ import SwiftUI
 
 struct Home: View {
     var body: some View {
-        ExperienceCard()
+        Text("Home view")
+//        SuggestionCard()
     }
 }
 
