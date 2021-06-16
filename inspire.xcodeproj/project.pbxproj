@@ -68,6 +68,7 @@
 		383D1F0F267A029C0079823A /* ExperiencePriceDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383D1F0E267A029C0079823A /* ExperiencePriceDates.swift */; };
 		383D1F11267A02AD0079823A /* ExperienceProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383D1F10267A02AD0079823A /* ExperienceProgram.swift */; };
 		383D1F13267A02D40079823A /* UserNeeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383D1F12267A02D40079823A /* UserNeeds.swift */; };
+		C265B377267A46F100CF33A9 /* ExpérienceCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C265B376267A46F100CF33A9 /* ExpérienceCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -134,6 +135,7 @@
 		383D1F0E267A029C0079823A /* ExperiencePriceDates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperiencePriceDates.swift; sourceTree = "<group>"; };
 		383D1F10267A02AD0079823A /* ExperienceProgram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceProgram.swift; sourceTree = "<group>"; };
 		383D1F12267A02D40079823A /* UserNeeds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNeeds.swift; sourceTree = "<group>"; };
+		C265B376267A46F100CF33A9 /* ExpérienceCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExpérienceCard.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -636,6 +638,7 @@
 				383D1F10267A02AD0079823A /* ExperienceProgram.swift */,
 				383D1F12267A02D40079823A /* UserNeeds.swift */,
 				383D1F042679FF9E0079823A /* ExperienceReviews.swift */,
+				C265B376267A46F100CF33A9 /* ExpérienceCard.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -749,6 +752,7 @@
 				2B26142A2678A35D00C48BC2 /* Suggestions.swift in Sources */,
 				2BE1E8942677979600E4C55D /* StepOne.swift in Sources */,
 				2B2614302678A65000C48BC2 /* ExperienceDetail.swift in Sources */,
+				C265B377267A46F100CF33A9 /* ExpérienceCard.swift in Sources */,
 				13F18E9B2678F8810095B184 /* InfosHeaderPRofileView.swift in Sources */,
 				2BE1E8672677704700E4C55D /* QuizTitle.swift in Sources */,
 				2BE1E87F267782BB00E4C55D /* Experiences.swift in Sources */,
