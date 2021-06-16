@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "maillot-nba-swingman-lebron-james-lakers-icon-edition-2020-p0Cm0g.png.jpeg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
