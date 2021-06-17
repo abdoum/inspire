@@ -43,3 +43,9 @@ struct SignUpUser {
 extension SignUpUser {
     static let empty: SignUpUser = SignUpUser(firstname: "", lastname: "", email: "", password: "", confirmPassword: "")
 }
+
+//--------------------DATA--------------------------
+
+let PROFILE : [User] = [
+    User(firstname: "Didier", lastname: "Leroy", email: "diderLeroy@gmail.com", password: "", biography: "", spokenLanguages: "", avatar: "", bookedSessions: [], location: CLLocationCoordinate2D(latitude: 22.9108638, longitude: 43.2045436), notificationsAccepted: false, role: UserRole.guest, isLogged: true)
+]

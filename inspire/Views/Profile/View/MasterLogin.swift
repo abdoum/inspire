@@ -13,7 +13,7 @@ struct MasterLogin: View {
     
     var body: some View {
         if isLog {
-            Profile(isLog: $isLog)
+            ProfileProfessional(isLog: $isLog)
         } else {
             SignIn(signUpUser: .empty, isLog: $isLog)
         }
