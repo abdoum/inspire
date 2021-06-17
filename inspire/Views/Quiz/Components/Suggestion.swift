@@ -19,33 +19,33 @@ struct Suggestion: View {
                 .overlay(Color.black.opacity(0.3))
                 .cornerRadius(14)
                 .shadow(radius: 10)
-            
+            Text("\(String(average))")
             VStack(alignment: .leading){
                 Text(experience.title)
                     .font(.title)
                     .fontWeight(.heavy)
                     .foregroundColor(.white)
-                RatingLine(averageRating: 4.89, commentsCount: 328, color: .white)
+                RatingLine(averageRating: average, commentsCount: 328, color: .white)
                     .padding(.vertical, 2)
                 DurationLine(duration: experience.duration, color: .white)
                     .padding(.vertical, 2)
-                Price(price: 75, color: .white)
+                Price(price: experience.price, color: .white)
                     .padding(.vertical, 2)
                 NavigationLink(destination:
-                    // TODO: implement navigation to a specific experience
-                    ExperienceDetail()
-                , label: {
-                    RoundedRectangle(cornerRadius: 14)
-                        .frame(width: 90, height: 46, alignment: .center)
-                        .foregroundColor(.white)
-                        .overlay(
-                            Text("Voir")
-                                .font(.system(size: 14))
-                                .fontWeight(.bold)
-                                .foregroundColor(.customPrimary)
-                                .padding()
-                    )
-                })
+                                // TODO: implement navigation to a specific experience
+                                ExperienceDetails()
+                               , label: {
+                                RoundedRectangle(cornerRadius: 14)
+                                    .frame(width: 90, height: 46, alignment: .center)
+                                    .foregroundColor(.white)
+                                    .overlay(
+                                        Text("Voir")
+                                            .font(.system(size: 14))
+                                            .fontWeight(.bold)
+                                            .foregroundColor(.customPrimary)
+                                            .padding()
+                                    )
+                               })
             }
             .alignmentGuide(HorizontalAlignment.leading) { _ in  80 }
         }

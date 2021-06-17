@@ -132,7 +132,7 @@ struct PageTitle_Previews: PreviewProvider {
             RatingLine(averageRating: 4.89, commentsCount: 328, color: .customPrimary)
             RatingLine(averageRating: 4.89, commentsCount: 328, color: .white)
                 .preferredColorScheme(.dark)
-            DurationLine(duration: 4850,  color: .customPrimary)
+            DurationLine(duration: 7900,  color: .customPrimary)
             DurationLine(duration: 4850,  color: .white)
                 .preferredColorScheme(.dark)
             Price(price: 75, color: .black)

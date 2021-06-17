@@ -30,3 +30,6 @@ var MOCK_REVIEWS = [
     Review(comment: "Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla.", rate: 5, author: MOCK_AUTHORS[1]),
     Review(comment: "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.", rate: 5, author: MOCK_AUTHORS[2])
 ]
+
+let average = Double(MOCK_REVIEWS.compactMap({$0.rate}).reduce(0, +) / MOCK_REVIEWS.count)
+
