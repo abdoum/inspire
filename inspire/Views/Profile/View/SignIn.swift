@@ -32,6 +32,8 @@ struct SignIn: View {
                     .sheet(isPresented: $signUp, content: {
                         SignUp(signUpUser: .empty, signIn: $signUp)
                     }).offset(y: 200)
+                Text("Ou")
+                SignInWithApple()
             }.padding()
         }
     }

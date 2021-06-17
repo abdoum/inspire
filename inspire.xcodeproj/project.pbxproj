@@ -13,6 +13,11 @@
 		1344A241267A511800D00BD0 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1344A240267A511800D00BD0 /* MainView.swift */; };
 		1344A243267A612800D00BD0 /* ProfileGuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1344A242267A612800D00BD0 /* ProfileGuest.swift */; };
 		1344A245267A629000D00BD0 /* InfosHeaderGuestProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1344A244267A629000D00BD0 /* InfosHeaderGuestProfileView.swift */; };
+<<<<<<< Updated upstream
+=======
+		1344A24D267B573800D00BD0 /* SignInWithAppleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1344A24C267B573800D00BD0 /* SignInWithAppleViewModel.swift */; };
+		1344A24F267B574E00D00BD0 /* QuickSignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1344A24E267B574E00D00BD0 /* QuickSignInWithApple.swift */; };
+>>>>>>> Stashed changes
 		138AE5182677BA2100F3826F /* OtherTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138AE5132677BA2000F3826F /* OtherTextFieldView.swift */; };
 		138AE5192677BA2100F3826F /* PasswordTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138AE5142677BA2100F3826F /* PasswordTextFieldView.swift */; };
 		138AE51A2677BA2100F3826F /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138AE5152677BA2100F3826F /* ButtonView.swift */; };
@@ -84,6 +89,11 @@
 		1344A240267A511800D00BD0 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		1344A242267A612800D00BD0 /* ProfileGuest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileGuest.swift; sourceTree = "<group>"; };
 		1344A244267A629000D00BD0 /* InfosHeaderGuestProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfosHeaderGuestProfileView.swift; sourceTree = "<group>"; };
+<<<<<<< Updated upstream
+=======
+		1344A24C267B573800D00BD0 /* SignInWithAppleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleViewModel.swift; sourceTree = "<group>"; };
+		1344A24E267B574E00D00BD0 /* QuickSignInWithApple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSignInWithApple.swift; sourceTree = "<group>"; };
+>>>>>>> Stashed changes
 		138AE5132677BA2000F3826F /* OtherTextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherTextFieldView.swift; sourceTree = "<group>"; };
 		138AE5142677BA2100F3826F /* PasswordTextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordTextFieldView.swift; sourceTree = "<group>"; };
 		138AE5152677BA2100F3826F /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
@@ -406,6 +416,7 @@
 		2B3FF57D267395BA00932E90 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1344A24C267B573800D00BD0 /* SignInWithAppleViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -423,6 +434,7 @@
 				13F18E982678F68F0095B184 /* ButtonSettingsProfileView.swift */,
 				13F18E9A2678F8810095B184 /* InfosHeaderProfessionnalProfileView.swift */,
 				1344A244267A629000D00BD0 /* InfosHeaderGuestProfileView.swift */,
+				1344A24E267B574E00D00BD0 /* QuickSignInWithApple.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -712,7 +724,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1250;
 				TargetAttributes = {
 					2BED752A267258D300C49853 = {
 						CreatedOnToolsVersion = 12.4;
@@ -809,14 +821,15 @@
 				2BE1E87126777D4400E4C55D /* Quiz.swift in Sources */,
 				2BE1E89126778A9300E4C55D /* Session.swift in Sources */,
 				2BE1E888267786C700E4C55D /* User.swift in Sources */,
+				1344A24D267B573800D00BD0 /* SignInWithAppleViewModel.swift in Sources */,
 				13F18E972678F5780095B184 /* DescriptionProfileView.swift in Sources */,
 				2BED754626725B0600C49853 /* FilterTag.swift in Sources */,
+				1344A24F267B574E00D00BD0 /* QuickSignInWithApple.swift in Sources */,
 				2B26142426789B0500C48BC2 /* RandomCategory.swift in Sources */,
 				138AE51A2677BA2100F3826F /* ButtonView.swift in Sources */,
 				138AE5232677BA5800F3826F /* ProfileProfessional.swift in Sources */,
 				13F18E952678F4660095B184 /* InfosProfileView.swift in Sources */,
 				383D1F052679FF9E0079823A /* ExperienceReviews.swift in Sources */,
-				2B3FF5942673966200932E90 /* SuggestionCard.swift in Sources */,
 				2B3FF5942673966200932E90 /* SuggestionCard.swift in Sources */,
 				1344A241267A511800D00BD0 /* MainView.swift in Sources */,
 				2BED752F267258D300C49853 /* inspireApp.swift in Sources */,
