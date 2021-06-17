@@ -17,8 +17,8 @@ struct ExperienceContact: View {
                     .frame(width: 30.0, height: 30.0)
                 Text("Langue(s) : ")
                 Text("Langue 1")
-                Text(" & ")
-                Text("Langue 2")
+                //           Text(" & ")
+                //          Text("Langue 2")
                 Spacer()
             }
             .font(/*@START_MENU_TOKEN@*/.subheadline/*@END_MENU_TOKEN@*/)
@@ -32,11 +32,13 @@ struct ExperienceContact: View {
                         .foregroundColor(.black)
                         .opacity(0.2)
                     VStack {
-                        Image(systemName: "envelope")
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 18.0, height: 18.0)
-                        
+                        Button(action: {}) {
+                            Image(systemName: "envelope")
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 18.0, height: 18.0)
+                                .foregroundColor(.black)
+                        }
                         Spacer()
                             .frame(height: 10)
                         Text("Contacter")
@@ -52,10 +54,13 @@ struct ExperienceContact: View {
                         .foregroundColor(.black)
                         .opacity(0.2)
                     VStack {
-                        Image(systemName: "checkmark.shield")
-                            .resizable()
-             //               .aspectRatio(contentMode: .fill)
-                            .frame(width: 20.0, height: 20.0)
+                        Button(action: {}) {
+                            Image(systemName: "checkmark.shield")
+                                .resizable()
+                                .frame(width: 20.0, height: 20.0)
+                                .aspectRatio(contentMode: .fill)
+                                .foregroundColor(.black)
+                        }
                         Spacer()
                             .frame(height: 10)
                         Text("Confidentialité")

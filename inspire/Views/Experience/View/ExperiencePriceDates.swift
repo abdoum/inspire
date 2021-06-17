@@ -40,7 +40,12 @@ struct ExperiencePriceDates: View {
                                 .foregroundColor(.white)
                                 .padding()
                             HStack {
-                                Image(systemName: "calendar")
+                                Button(action: {}) {
+                                    Image(systemName: "calendar")
+                                        .foregroundColor(.black)
+                                        .opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
+
+                                }
                                 Text("Voir les dates")
                                 
                             }
