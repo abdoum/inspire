@@ -32,11 +32,13 @@ struct ExperienceReviews: View {
                 Button(action: {}) {
                     HStack {
                         Spacer()
-                        Text("Voir tout")
-                        .fontWeight(.bold)
-                        .foregroundColor(.black)
-                        .underline()
-                        .font(/*@START_MENU_TOKEN@*/.subheadline/*@END_MENU_TOKEN@*/)
+                        Button(action: {}) {
+                            Text("Voir tout")
+                                .fontWeight(.bold)
+                                .foregroundColor(.black)
+                                .underline()
+                                .font(/*@START_MENU_TOKEN@*/.subheadline/*@END_MENU_TOKEN@*/)
+                        }
                     }
                 }
                 
@@ -51,7 +53,7 @@ struct ExperienceReviews: View {
                 VStack {
                     HStack {
                         Text("Name")
-                        Image(systemName: "checkmark.circle.fill")
+   //                     Image(systemName: "checkmark.circle.fill")
                     }
                     Text("Date")
                 }
