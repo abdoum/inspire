@@ -13,11 +13,6 @@
 		1344A241267A511800D00BD0 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1344A240267A511800D00BD0 /* MainView.swift */; };
 		1344A243267A612800D00BD0 /* ProfileGuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1344A242267A612800D00BD0 /* ProfileGuest.swift */; };
 		1344A245267A629000D00BD0 /* InfosHeaderGuestProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1344A244267A629000D00BD0 /* InfosHeaderGuestProfileView.swift */; };
-<<<<<<< Updated upstream
-=======
-		1344A24D267B573800D00BD0 /* SignInWithAppleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1344A24C267B573800D00BD0 /* SignInWithAppleViewModel.swift */; };
-		1344A24F267B574E00D00BD0 /* QuickSignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1344A24E267B574E00D00BD0 /* QuickSignInWithApple.swift */; };
->>>>>>> Stashed changes
 		138AE5182677BA2100F3826F /* OtherTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138AE5132677BA2000F3826F /* OtherTextFieldView.swift */; };
 		138AE5192677BA2100F3826F /* PasswordTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138AE5142677BA2100F3826F /* PasswordTextFieldView.swift */; };
 		138AE51A2677BA2100F3826F /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138AE5152677BA2100F3826F /* ButtonView.swift */; };
@@ -89,11 +84,8 @@
 		1344A240267A511800D00BD0 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		1344A242267A612800D00BD0 /* ProfileGuest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileGuest.swift; sourceTree = "<group>"; };
 		1344A244267A629000D00BD0 /* InfosHeaderGuestProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfosHeaderGuestProfileView.swift; sourceTree = "<group>"; };
-<<<<<<< Updated upstream
-=======
 		1344A24C267B573800D00BD0 /* SignInWithAppleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleViewModel.swift; sourceTree = "<group>"; };
 		1344A24E267B574E00D00BD0 /* QuickSignInWithApple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSignInWithApple.swift; sourceTree = "<group>"; };
->>>>>>> Stashed changes
 		138AE5132677BA2000F3826F /* OtherTextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherTextFieldView.swift; sourceTree = "<group>"; };
 		138AE5142677BA2100F3826F /* PasswordTextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordTextFieldView.swift; sourceTree = "<group>"; };
 		138AE5152677BA2100F3826F /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
