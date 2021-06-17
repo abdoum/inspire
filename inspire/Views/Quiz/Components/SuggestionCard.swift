@@ -13,7 +13,7 @@ struct SuggestionCard: View {
         VStack(alignment: .center) {
             
             ZStack {
-                Image("experience.imageName")
+                Image(experience.category.image)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .clipped()
@@ -43,8 +43,8 @@ struct SuggestionCard: View {
     }
 }
 
-// struct ExperienceCard_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SuggestionCard(experience: <#Experience#>)
-//    }
-//}
+ struct ExperienceCard_Previews: PreviewProvider {
+    static var previews: some View {
+        SuggestionCard(experience: MOCK_EXPERIENCES[0])
+    }
+}

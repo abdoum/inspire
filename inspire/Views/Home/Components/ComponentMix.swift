@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 struct PageTitle: View {
     let content : String
@@ -61,6 +62,49 @@ struct DurationLine: View {
     }
 }
 
+class ImageLoader: ObservableObject {
+    var didChange = PassthroughSubject<Data, Never>()
+    var data = Data() {
+        didSet {
+            didChange.send(data)
+        }
+    }
+
+    init(urlString:String) {
+        guard let url = URL(string: urlString) else { return }
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data else { return }
+            DispatchQueue.main.async {
+                self.data = data
+            }
+        }
+        task.resume()
+    }
+}
+
+struct ImageView: View {
+    @ObservedObject var imageLoader:ImageLoader
+    @State var image:UIImage = UIImage()
+    @State private var isRedacted: Bool = true
+    
+    init(withURL url:String) {
+        imageLoader = ImageLoader(urlString:url)
+    }
+
+    var body: some View {
+            Image(uiImage: image)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width:100, height:100)
+                .clipShape(Circle())
+                .redacted(reason:  isRedacted ? .placeholder : .init())
+                .onReceive(imageLoader.didChange) { data in
+                    isRedacted = false
+                self.image = UIImage(data: data) ?? UIImage()
+        }
+    }
+}
+
 func priceFormatter(_ price : Double) -> String {
     let formatter = NumberFormatter()
     formatter.locale = Locale.init(identifier: "fr")
@@ -92,6 +136,7 @@ struct PageTitle_Previews: PreviewProvider {
             DurationLine(duration: 4850,  color: .white)
                 .preferredColorScheme(.dark)
             Price(price: 75, color: .black)
+            ImageView(withURL: "https://i.pravatar.cc/100?img=1")
         }.previewLayout(.sizeThatFits)
     }
 }
