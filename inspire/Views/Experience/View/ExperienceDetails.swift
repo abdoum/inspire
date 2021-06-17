@@ -29,7 +29,7 @@ struct ExperienceDetails: View {
     //  var sessions: [Session]
     //var prerequisites: [String] = ["dsfgdf"]
     //  var accumulatedReservations: sum(sessions.guests)
-    
+   @State var active = true
     var body: some View {
         ZStack {
             VStack {
@@ -52,16 +52,27 @@ struct ExperienceDetails: View {
             }
             VStack {
                 HStack {
-                    Button(action: {}) {
-                        ZStack {
-                            Image(systemName: "circle.fill")
-                                .foregroundColor(.black)
-                                .opacity(0.5)
-                            Image(systemName: "xmark.circle.fill")
-                                .foregroundColor(.white)
-                        }.font(.system(size: 30))
-                    }
-                    .padding()
+                    NavigationLink(
+                        destination: Text("Destination"),
+                        label: {
+                            ZStack {
+                                Image(systemName: "circle.fill")
+                                    .foregroundColor(.black)
+                                    .opacity(0.5)
+                                Image(systemName: "xmark.circle.fill")
+                                    .foregroundColor(.white)
+                            }.font(.system(size: 30))
+                        })
+//                    Button(action: {}) {
+//                        ZStack {
+//                            Image(systemName: "circle.fill")
+//                                .foregroundColor(.black)
+//                                .opacity(0.5)
+//                            Image(systemName: "xmark.circle.fill")
+//                                .foregroundColor(.white)
+//                        }.font(.system(size: 30))
+//                    }
+//                    .padding()
                     
                     Spacer()
                     

@@ -10,7 +10,7 @@ import SwiftUI
 struct MainView: View {
     var body: some View {
         TabView {
-            Home()
+            Suggestions()
                 .tabItem {
                     Image(systemName: "house")
                 }
@@ -19,7 +19,7 @@ struct MainView: View {
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                 }
-//
+
 //            UploadPostView()
 //                .tabItem {
 //                    Image(systemName: "plus.square")

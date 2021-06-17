@@ -42,7 +42,6 @@
 		2B26142D2678A38C00C48BC2 /* Suggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B26142C2678A38C00C48BC2 /* Suggestion.swift */; };
 		2B2614302678A65000C48BC2 /* ExperienceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B26142F2678A65000C48BC2 /* ExperienceDetail.swift */; };
 		2B3FF5912673963400932E90 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3FF5902673963400932E90 /* Home.swift */; };
-		2B3FF5942673966200932E90 /* SuggestionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3FF5932673966200932E90 /* SuggestionCard.swift */; };
 		2B90CC562677D4D000B5EC2E /* StepTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B90CC552677D4D000B5EC2E /* StepTwo.swift */; };
 		2BE1E8672677704700E4C55D /* QuizTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE1E8662677704700E4C55D /* QuizTitle.swift */; };
 		2BE1E86B2677712500E4C55D /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE1E86A2677712500E4C55D /* Category.swift */; };
@@ -113,7 +112,6 @@
 		2B26142C2678A38C00C48BC2 /* Suggestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suggestion.swift; sourceTree = "<group>"; };
 		2B26142F2678A65000C48BC2 /* ExperienceDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExperienceDetail.swift; path = inspire/Views/Quiz/Components/ExperienceDetail.swift; sourceTree = SOURCE_ROOT; };
 		2B3FF5902673963400932E90 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
-		2B3FF5932673966200932E90 /* SuggestionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionCard.swift; sourceTree = "<group>"; };
 		2B90CC552677D4D000B5EC2E /* StepTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepTwo.swift; sourceTree = "<group>"; };
 		2BE1E8662677704700E4C55D /* QuizTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTitle.swift; sourceTree = "<group>"; };
 		2BE1E86A2677712500E4C55D /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -377,7 +375,6 @@
 				2BE1E86A2677712500E4C55D /* Category.swift */,
 				2B26142326789B0500C48BC2 /* RandomCategory.swift */,
 				2B26142C2678A38C00C48BC2 /* Suggestion.swift */,
-				2B3FF5932673966200932E90 /* SuggestionCard.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -816,8 +813,6 @@
 				138AE5232677BA5800F3826F /* ProfileProfessional.swift in Sources */,
 				13F18E952678F4660095B184 /* InfosProfileView.swift in Sources */,
 				383D1F052679FF9E0079823A /* ExperienceReviews.swift in Sources */,
-				2B3FF5942673966200932E90 /* SuggestionCard.swift in Sources */,
-				2B3FF5942673966200932E90 /* SuggestionCard.swift in Sources */,
 				1344A241267A511800D00BD0 /* MainView.swift in Sources */,
 				2BED752F267258D300C49853 /* inspireApp.swift in Sources */,
 				138AE51B2677BA2100F3826F /* EmailTextFieldView.swift in Sources */,

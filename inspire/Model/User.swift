@@ -17,7 +17,7 @@ struct User: Identifiable {
     var biography : String = ""
     var spokenLanguages : String = "francais"
     var avatar : String = "https://i.pravatar.cc/150"
-    var bookedSessions : [Session] = [] // FIX: caused circular reference errors with MOCK_SESSIONS
+    var bookedSessions : [Session] = []
     var location : CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 22.9108638, longitude: 43.2045436)
     var notificationsAccepted : Bool? = false
     var role : UserRole = UserRole.guest

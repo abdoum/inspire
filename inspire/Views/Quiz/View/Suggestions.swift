@@ -8,13 +8,25 @@
 import SwiftUI
 
 struct Suggestions: View {
+    @EnvironmentObject var sharedExperiences: SharedExperiences
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+//        let experiences = sharedExperiences.experiences
+        VStack{
+//            Slider()(value: 0...5, label: {experience in
+//                Suggestion(experience: experience)
+//            })
+            NavigationLink(
+                destination: Text("Destination"),
+                label: {
+                    Text("Navigate")
+                })
+        }
     }
 }
 
 struct Suggestions_Previews: PreviewProvider {
     static var previews: some View {
         Suggestions()
+            .environmentObject(SharedExperiences())
     }
 }
