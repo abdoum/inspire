@@ -27,61 +27,86 @@ struct AuthorMainInfos: View {
                             .font(.headline)
                             .fontWeight(.bold)
                         
-                        Image(systemName: "checkmark.circle.fill")
+                        //                    Image(systemName: "checkmark.circle.fill")
                     }
-                    Text("Craft")
+                    Text("Specialisation")
                 }
             }
             
             HStack {
                 ZStack {
                     RoundedRectangle(cornerRadius: 8)
-                        .frame(width: 200.0, height: 30.0)
+                        .frame(width: 150.0, height: 30.0)
                         .foregroundColor(.black)
-                        .opacity(0.7)
+                        .opacity(0.5)
                     
                     Text("Category")
                         .foregroundColor(.white)
                 }
                 Spacer()
-                Image(systemName: "stopwatch")
-                    .foregroundColor(.black)
-                    .opacity(0.5)
-                Text("Duration")
+                ZStack {
+                    RoundedRectangle(cornerRadius: 8)
+                        .frame(width: 150.0, height: 30.0)
+                        .foregroundColor(.black)
+                        .opacity(0.5)
+                    HStack {
+                        Image(systemName: "stopwatch")
+                            .foregroundColor(.white)
+                        //            .opacity(0.5)
+                        Text("Duration")
+                            .foregroundColor(.white)
+                        
+                    }
+                }
                 Spacer()
             }
             .padding()
             
             HStack {
                 VStack {
-                    Image(systemName: "person")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 25.0, height: 25.0)
-                        .opacity(0.8)
+                    Button(action: {}) {
+                        Image(systemName: "person")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 25.0, height: 25.0)
+                            .foregroundColor(.black)
+                            .opacity(0.8)
+                    }
+                    
                 }
                 Spacer()
                 VStack {
-                    Image(systemName: "person.3")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 20.0, height: 20.0)
-                        .opacity(0.8)
-                    Text("+5")
+                    Button(action: {}) {
+                        VStack {
+                            Image(systemName: "person.3")
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 20.0, height: 20.0)
+                                .foregroundColor(.black)
+                                .opacity(0.8)
+                            Text("+5")
+                                .foregroundColor(.black)
+                                .opacity(0.8)
+                        }
+                    }
+                    
                 }
                 Spacer()
                 VStack {
-                    Image(systemName: "video")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 25.0, height: 25.0)
-                        .opacity(0.8)
+                    
+                    Button(action: {}) {
+                        Image(systemName: "video")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 25.0, height: 25.0)
+                            .opacity(0.8)
+                            .foregroundColor(.black)
+                    }
                 }
-                
             }
             .padding(.horizontal, 50.0)
-      //      .padding(.vertical)
-
+            //      .padding(.vertical)
+            
             
             
             Text("Expérience à découvrir")
@@ -95,31 +120,47 @@ struct AuthorMainInfos: View {
                     .foregroundColor(.black)
                     .opacity(0.8)
                 Text("Note")
-                    .font(.headline)
+                    .font(.title3)
                     .fontWeight(.bold)
                     .foregroundColor(.black)
                     .opacity(0.8)
-                Text("(Nb Avis)")
-                    .font(.title3)
-                    .underline()
+                
+                Button(action: {}) {
+                    Text("(Nb Avis)")
+                        .font(.headline)
+                        .foregroundColor(Color.gray)
+                        .underline()
+                }
+                
+                
                 
             }
             
             
             Divider()
             
-            HStack {
-                Image(systemName: "map")
-                    .foregroundColor(.black)
-                    .opacity(0.5)
-                
-                Text("Town, Country")
-                    .font(.headline)
-                    .foregroundColor(Color.gray)
+            ZStack {
+                HStack {
+                Button(action: {}) {
+                    RoundedRectangle(cornerRadius: 8)
+                        .frame(width: 150.0, height: 30.0)
+                        .foregroundColor(.black)
+                        .opacity(0.0) // rendre le bouton invisible
+                    Spacer()
+                }
+                }
+                HStack {
+                    Image(systemName: "map")
+                        .foregroundColor(.black)
+                        .opacity(0.5)
+                    
+                    Text("Town, Country")
+                        .font(.headline)
+                        .foregroundColor(Color.gray)
+                    Spacer()
+                }
                 
             }
-            
-            
         }
         .padding([.top, .leading, .bottom])
         
