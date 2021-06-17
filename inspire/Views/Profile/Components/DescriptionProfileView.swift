@@ -9,6 +9,8 @@ import SwiftUI
 
 struct DescriptionProfileView: View {
     
+    let descriptionProfile: String
+    
     var body: some View {
         HStack {
             VStack (alignment: .leading){
@@ -16,7 +18,7 @@ struct DescriptionProfileView: View {
                     .font(.title2)
                     .fontWeight(.bold)
                     .padding(.bottom)
-                Text("Description Profile...")
+                Text(descriptionProfile)
             }
             .padding(.leading)
             Spacer()
@@ -26,6 +28,6 @@ struct DescriptionProfileView: View {
 
 struct DescriptionProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        DescriptionProfileView()
+        DescriptionProfileView(descriptionProfile: "Description du profile")
     }
 }

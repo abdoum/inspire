@@ -23,6 +23,8 @@ struct ButtonView: View {
                     .fontWeight(.bold)
                 
             }
+            .padding(.trailing)
+            .padding(.leading)
         })
     }
 }
@@ -47,21 +49,3 @@ struct ButtonView_Previews: PreviewProvider {
         TextLink(label: "Connexion", action: {})
     }
 }
-
-//    let labelButton: String
-//    let action: () -> Void
-//
-//    func button(label: String) -> some View {
-//        Button(action: action, label: {
-//            Text(label)
-//        })
-//        .padding()
-//        .frame(maxWidth: .infinity, alignment: .center)
-//        .buttonStyle(PlainButtonStyle())
-//    }
-//
-//    var body: some View {
-//        VStack {
-//        button(label: labelButton)
-//        }
-//    }

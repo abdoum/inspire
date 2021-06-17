@@ -36,9 +36,11 @@ struct ButtonSettingsProfileView: View {
                         .underline()
                 }.padding([.leading, .trailing], 30)
             }
+            .padding(.leading)
+            .padding(.trailing)
         }
 
-    )}
+        )}
 }
 
 struct ButtonSettingsProfileView_Previews: PreviewProvider {
