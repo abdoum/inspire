@@ -8,6 +8,7 @@
 import SwiftUI
 import AuthenticationServices
 
+
 struct QuickSignInWithApple: UIViewRepresentable {
     @Environment(\.colorScheme) var colorScheme
   
