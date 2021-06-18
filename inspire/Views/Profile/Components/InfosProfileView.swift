@@ -39,7 +39,7 @@ struct InfosProfileView: View {
         }
         .frame(width: UIScreen.main.bounds.width)
         .frame(height: 150)
-        .hasScrollEnabled(false)
+        
     }
 }
 

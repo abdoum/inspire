@@ -13,10 +13,8 @@ struct inspireApp: App {
 
     var body: some Scene {
         WindowGroup {
-            MainView()
-//            MasterLogin()
-//            ContentView()
-//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            MasterView()
+                .environmentObject(UserManager())
         }
     }
 }

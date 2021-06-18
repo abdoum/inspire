@@ -22,9 +22,9 @@ struct StepThree: View {
                     Label(
                         title: {
                             if mode == "all" {
-                                Text("Tous")
-                            } else if mode == "country" {
-                                Text("National")
+                                Text("Les deux")
+                            } else if mode == "france" {
+                                Text("En france")
                             }else if mode == "proximity"{
                                 Text("A proximité")
                             }else if mode == "worldwide"{

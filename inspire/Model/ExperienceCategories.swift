@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct ExperienceCategory {
+struct ExperienceCategory: Hashable  {
     let name : String
     let image : String
     var specialisations : [String] = []
 }
 
-var EXPERIENCE_CATEGORIES : [ExperienceCategory] =
+var experiencesCategories : [ExperienceCategory] =
     [
         ExperienceCategory(name: "Technology", image: "ingenierie", specialisations: ["Linemen", "Sheet Metal Worker", "Pipefitter", "Stucco Mason", "Terrazzo"]),
         ExperienceCategory(name: "Public Utilities", image: "boulanger", specialisations: ["Plasterers", "Sheet Metal Worker", "Terrazzo", "Electrician", "Sheet Metal Worker"]),

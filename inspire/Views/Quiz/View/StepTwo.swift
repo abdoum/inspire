@@ -46,7 +46,7 @@ struct StepTwo: View {
                     .foregroundColor((quiz.params.preferedExperienceParticipationMode != nil) && (quiz.params.preferedExperienceParticipationMode!.rawValue == mode) ? Color.customPrimary : Color.customSecondary)
                     .frame(width: 335, height: 86, alignment: .center)
                     .border((quiz.params.preferedExperienceParticipationMode != nil) && (quiz.params.preferedExperienceParticipationMode!.rawValue == mode) ?  Color.customPrimary : Color.customSecondary, width: 2)
-                    .background((quiz.params.preferedExperienceParticipationMode != nil) && (quiz.params.preferedExperienceParticipationMode!.rawValue == mode) ? Color.customSecondary : Color.white)
+                    .background((quiz.params.preferedExperienceParticipationMode != nil) && (quiz.params.preferedExperienceParticipationMode!.rawValue == mode) ? Color.customSecondaryLight : Color.white)
                     .cornerRadius(14)
                     
                 })

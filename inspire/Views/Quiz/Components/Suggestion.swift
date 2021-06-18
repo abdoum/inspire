@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Suggestion: View {
+    @EnvironmentObject var quiz : Quiz
     var experience : Experience
     var body: some View {
         
@@ -19,7 +20,7 @@ struct Suggestion: View {
                 .overlay(Color.black.opacity(0.3))
                 .cornerRadius(14)
                 .shadow(radius: 10)
-            
+                
             VStack(alignment: .leading){
                 Text(experience.title)
                     .font(.title)
@@ -29,7 +30,7 @@ struct Suggestion: View {
                     .padding(.vertical, 2)
                 DurationLine(duration: experience.duration, color: .white)
                     .padding(.vertical, 2)
-                Price(price: experience.price, color: .white)
+                PriceView(price: experience.price, color: .white)
                     .padding(.vertical, 2)
                 NavigationLink(destination:
                                 // TODO: implement navigation to a specific experience
@@ -39,11 +40,16 @@ struct Suggestion: View {
                                     .frame(width: 90, height: 46, alignment: .center)
                                     .foregroundColor(.white)
                                     .overlay(
-                                        Text("Voir")
-                                            .font(.system(size: 14))
-                                            .fontWeight(.bold)
-                                            .foregroundColor(.customPrimary)
-                                            .padding()
+                                        Button(action: {
+                                            quiz.params.skipQuiz = false
+                                        }, label: {
+                                            Text("Voir")
+                                                .font(.system(size: 14))
+                                                .fontWeight(.bold)
+                                                .foregroundColor(.customPrimary)
+                                                .padding()
+                                        })
+                                        
                                     )
                                })
             }
@@ -55,5 +61,6 @@ struct Suggestion: View {
 struct Suggestion_Previews: PreviewProvider {
     static var previews: some View {
         Suggestion(experience: MOCK_EXPERIENCES[2])
+            .environmentObject(Quiz())
     }
 }

@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct Flow: View {
+    @EnvironmentObject var sharedExperiences: SharedExperiences
     @EnvironmentObject var quiz : Quiz
-    
+    @State private var showMap : Bool = false
     var body: some View {
         let steps : [String] = quiz.params.steps.keys.map({String($0)})
         
@@ -47,15 +48,15 @@ struct Flow: View {
                     case 4:
                         Suggestions()
                     default:
-                        Home()
+                        ExplorerView(showMap: $showMap , experiences: experiencesCategories[1])
                     }
                     Spacer()
                 }
                 .edgesIgnoringSafeArea(.all)
             }else{
-                Home()
+                ExplorerView(showMap: $showMap , experiences: experiencesCategories[1])
             }
-        }
+        }.ignoresSafeArea()
     }
 }
 
@@ -63,5 +64,6 @@ struct Step_Previews: PreviewProvider {
     static var previews: some View {
         Flow()
             .environmentObject(Quiz())
+            .environmentObject(SharedExperiences())
     }
 }
