@@ -83,7 +83,6 @@
 		383D1F13267A02D40079823A /* UserNeeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383D1F12267A02D40079823A /* UserNeeds.swift */; };
 		38B042BD267B23E800A0765D /* EssaiExp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B042BC267B23E800A0765D /* EssaiExp.swift */; };
 		38B042BF267B280100A0765D /* NeedsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B042BE267B280100A0765D /* NeedsData.swift */; };
-		C265B377267A46F100CF33A9 /* ExpérienceCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C265B376267A46F100CF33A9 /* ExpérienceCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -630,7 +629,6 @@
 				2BE1E8942677979600E4C55D /* StepOne.swift in Sources */,
 				21B6EC02267C936D00EC2F9E /* TitleScreen.swift in Sources */,
 				21B6EC32267C97B100EC2F9E /* OtherLoginButton.swift in Sources */,
-				C265B377267A46F100CF33A9 /* ExpérienceCard.swift in Sources */,
 				2BE1E8672677704700E4C55D /* QuizTitle.swift in Sources */,
 				2BED753B267258D600C49853 /* inspire.xcdatamodeld in Sources */,
 				21B6EC47267CA20900EC2F9E /* DurationLine.swift in Sources */,
