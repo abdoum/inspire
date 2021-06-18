@@ -10,6 +10,8 @@ import SwiftUI
 struct MasterView: View {
     var body: some View {
         TabView {
+//            ContentView()
+//                .tabItem { Image(systemName: "latch.2.case") }
             ExplorerView(showMap: .constant(false), experiences: experiencesCategories[0])
                 .tabItem { Image(systemName: "house") }
             FavorisView(experienceCategory: experiencesCategories[0])

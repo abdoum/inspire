@@ -9,27 +9,8 @@ import SwiftUI
 
 struct ExperienceDetails: View {
     
-    // Var duration: Timer
-    // var price: Double = 100
-    //var currency: String = "Euros"
-    //   var category: ExperienceCategories
-    //   var mode: Session.ParticipationMode
-    //var title: String = "Sculpture"
-    //var description: String = "zzffz"
-    //   var creationDate: Date =
-    //   var reviews: [Review]
-    //   var rateAverage: avg(reviews.rate)
-    //var isFavorite: Bool = true
-    // var location: CLLocationCoordinate2D
-    // var author: User
-    // var guest: [User]
-    // var photos: [String]
-    //  var videos: [String]
-    //var imageCover: String = "image" //photos[0]
-    //  var sessions: [Session]
-    //var prerequisites: [String] = ["dsfgdf"]
-    //  var accumulatedReservations: sum(sessions.guests)
    @State var active = true
+    
     var body: some View {
         ZStack {
             VStack {

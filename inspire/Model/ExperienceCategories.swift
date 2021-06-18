@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct ExperienceCategory: Hashable  {
+struct ExperienceCategory: Hashable , Identifiable {
+    let id = UUID()
     let name : String
     let image : String
     var specialisations : [String] = []
@@ -19,3 +20,11 @@ var experiencesCategories : [ExperienceCategory] =
         ExperienceCategory(name: "Public Utilities", image: "boulanger", specialisations: ["Plasterers", "Sheet Metal Worker", "Terrazzo", "Electrician", "Sheet Metal Worker"]),
         ExperienceCategory(name: "Transportation", image: "bricolage", specialisations: ["Brickmason", "Plasterers", "Carpenter", "Carpenter", "Plasterers"])
     ]
+
+var mainCategoriesTags : [FilterTag] {
+    var tags = [FilterTag]()
+    for category in experiencesCategories {
+        tags.append(FilterTag(text: category.name, isSelected: false))
+    }
+    return tags
+}

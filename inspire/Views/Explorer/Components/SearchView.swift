@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct SearchView: View {
-    @State var searchText = ""
-    @State var inSearchmode = false
+    @Binding var searchText : String
+    @Binding var inSearchmode : Bool
     var body: some View {
         SearchBar(text: $searchText, isEditing: $inSearchmode)
     }
@@ -17,6 +17,6 @@ struct SearchView: View {
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchView()
+        SearchView(searchText: .constant("choco"), inSearchmode: .constant(false))
     }
 }

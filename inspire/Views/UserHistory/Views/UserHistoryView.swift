@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct UserHistoryView: View {
+    @State var searchText = ""
+    @State var inSearchmode = false
+    
     var body: some View {
         NavigationView {
             ScrollView {
                 VStack (alignment: .leading) {
-//                    TitleScreen(content: "Expériences").padding()
-                    SearchView().padding(.trailing).padding(.leading)
+                    SearchView(searchText: $searchText, inSearchmode: $inSearchmode).padding(.trailing).padding(.leading)
                     SectionTitle(content: "Ce mois-ci :").padding(.top).padding(.leading)
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
