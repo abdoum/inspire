@@ -29,14 +29,8 @@ struct InfosHeaderProfessionnalProfileView: View {
                 Text(job)
                     .font(.subheadline)
                     .padding(.top, 1)
-                HStack {
-                    Image(systemName: "star.fill")
-                    Text("4.65")
-                    Text("(16 avis)")
-                        .underline()
-                        .font(.subheadline)
-                }
-                .padding(.top, 10)
+                RatingLine(averageRating: 4.89, commentsCount: 328, color: .customPrimary)
+                    .padding(.top, 10)
             }
             .offset(x: -80)
         }
