@@ -27,7 +27,7 @@ struct UserHistoryView: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
                             ForEach(experiencesCategories, id: \.self) { _ in
-                                ExperienceCard(experienceCategory: experiencesCategories[3])
+                                ExperienceCard(experienceCategory: experiencesCategories[2])
                                     .padding(.leading).padding(.top, 6)
                             }
                         }
