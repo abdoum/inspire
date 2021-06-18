@@ -19,13 +19,13 @@ struct Suggestion: View {
                 .overlay(Color.black.opacity(0.3))
                 .cornerRadius(14)
                 .shadow(radius: 10)
-            Text("\(String(average))")
+            
             VStack(alignment: .leading){
                 Text(experience.title)
                     .font(.title)
                     .fontWeight(.heavy)
                     .foregroundColor(.white)
-                RatingLine(averageRating: average, commentsCount: 328, color: .white)
+                RatingLine(averageRating: experience.averageRate, commentsCount: 328, color: .white)
                     .padding(.vertical, 2)
                 DurationLine(duration: experience.duration, color: .white)
                     .padding(.vertical, 2)
