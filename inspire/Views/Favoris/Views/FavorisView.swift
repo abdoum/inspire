@@ -30,15 +30,7 @@ struct FavorisView: View {
                             SeeMoreButton()
                                 .padding(.trailing)
                         }
-                        
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack {
-                                ForEach(experiencesCategories, id: \.self) { _ in
-                                    ExperienceCard(experienceCategory: experiencesCategories[1])
-                                        .padding(.leading).padding(.top, 6)
-                                }
-                            }
-                        }
+                        //add files
                         
                         HStack {
                             SectionTitle(content: "Mes catégories")
@@ -46,6 +38,8 @@ struct FavorisView: View {
                             Spacer()
                             SeeMoreButton().padding(.trailing)
                         }
+                        
+                        //only images...
                         ScrollView (.horizontal, showsIndicators: false)  {
                             HStack {
                                 ForEach(experiencesCategories, id: \.self) { _ in
@@ -66,14 +60,6 @@ struct FavorisView: View {
                                 .padding(.trailing)
                         }
                         
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack {
-                                ForEach(experiencesCategories, id: \.self) { _ in
-                                    ExperienceCard(experienceCategory: experiencesCategories[2])
-                                        .padding(.leading).padding(.top, 6)
-                                }
-                            }
-                        }
                         SectionTitle(content: "Mots-clés").font(.title3).padding(.leading).padding()
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack {

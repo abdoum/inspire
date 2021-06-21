@@ -42,3 +42,14 @@ struct TextFieldInfos {
         self.placeHolder = placeHolder ?? label
     }
 }
+
+struct InfosPersonalTextFieldView2: View {
+    @Binding var firstName: String
+    @Binding var lastName: String
+    var body: some View {
+        TextField("Prénom", text: $firstName)
+            .textFieldStyle(RoundedBorderTextFieldStyle())
+        TextField("Nom", text: $lastName)
+            .textFieldStyle(RoundedBorderTextFieldStyle())
+    }
+}

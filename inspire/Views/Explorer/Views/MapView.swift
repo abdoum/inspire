@@ -15,26 +15,9 @@ struct MapView: View {
      var places: [Location] = [
         Location(coordinate: CLLocationCoordinate2D(latitude: 48.8548, longitude:  2.6287))
     ]
-    let categoryArray: [String] = [
-        "Artisanat", "Cuisine", "Informatique", "Ostéopathe"
-    ]
-    @Binding var showMap: Bool
     
     var body: some View {
         VStack  (alignment: .leading) {
-            SearchView()
-                .padding(.trailing).padding(.leading)
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack {
-                    ForEach(categoryArray, id: \.self) { _ in
-                        CategoryFilter()
-                            .padding(.leading).padding(.top, 6)
-                    }
-                }
-            }
-            CategoryFilter()
-                .padding(.leading).padding(.top, 5)
-            Divider().padding(.top)
             Map(coordinateRegion: $region, annotationItems: places, annotationContent: { place in
                 MapPin(coordinate: place.coordinate)
             }).frame(height: 590)
@@ -48,6 +31,6 @@ struct Location: Identifiable {
 }
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
-        MapView( showMap: .constant(false))
+        MapView()
     }
 }

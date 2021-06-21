@@ -7,40 +7,87 @@
 
 import SwiftUI
 
+
 struct UserHistoryView: View {
+    
+    let categoryArray: [String] = [
+        "Artisanat", "Cuisine", "Informatique", "Ostéopathe"
+    ]
+    let experienceCategory: Experience
+    
     var body: some View {
         NavigationView {
-            ScrollView {
-                VStack (alignment: .leading) {
-//                    TitleScreen(content: "Expériences").padding()
-                    SearchView().padding(.trailing).padding(.leading)
-                    SectionTitle(content: "Ce mois-ci :").padding(.top).padding(.leading)
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack {
-                            ForEach(experiencesCategories, id: \.self) { _ in
-                                ExperienceCard(experienceCategory: experiencesCategories[2])
-                                    .padding(.leading).padding(.top, 6)
-                            }
+            VStack {
+                ScrollView {
+                    VStack (alignment: .leading) {
+                        VStack  (alignment: .leading) {
+                            SearchView()
+                                .padding()
+                            UpComingExperiences()
                         }
-                    }.padding()
-                    SectionTitle(content: "Cette semaine :").padding(.top).padding(.leading)
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack {
-                            ForEach(experiencesCategories, id: \.self) { _ in
-                                ExperienceCard(experienceCategory: experiencesCategories[2])
-                                    .padding(.leading).padding(.top, 6)
-                            }
-                        }
-                    }.padding()
+                    }
+                    FirstItem()
+                    SecondItem()
+                    ThirdItem()
                 }
             }
-            .navigationTitle("Experiences")
+            .navigationTitle("Mes expériences")
         }
     }
 }
 
+struct FirstItem: View {
+    var body: some View {
+        VStack {
+            HStack {
+                SectionTitle(content: "Proposées")
+                    .font(.title2)
+                    .padding(.leading)
+                Spacer()
+                SeeMoreButton()
+                    .padding(.trailing)
+            }
+            UserHistoryList(experiences: MOCK_EXPERIENCES)
+        }
+        .frame(height: 300)
+    }
+}
+struct SecondItem: View {
+    var body: some View {
+        VStack {
+            HStack {
+                SectionTitle(content: "Planifiées")
+                    .font(.title2)
+                    .padding(.leading)
+                Spacer()
+                SeeMoreButton()
+                    .padding(.trailing)
+            }
+            UserHistoryList(experiences: MOCK_EXPERIENCES)
+        }
+    }
+}
+struct ThirdItem: View {
+    var body: some View {
+        VStack {
+            HStack {
+                SectionTitle(content: "Effectuées")
+                    .font(.title2)
+                    .padding(.leading)
+                Spacer()
+                SeeMoreButton()
+                    .padding(.trailing)
+            }
+            UserHistoryList(experiences: MOCK_EXPERIENCES)
+        }
+    }
+}
+
+
 struct UserHistoryView_Previews: PreviewProvider {
     static var previews: some View {
-        UserHistoryView()
+        Group {
+            UserHistoryView(experienceCategory: MOCK_EXPERIENCES[0])
+        }
     }
 }

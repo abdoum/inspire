@@ -7,44 +7,37 @@
 
 import SwiftUI
 
-struct Infos: Identifiable {
-    let id = UUID()
-    let imageName: String
-    let details: String
-}
 
-struct InfosRow: View {
-    var infos: Infos
-    var body: some View {
+struct InfosProfileView2: View {
+    
+    func infos(imageName: String, description: String) -> some View {
         HStack {
-            Image(systemName: infos.imageName)
-            Text(infos.details)
+            Image(systemName: imageName)
+            Text(description)
                 .padding(.leading, 2)
         }
     }
-}
-
-
-struct InfosProfileView: View {
-    
-    let informations = [
-        Infos(imageName: "mappin", details: " Paris, France"),
-        Infos(imageName: "speaker.wave.2", details: "Langue: Français et Anglais"),
-        Infos(imageName: "latch.2.case", details: "Serveuse chez Bar café Paris")
-    ]
+    let user: Experience
+    let isLog: Bool
     
     var body: some View {
-        List(informations) { information in
-            InfosRow(infos: information)
+        List {
+            infos(imageName: "mappin", description: "  Paris, France")
+            infos(imageName: "speaker.wave.2", description: user.author.spokenLanguages)
+            if isLog {
+                infos(imageName: "latch.2.case", description: user.category.specialisations)
+            }
         }
         .frame(width: UIScreen.main.bounds.width)
         .frame(height: 150)
-        
     }
 }
 
-struct InfosProfileView_Previews: PreviewProvider {
+struct InfosProfileView2_Previews: PreviewProvider {
     static var previews: some View {
-        InfosProfileView()
+        Group {
+            InfosProfileView2(user: MOCK_EXPERIENCES[0], isLog: false)
+            InfosProfileView2(user: MOCK_EXPERIENCES[0], isLog: true)
+        }
     }
 }

@@ -12,7 +12,7 @@ struct MasterLogin: View {
     
     var body: some View {
         if isLog {
-            ProfileView(isLog: $isLog, experience: MOCK_EXPERIENCES[2])
+            ProfileView(isLog: $isLog, experience: MOCK_EXPERIENCES[0])
         } else {
             SignInView(signUpUser: .empty, isLog: $isLog)
         }

@@ -10,11 +10,11 @@ import SwiftUI
 struct MasterView: View {
     var body: some View {
         TabView {
-            ExplorerView(showMap: .constant(false), experiences: experiencesCategories[0])
+            ExplorerView(experiences: experiencesCategories[0], experience: MOCK_EXPERIENCES)
                 .tabItem { Image(systemName: "house") }
             FavorisView(experienceCategory: experiencesCategories[0])
                 .tabItem { Image(systemName: "heart") }
-            UserHistoryView()
+            UserHistoryView(experienceCategory: MOCK_EXPERIENCES[0])
                 .tabItem { Image(systemName: "latch.2.case") }
             MasterLogin()
                 .tabItem { Image(systemName: "person") }

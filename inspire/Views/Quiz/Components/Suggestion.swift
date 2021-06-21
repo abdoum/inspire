@@ -28,13 +28,13 @@ struct Suggestion: View {
                     .foregroundColor(.white)
                 RatingLine(averageRating: experience.averageRate, commentsCount: 328, color: .white)
                     .padding(.vertical, 2)
-                DurationLine(duration: experience.duration, color: .white)
+//                DurationLine(duration: experience.duration, color: .white)
                     .padding(.vertical, 2)
                 PriceView(price: experience.price, color: .white)
                     .padding(.vertical, 2)
                 NavigationLink(destination:
                                 // TODO: implement navigation to a specific experience
-                                ExperienceDetails()
+                                ExperienceDetails(experiences: experience)
                                , label: {
                                 RoundedRectangle(cornerRadius: 14)
                                     .frame(width: 90, height: 46, alignment: .center)

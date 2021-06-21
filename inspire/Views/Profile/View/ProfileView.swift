@@ -10,7 +10,7 @@ import SwiftUI
 struct ProfileView: View {
     @Binding var isLog: Bool
     @EnvironmentObject var userManager: UserManager
-    var experience: Experience
+    let experience: Experience
     
     var body: some View {
         if let user = userManager.currentUser {
@@ -18,26 +18,24 @@ struct ProfileView: View {
                 ScrollView {
                     InfosHeaderProfileView(imageName: user.avatar, fullName: "\(user.firstname)  \(user.lastname)", job: experience.title, isPro: true)
                         .padding()
-                    LoginButton(label: "Créer une expérience", action: {})
-                    InfosProfileView()
+                    InfosProfileView2(user: MOCK_EXPERIENCES[2], isLog: isLog)
 
                     SettingsButtonView(imageName: "checkmark.shield", label: " Mon compte est vérifié", editName: "Modifier", action: {})
                     SettingsButtonView(imageName: "creditcard", label: "Paiements et versements", editName: "Voir", action: {})
                     SettingsButtonView(imageName: "gearshape", label: "Paramètres", editName: "Modifier", action: {})
-                    DescriptionProfileView(descriptionProfile: "Ceci est un prototype...")
+                    DescriptionProfileView(descriptionProfile: user.biography)
                     
                 }.padding()
                 LoginButton(label: "Se déconnecter", action: {isLog = false}).buttonConnexionViewStyle(style: ButtonConnexionViewStyleBlack())
-                    .padding()
             }
         } else {
-            Text("T'es pas connecter mec")
+            Text("Veuillez vous connecter !")
         }
     }
 }
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView(isLog: .constant(true), experience: MOCK_EXPERIENCES[2]).environmentObject(UserManager())
+        ProfileView(isLog: .constant(true), experience: MOCK_EXPERIENCES[0]).environmentObject(UserManager())
     }
 }

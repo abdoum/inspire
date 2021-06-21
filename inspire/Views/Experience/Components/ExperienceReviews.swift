@@ -12,8 +12,8 @@ struct ExperienceReviews: View {
         VStack {
             HStack {
                 Text("Les avis")
-                .font(/*@START_MENU_TOKEN@*/.title3/*@END_MENU_TOKEN@*/)
-                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                    .font(.title3)
+                    .fontWeight(.bold)
                 Spacer()
             }
             .padding(.vertical)
@@ -41,7 +41,6 @@ struct ExperienceReviews: View {
                         }
                     }
                 }
-                
             }
             HStack {
                 Image("SteveJobs")
@@ -53,20 +52,18 @@ struct ExperienceReviews: View {
                 VStack {
                     HStack {
                         Text("Name")
-   //                     Image(systemName: "checkmark.circle.fill")
                     }
                     Text("Date")
                 }
                 Spacer()
-                
             }
             HStack {
                 Text("Contrairement à une opinion répandue, le Lorem Ipsum n'est pas simplement du texte aléatoire. Il trouve ses racines dans une oeuvre de la littérature latine classique datant de 45 av. J.-C., le rendant vieux de 2000 ans. Un professeur du Hampden-Sydney College, en Virginie, s'est intéressé à un des mots latins les plus obscurs, consectetur, extrait d'un passage du Lorem Ipsum, et en étudiant tous les usages de ce mot dans la littérature classique, découvrit la source incontestable du Lorem Ipsum.")
                 Spacer()
             }
-
         }
-        
+        .padding(.leading)
+        .padding(.trailing)
     }
 }
 

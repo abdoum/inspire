@@ -9,107 +9,38 @@ import SwiftUI
 
 struct ExperienceDetails: View {
     
-    // Var duration: Timer
-    // var price: Double = 100
-    //var currency: String = "Euros"
-    //   var category: ExperienceCategories
-    //   var mode: Session.ParticipationMode
-    //var title: String = "Sculpture"
-    //var description: String = "zzffz"
-    //   var creationDate: Date =
-    //   var reviews: [Review]
-    //   var rateAverage: avg(reviews.rate)
-    //var isFavorite: Bool = true
-    // var location: CLLocationCoordinate2D
-    // var author: User
-    // var guest: [User]
-    // var photos: [String]
-    //  var videos: [String]
-    //var imageCover: String = "image" //photos[0]
-    //  var sessions: [Session]
-    //var prerequisites: [String] = ["dsfgdf"]
-    //  var accumulatedReservations: sum(sessions.guests)
-   @State var active = true
+    @State var active = true
+    let experiences: Experience
+    
     var body: some View {
         ZStack {
             VStack {
-                List {
-                    Image("SculpteurSurPierre")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .listRowInsets(EdgeInsets())
-                    AuthorMainInfos()
-                        .listRowInsets(EdgeInsets())
-                    ExperienceContact()
-                    ExperienceProgram("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut laborum", lineLimit: 6)
-                    
-                    UserNeeds()
-                    
-                    ExperienceReviews()
-                }
-                ExperiencePriceDates()
-                
-            }
-            VStack {
-                HStack {
-                    NavigationLink(
-                        destination: Text("Destination"),
-                        label: {
-                            ZStack {
-                                Image(systemName: "circle.fill")
-                                    .foregroundColor(.black)
-                                    .opacity(0.5)
-                                Image(systemName: "xmark.circle.fill")
-                                    .foregroundColor(.white)
-                            }.font(.system(size: 30))
-                        })
-//                    Button(action: {}) {
-//                        ZStack {
-//                            Image(systemName: "circle.fill")
-//                                .foregroundColor(.black)
-//                                .opacity(0.5)
-//                            Image(systemName: "xmark.circle.fill")
-//                                .foregroundColor(.white)
-//                        }.font(.system(size: 30))
-//                    }
-//                    .padding()
-                    
-                    Spacer()
-                    
-                    Button(action: {}) {
-                        ZStack {
-                            Image(systemName: "circle.fill")
-                                .foregroundColor(.black)
-                                .opacity(0.5)
-                            Image(systemName: "paperplane.circle.fill")
-                                .foregroundColor(.white)
-                        }.font(.system(size: 30))
-                    }
-                    .padding()
-                    
-                    Button(action: {}) {
-                        ZStack {
-                            Image(systemName: "circle.fill")
-                                .foregroundColor(.white)
-                                .font(.system(size: 30))
-                            Image(systemName: "heart")
-                                .foregroundColor(.black)
-                                .opacity(0.8)
-                                .font(.system(size: 18))
+                ScrollView {
+                    VStack {
+                        Image(experiences.category.image)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .listRowInsets(EdgeInsets())
+                        VStack {
+                            AuthorMainInfos(imageName: experiences.author.avatar, fullName: "\(experiences.author.firstname) \(experiences.author.lastname.uppercased())", specialisation: experiences.category.specialisations, rate: experiences.rate)
+                            ExperienceContact(language: experiences.author.spokenLanguages)
+                                .padding(.leading).padding(.trailing)
+                            ExperienceProgram(experiences.description, lineLimit: 6)
+                            UserNeeds()
+                            ExperienceReviews()
                         }
+                        .padding()
                     }
-                    .padding()
                 }
-                .padding(.top,40)
-                Spacer()
+                ExperiencePriceDates(experiences: MOCK_EXPERIENCES[0])
             }
-        } .edgesIgnoringSafeArea(.all)
+        }
+        .edgesIgnoringSafeArea(.all)
     }
-    
 }
 
 struct ExperienceDetails_Previews: PreviewProvider {
     static var previews: some View {
-        ExperienceDetails()
+        ExperienceDetails(experiences: MOCK_EXPERIENCES[0])
     }
 }

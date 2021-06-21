@@ -22,7 +22,6 @@ struct UserNeeds: View {
                 Spacer()
             }
             ForEach(items, id: \.self) { item in
-                
                 HStack {
                     Button(action: {
                         if isSelectedNeed == false {
@@ -33,14 +32,12 @@ struct UserNeeds: View {
                     }) {
                         Image(systemName: "checkmark.circle")
                             .foregroundColor(isSelectedNeed ? .red : .green)
-           //                 .foregroundColor(.black)
                             .opacity(0.5)
                     }
                     .font(.system(size: 30))
                     
                     Text(item)
                     Spacer()
-                    
                 }
                 .padding()
                 .overlay(
@@ -50,15 +47,7 @@ struct UserNeeds: View {
                 )
             }
         }
-        
-        
-        .padding(.vertical)
-        
-        
-        
-        
-        
-        
+        .padding()
     }
     
 }

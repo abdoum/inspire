@@ -51,6 +51,17 @@ struct ImageProfile: View {
     }
 }
 
+struct ImageProfileView: View {
+    let imageName: String
+    var body: some View {
+        Image(imageName)
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width:100, height:100)
+            .clipShape(Circle())
+    }
+}
+
 struct ImageProfile_Previews: PreviewProvider {
     static var previews: some View {
         ImageProfile(withURL: "")

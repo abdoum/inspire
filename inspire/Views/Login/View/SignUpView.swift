@@ -17,7 +17,7 @@ struct SignUpView: View {
                 TitleScreen(content: "Inscription")
                     .offset(y: 75)
                 Spacer()
-                InfosPersonalTextFieldView(firstName: $signUpUser.firstname, lastName: $signUpUser.lastname)
+                InfosPersonalTextFieldView2(firstName: $signUpUser.firstname, lastName: $signUpUser.lastname)
                 EmailTextFieldView(email: $signUpUser.email)
                 PasswordTextFieldView(password: $signUpUser.password)
                 SecureField("Confirmer mot de passe", text: $signUpUser.confirmPassword)
