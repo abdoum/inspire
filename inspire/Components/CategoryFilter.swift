@@ -13,27 +13,26 @@
 
 import SwiftUI
 
-struct FilterTag {
-    var text : String
-    var isSelected : Bool
-}
-
-var exempleTag = FilterTag(text: "En visio", isSelected: false)
-
-struct CategoryFilters: View {
-    @Binding var tag : FilterTag
+struct CategoryFilter: View {
+    @Binding var tag : FilterTagModel
+    @Binding var searchText : String
     
     var body: some View {
         HStack {
             Button(action: {
                 tag.isSelected.toggle()
+                if tag.isSelected{
+                searchText += tag.text + " "
+                }else{
+                    searchText = searchText.replacingOccurrences(of: tag.text, with: "").trimmingCharacters(in: .whitespaces)
+                }
             }, label: {
                 HStack{
                     if tag.isSelected {
                         Image(systemName: "xmark")
                     }
                     // MARK: tag text
-                    Text(exempleTag.text)
+                    Text(tag.text)
                         .tracking(0.2)
                 }
                 .padding(tag.isSelected ? 6 : 12)

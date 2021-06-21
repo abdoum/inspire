@@ -31,7 +31,7 @@ struct SearchBar: View {
                 text = ""
                 UIApplication.shared.endEditing()
             }, label: {
-                Text("Cancel")
+                Text("Annuler")
                     .foregroundColor(.black)
             })
             .padding(.trailing, 8)

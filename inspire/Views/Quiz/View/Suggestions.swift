@@ -10,51 +10,36 @@ import SwiftUI
 struct Suggestions: View {
     @EnvironmentObject var sharedExperiences: SharedExperiences
     @EnvironmentObject var quiz : Quiz
-    @State private var selected : Int = 0
-    @State private var shouldShowPurple : Bool = true
     @State private var showMap : Bool = false
+    
+    var bgColor : Color
     var body: some View {
         let experiences = sharedExperiences.experiences
-        
-        TabView(selection: $selected,
-                content:  {
+        VStack{
+            QuizPageTitle()
+            ScrollView(.horizontal, showsIndicators: true) {
+                HStack {
                     ForEach(experiences, id:\.id) {experience in
-                        
-                        //                        GeometryReader{reader in
                         NavigationLink(
-                            destination: ExplorerView(showMap: $showMap, experiences: experiencesCategories[1]),
-                                            isActive: $shouldShowPurple
-                                        ) {
-                            Suggestion(experience: experience)
-                                        }
-                        
-                        
-                        //                        }
-                        //                        .frame(height: height / 2)
-                        //                        .padding(10)
-                        //                        .padding(.horizontal,45)
-                        
+                            destination: ExperienceDetails()
+                                .navigationBarBackButtonHidden(true)
+                                .navigationBarHidden(true),
+                            label: {
+                                Suggestion(experience: experience)
+                                    .padding()
+                            })
                     }
-                })
-            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-        
-        //        VStack{
-        //            Slider()(value: 0...5, label: {experience in
-        //                Suggestion(experience: experience)
-        //            })
-        
-        //            NavigationLink(
-        //                destination: Text("Destination"),
-        //                label: {
-        //                    Text("Navigate")
-        //                })
-        //        }
+                }
+            }
+            Spacer()
+        }
+        .background(bgColor.ignoresSafeArea())
     }
 }
 
 struct Suggestions_Previews: PreviewProvider {
     static var previews: some View {
-        Suggestions()
+        Suggestions(bgColor: .green.opacity(0.3))
             .environmentObject(Quiz())
             .environmentObject(SharedExperiences())
     }

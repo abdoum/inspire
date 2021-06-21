@@ -11,10 +11,10 @@ struct FavorisView: View {
     let categoryArray: [String] = [
         "Artisanat", "Cuisine", "Informatique", "Ostéopathe"
     ]
-    let experienceCategory: ExperienceCategory
+    @EnvironmentObject var experiences: SharedExperiences
     @State var searchText = ""
     @State var inSearchmode = false
-    @State private var tag = FilterTag(text: "", isSelected: false)
+    @State private var tag = FilterTagModel(text: "", isSelected: false)
     
     var body: some View {
         
@@ -36,8 +36,8 @@ struct FavorisView: View {
                         
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack {
-                                ForEach(experiencesCategories, id: \.self) { _ in
-                                    ExperienceCard(experienceCategory: experiencesCategories[1])
+                                ForEach(experiences.experiences, id: \.id) { experience in
+                                    ExperienceCard(experience: experience)
                                         .padding(.leading).padding(.top, 6)
                                 }
                             }
@@ -51,8 +51,8 @@ struct FavorisView: View {
                         }
                         ScrollView (.horizontal, showsIndicators: false)  {
                             HStack {
-                                ForEach(experiencesCategories, id: \.self) { _ in
-                                    Image(experienceCategory.image)
+                                ForEach(experiences.experiences, id: \.id) { experience in
+                                    Image(experience.category.image)
                                         .resizable()
                                         .scaledToFill()
                                         .frame(width: 180, height: 220)
@@ -71,8 +71,8 @@ struct FavorisView: View {
                         
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack {
-                                ForEach(experiencesCategories, id: \.self) { _ in
-                                    ExperienceCard(experienceCategory: experiencesCategories[2])
+                                ForEach(experiences.experiences, id: \.id) { experience in
+                                    ExperienceCard(experience: experience)
                                         .padding(.leading).padding(.top, 6)
                                 }
                             }
@@ -81,7 +81,7 @@ struct FavorisView: View {
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack {
                                 ForEach(categoryArray, id: \.self) { _ in
-                                    CategoryFilters(tag: $tag)
+                                    CategoryFilter(tag: $tag, searchText: $searchText)
                                         .padding(.leading).padding(.top, 6)
                                 }
                             }
@@ -97,6 +97,6 @@ struct FavorisView: View {
 
 struct FavorisView_Previews: PreviewProvider {
     static var previews: some View {
-        FavorisView(experienceCategory: experiencesCategories[0])
+        FavorisView()
     }
 }

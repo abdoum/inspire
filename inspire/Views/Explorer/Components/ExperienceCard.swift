@@ -10,7 +10,7 @@ import SwiftUI
 struct ExperienceCard: View {
     
     @State var isFavorite: Bool = false
-    let experienceCategory: ExperienceCategory
+    let experience: Experience
     
     func addFavorite(color: Color) -> some View {
         Button(action: {
@@ -24,7 +24,7 @@ struct ExperienceCard: View {
     var body: some View {
             VStack {
                 ZStack {
-                    Image(experienceCategory.image)
+                    Image(experience.category.image)
                         .resizable()
                         .scaledToFill()
                         .frame(width: 180, height: 220)
@@ -60,7 +60,7 @@ struct ExperienceCard: View {
                 .font(.subheadline)
                 .frame(width: 160, height: 20)
                 HStack {
-                    Text(experienceCategory.name)
+                    Text(experience.title)
                                   .font(.title3)
                                   .foregroundColor(Color.black)
                                   .opacity(0.8)
@@ -98,7 +98,7 @@ struct ExperienceCard: View {
 
 struct ExperienceCard_Previews: PreviewProvider {
     static var previews: some View {
-        ExperienceCard(experienceCategory: experiencesCategories[0])
+        ExperienceCard(experience: MOCK_EXPERIENCES[0])
     }
 }
 

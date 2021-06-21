@@ -9,15 +9,24 @@ import SwiftUI
 
 struct StepThree: View {
     @EnvironmentObject var quiz : Quiz
+    var bgColor : Color
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         let choices = quiz.params.existingExperienceLocationModes
         
-        VStack(spacing: 26) {
+        VStack(spacing: 15) {
+            QuizPageTitle()
+            
             ForEach(choices, id: \.self){mode in
-                
                 Button(action: {
-                    quiz.params.preferedExperienceLocationMode = LocationMode(rawValue: mode) ?? .all
-                    quiz.params.currentStep += 1
+                    withAnimation(.spring()) {
+                        presentationMode.wrappedValue.dismiss()
+                        quiz.params.preferedExperienceLocationMode = LocationMode(rawValue: mode) ?? .all
+                        quiz.params.currentStep += 1
+                        
+                    }
+                    
                 }, label: {
                     Label(
                         title: {
@@ -37,25 +46,30 @@ struct StepThree: View {
                                     .font(.system(size: 22))
                             } else {
                                 Circle()
-                                    .frame(width: 22, height: 22, alignment: .center)
+                                    .frame(width: 22, height: 22)
                                     .foregroundColor(.customSecondaryLight)
                             }
                         }
                     )
                     .foregroundColor((quiz.params.preferedExperienceLocationMode != nil) && (quiz.params.preferedExperienceLocationMode!.rawValue == mode) ? Color.customPrimary : Color.customSecondary)
-                    .frame(width: 335, height: 86, alignment: .center)
-                    .border((quiz.params.preferedExperienceLocationMode != nil) && (quiz.params.preferedExperienceLocationMode!.rawValue == mode) ? Color.customPrimary : Color.customSecondaryLight, width: 2)
+                    .overlay(
+                    RoundedRectangle(cornerRadius: 14)
+                    .stroke((quiz.params.preferedExperienceLocationMode != nil) && (quiz.params.preferedExperienceLocationMode!.rawValue == mode) ? Color.customPrimary : Color.customSecondaryLight, lineWidth: 2)
+                        .frame(minWidth: 300, minHeight: 86)
+                        )
+                    .frame(minWidth: 300, minHeight: 86)
                     .background((quiz.params.preferedExperienceLocationMode != nil) && (quiz.params.preferedExperienceLocationMode!.rawValue == mode) ? Color.customSecondaryLight : Color.white)
                     .cornerRadius(14)
                 })
             }
-        }
+            Spacer()
+        }.background(bgColor.ignoresSafeArea())
     }
 }
 
 struct StepThree_Previews: PreviewProvider {
     static var previews: some View {
-        StepThree()
+        StepThree(bgColor: .red)
             .environmentObject(Quiz())
     }
 }

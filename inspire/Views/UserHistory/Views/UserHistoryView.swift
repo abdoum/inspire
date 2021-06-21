@@ -10,7 +10,7 @@ import SwiftUI
 struct UserHistoryView: View {
     @State var searchText = ""
     @State var inSearchmode = false
-    
+    @EnvironmentObject var experiences: SharedExperiences
     var body: some View {
         NavigationView {
             ScrollView {
@@ -19,8 +19,8 @@ struct UserHistoryView: View {
                     SectionTitle(content: "Ce mois-ci :").padding(.top).padding(.leading)
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
-                            ForEach(experiencesCategories, id: \.self) { _ in
-                                ExperienceCard(experienceCategory: experiencesCategories[2])
+                            ForEach(experiences.experiences, id: \.id) { _ in
+                                ExperienceCard(experience: experiences.experiences[2])
                                     .padding(.leading).padding(.top, 6)
                             }
                         }
@@ -28,8 +28,8 @@ struct UserHistoryView: View {
                     SectionTitle(content: "Cette semaine :").padding(.top).padding(.leading)
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
-                            ForEach(experiencesCategories, id: \.self) { _ in
-                                ExperienceCard(experienceCategory: experiencesCategories[2])
+                            ForEach(experiences.experiences, id: \.id) { _ in
+                                ExperienceCard(experience: experiences.experiences[2])
                                     .padding(.leading).padding(.top, 6)
                             }
                         }

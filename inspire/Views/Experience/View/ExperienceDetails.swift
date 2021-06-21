@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ExperienceDetails: View {
-    
-   @State var active = true
+    @State private var showMap : Bool = false
+    @State var active = true
     
     var body: some View {
         ZStack {
@@ -34,7 +34,7 @@ struct ExperienceDetails: View {
             VStack {
                 HStack {
                     NavigationLink(
-                        destination: Text("Destination"),
+                        destination: ExplorerView(showMap: $showMap, showQuiz: .constant(false)),
                         label: {
                             ZStack {
                                 Image(systemName: "circle.fill")
@@ -44,16 +44,16 @@ struct ExperienceDetails: View {
                                     .foregroundColor(.white)
                             }.font(.system(size: 30))
                         })
-//                    Button(action: {}) {
-//                        ZStack {
-//                            Image(systemName: "circle.fill")
-//                                .foregroundColor(.black)
-//                                .opacity(0.5)
-//                            Image(systemName: "xmark.circle.fill")
-//                                .foregroundColor(.white)
-//                        }.font(.system(size: 30))
-//                    }
-//                    .padding()
+                    //                    Button(action: {}) {
+                    //                        ZStack {
+                    //                            Image(systemName: "circle.fill")
+                    //                                .foregroundColor(.black)
+                    //                                .opacity(0.5)
+                    //                            Image(systemName: "xmark.circle.fill")
+                    //                                .foregroundColor(.white)
+                    //                        }.font(.system(size: 30))
+                    //                    }
+                    //                    .padding()
                     
                     Spacer()
                     
