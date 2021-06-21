@@ -11,7 +11,7 @@ struct ExperienceDetails: View {
     
     @Environment(\.presentationMode) var presentationMode
     @State var active = true
-    let experiences: Experience
+    let experience: Experience
     
     var body: some View {
         NavigationView {
@@ -19,15 +19,15 @@ struct ExperienceDetails: View {
                 VStack {
                     ScrollView {
                         VStack {
-                            Image(experiences.category.image)
+                            Image(experience.category.image)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .listRowInsets(EdgeInsets())
                             VStack {
-                                AuthorMainInfos(imageName: experiences.author.avatar, fullName: "\(experiences.author.firstname) \(experiences.author.lastname.uppercased())", specialisation: experiences.category.specialisations, rate: experiences.rate)
-                                ExperienceContact(language: experiences.author.spokenLanguages)
+                                AuthorMainInfos(imageName: experience.author.avatar, fullName: "\(experience.author.firstname) \(experience.author.lastname.uppercased())", specialisation: experience.category.specialisation, rate: experience.rate)
+                                ExperienceContact(language: experience.author.spokenLanguages)
                                     .padding(.leading).padding(.trailing)
-                                ExperienceProgram(experiences.description, lineLimit: 6)
+                                ExperienceProgram(experience.description, lineLimit: 6)
                                 UserNeeds()
                                 ExperienceReviews()
                             }
@@ -66,6 +66,6 @@ struct ExperienceDetails: View {
 
 struct ExperienceDetails_Previews: PreviewProvider {
     static var previews: some View {
-        ExperienceDetails(experiences: MOCK_EXPERIENCES[0])
+        ExperienceDetails(experience: MOCK_EXPERIENCES[0])
     }
 }

@@ -19,9 +19,9 @@ struct ExperienceList: View {
                     Button(action: {
                         isPresented.toggle()
                     }, label: {
-                        ExperienceCard(experienceCategory: experience)
+                        ExperienceCard(experience: experience)
                     }).fullScreenCover(isPresented: $isPresented){
-                        ExperienceDetails(experiences: Experience.init(author: experience.author, price: experience.price, category: experience.category, title: experience.title, description: experience.description, rate: experience.rate, location: experience.location))
+                        ExperienceDetails(experience: Experience.init(author: experience.author, price: experience.price, category: experience.category, title: experience.title, description: experience.description, rate: experience.rate, location: experience.location))
                     }
                 }
             }

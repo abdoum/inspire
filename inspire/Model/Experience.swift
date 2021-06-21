@@ -22,7 +22,7 @@ struct Experience : Identifiable {
     var reviews : [Review] = []
     var rate: String
     var averageRate : Double {
-        Double(reviews.compactMap({$0.rate}).reduce(0, +) / reviews.count)
+        Double(reviews.compactMap({$0.rate}).reduce(0, +) / reviews.count).rounded()
     }
     var isFavorite : Bool = false
     var location: CLLocationCoordinate2D
@@ -31,17 +31,16 @@ struct Experience : Identifiable {
 
 class SharedExperiences: ObservableObject {
     @Published var experiences = MOCK_EXPERIENCES
-//    @Published var filteredExperiences : [Experience] = []
     
     func search(searchText: String) -> [Experience] {
-        let selectedTags = ExperienceCategory(name: "any", image: "boulanger").selectedTags.map({$0.text})
+        let selectedTags = ExperienceCategory(name: "any", image: "boulanger", specialisation: "").selectedTags.map({$0.text})
         let searchText = searchText.trimmingCharacters(in: .whitespaces)
         var results : [Optional<Experience>] = experiences.filter(
             { searchText.isEmpty ? true :
                 $0.title.contains(searchText)
                 || $0.description.contains(searchText)
                 || $0.category.name.contains(searchText)
-                || $0.category.specialisations.contains(searchText)
+                || $0.category.specialisation.contains(searchText)
                 
             })
         
@@ -52,18 +51,15 @@ class SharedExperiences: ObservableObject {
                     $0.title.contains(tag)
                     || $0.description.contains(tag)
                     || $0.category.name.contains(tag)
-                    || $0.category.specialisations.contains(tag)
+                    || $0.category.specialisation.contains(tag)
                 })
                     results += tagSearchResults
-//                filteredExperiences = results.compactMap({$0})
             }
         }
        
         if  (!results.isEmpty) {
-//            filteredExperiences = results.compactMap({$0})
             return results.compactMap({$0})
         }else{
-//            filteredExperiences = []
             return []
         }
     }

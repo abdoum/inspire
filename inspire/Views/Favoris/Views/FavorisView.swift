@@ -11,7 +11,7 @@ struct FavorisView: View {
     let categoryArray: [String] = [
         "Artisanat", "Cuisine", "Informatique", "Ostéopathe"
     ]
-    @EnvironmentObject var experiences: SharedExperiences
+    @EnvironmentObject var sharedExperiences: SharedExperiences
     @State var searchText = ""
     @State var inSearchmode = false
     @State private var tag = FilterTagModel(text: "", isSelected: false)
@@ -36,7 +36,7 @@ struct FavorisView: View {
                         
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack {
-                                ForEach(experiences.experiences, id: \.id) { experience in
+                                ForEach(sharedExperiences.experiences) { experience in
                                     ExperienceCard(experience: experience)
                                         .padding(.leading).padding(.top, 6)
                                 }
@@ -51,7 +51,7 @@ struct FavorisView: View {
                         }
                         ScrollView (.horizontal, showsIndicators: false)  {
                             HStack {
-                                ForEach(experiences.experiences, id: \.id) { experience in
+                                ForEach(sharedExperiences.experiences) { experience in
                                     Image(experience.category.image)
                                         .resizable()
                                         .scaledToFill()
@@ -71,7 +71,7 @@ struct FavorisView: View {
                         
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack {
-                                ForEach(experiences.experiences, id: \.id) { experience in
+                                ForEach(sharedExperiences.experiences) { experience in
                                     ExperienceCard(experience: experience)
                                         .padding(.leading).padding(.top, 6)
                                 }
@@ -98,5 +98,6 @@ struct FavorisView: View {
 struct FavorisView_Previews: PreviewProvider {
     static var previews: some View {
         FavorisView()
+            .environmentObject(SharedExperiences())
     }
 }
