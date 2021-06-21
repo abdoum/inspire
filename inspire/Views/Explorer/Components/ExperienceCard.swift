@@ -58,7 +58,7 @@ struct ExperienceCard: View {
                 .frame(width: 180)
             
             HStack(alignment: .top) {
-                PriceView(price: experienceCategory.price, color: .black)
+                PriceView(price: Double(experienceCategory.price), color: .black)
                 Spacer()
                 Image(systemName: "video")
                     .resizable()

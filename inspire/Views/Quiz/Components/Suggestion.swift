@@ -30,7 +30,7 @@ struct Suggestion: View {
                     .padding(.vertical, 2)
 //                DurationLine(duration: experience.duration, color: .white)
                     .padding(.vertical, 2)
-                PriceView(price: experience.price, color: .white)
+                PriceView(price: Double(experience.price), color: .white)
                     .padding(.vertical, 2)
                 NavigationLink(destination:
                                 // TODO: implement navigation to a specific experience

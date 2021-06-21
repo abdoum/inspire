@@ -20,9 +20,9 @@ struct ExperienceList: View {
                         isPresented.toggle()
                     }, label: {
                         ExperienceCard(experienceCategory: experience)
-                    }).fullScreenCover(isPresented: $isPresented, content: {
-                        ExperienceDetails(experiences: Experience.init(author: experience.author, price: experience.price, category: experience.category, title: experience.title, description: experience.description, rate: experience.rate))
-                    })
+                    }).fullScreenCover(isPresented: $isPresented){
+                        ExperienceDetails(experiences: Experience.init(author: experience.author, price: experience.price, category: experience.category, title: experience.title, description: experience.description, rate: experience.rate, location: experience.location))
+                    }
                 }
             }
         }

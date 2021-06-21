@@ -74,7 +74,7 @@ struct ExplorerView: View {
                                     ExperienceList(experiences: MOCK_EXPERIENCES)
                                 }
                             } else {
-                                MapView()
+//                                MapView()
                             }
                             Divider().padding(.top)
                         }
