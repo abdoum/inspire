@@ -14,15 +14,14 @@
 import SwiftUI
 
 struct FilterTag {
-    let text : String
+    var text : String
     var isSelected : Bool
 }
 
 var exempleTag = FilterTag(text: "En visio", isSelected: false)
 
-struct CategoryFilter: View {
-    @State private var tag : FilterTag = exempleTag
-    
+struct CategoryFilters: View {
+    @Binding var tag : FilterTag
     
     var body: some View {
         HStack {

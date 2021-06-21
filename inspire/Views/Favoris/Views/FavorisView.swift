@@ -12,6 +12,9 @@ struct FavorisView: View {
         "Artisanat", "Cuisine", "Informatique", "Ostéopathe"
     ]
     let experienceCategory: ExperienceCategory
+    @State var searchText = ""
+    @State var inSearchmode = false
+    @State private var tag = FilterTag(text: "", isSelected: false)
     
     var body: some View {
         
@@ -20,7 +23,7 @@ struct FavorisView: View {
                 ScrollView {
                     VStack (alignment: .leading) {
                         VStack  (alignment: .leading) {
-                            SearchView()
+                            SearchView(searchText: $searchText, inSearchmode: $inSearchmode)
                                 .padding()
                         }
                         HStack {
@@ -64,7 +67,7 @@ struct FavorisView: View {
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack {
                                 ForEach(categoryArray, id: \.self) { _ in
-                                    CategoryFilter()
+                                    CategoryFilters(tag: $tag)
                                         .padding(.leading).padding(.top, 6)
                                 }
                             }
