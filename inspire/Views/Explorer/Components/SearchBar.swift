@@ -18,13 +18,6 @@ struct SearchBar: View {
                 .padding(.horizontal, 24)
                 .background(Color(.systemGray6))
                 .cornerRadius(8)
-                .overlay(
-                    HStack {
-                        Image(systemName: "magnifiyingglass")
-                            .foregroundColor(.gray)
-                            .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/,  maxWidth: .infinity, alignment: .leading)
-                    }
-                )
             
             Button(action: {
                 isEditing = false

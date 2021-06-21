@@ -8,6 +8,30 @@
 import SwiftUI
 
 struct ExperienceContact: View {
+    
+    func buttonContact(image: String, label: String) -> some View {
+        Button(action: {}) {
+            ZStack {
+                RoundedRectangle(cornerRadius: 20)
+                    .frame(width: 165.0, height: 80.0)
+                    .foregroundColor(.black)
+                    .opacity(0.2)
+                VStack {
+                    Image(systemName: image)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 18.0, height: 18.0)
+                        .foregroundColor(.black)
+                    Spacer()
+                        .frame(height: 10)
+                    Text(label)
+                        .foregroundColor(.black)
+                }
+            }
+        }
+    }
+    let language: String
+    
     var body: some View {
         VStack {
             HStack {
@@ -15,74 +39,24 @@ struct ExperienceContact: View {
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 30.0, height: 30.0)
-                Text("Langue(s) : ")
-                Text("Langue 1")
-                //           Text(" & ")
-                //          Text("Langue 2")
+                Text("Langue(s) : \(language)")
                 Spacer()
             }
-            .font(/*@START_MENU_TOKEN@*/.subheadline/*@END_MENU_TOKEN@*/)
+            .font(.subheadline)
             
             Divider()
             
             HStack {
-                ZStack {
-                    RoundedRectangle(cornerRadius: 20)
-                        .frame(width: 165.0, height: 80.0)
-                        .foregroundColor(.black)
-                        .opacity(0.2)
-                    VStack {
-                        Button(action: {}) {
-                            Image(systemName: "envelope")
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: 18.0, height: 18.0)
-                                .foregroundColor(.black)
-                        }
-                        Spacer()
-                            .frame(height: 10)
-                        Text("Contacter")
-                        Text(" FirstName  Name")
-                    }
-                }
-                
-                Spacer()
-                
-                ZStack {
-                    RoundedRectangle(cornerRadius: 20)
-                        .frame(width: 165.0, height: 80.0)
-                        .foregroundColor(.black)
-                        .opacity(0.2)
-                    VStack {
-                        Button(action: {}) {
-                            Image(systemName: "checkmark.shield")
-                                .resizable()
-                                .frame(width: 20.0, height: 20.0)
-                                .aspectRatio(contentMode: .fill)
-                                .foregroundColor(.black)
-                        }
-                        Spacer()
-                            .frame(height: 10)
-                        Text("Confidentialité")
-                        Text("  et Sécurité")
-                    }
-                    
-                }
+                buttonContact(image: "envelope", label: "Me contacter")
+                Spacer(minLength: 1)
+                buttonContact(image: "checkmark.shield", label: "Confidentialité \n   et Sécurité")
             }
-            .font(/*@START_MENU_TOKEN@*/.subheadline/*@END_MENU_TOKEN@*/)
-            
         }
-        
-        
-        
-        
-        
-        
     }
 }
 
 struct ExperienceContact_Previews: PreviewProvider {
     static var previews: some View {
-        ExperienceContact()
+        ExperienceContact(language: "TEST")
     }
 }

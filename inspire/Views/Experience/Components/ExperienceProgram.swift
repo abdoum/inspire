@@ -100,6 +100,8 @@ struct ExperienceProgram: View {
                 }
             }
         }
+        .padding(.trailing)
+        .padding(.leading)
     }
     
 }
@@ -112,7 +114,6 @@ struct ExperienceProgram_Previews: PreviewProvider {
             
             
         }
-        .padding()
     }
 }
 

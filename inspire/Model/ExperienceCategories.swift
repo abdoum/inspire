@@ -11,7 +11,7 @@ struct ExperienceCategory: Hashable , Identifiable {
     let id = UUID()
     let name : String
     let image : String
-    var specialisations : [String] = []
+    var specialisations: String
     var mainCategoriesTags : [FilterTagModel] {
         var tags = Array<FilterTagModel>()
         for category in experiencesCategories {
@@ -26,12 +26,15 @@ struct ExperienceCategory: Hashable , Identifiable {
 
 var experiencesCategories : [ExperienceCategory] =
     [
-        ExperienceCategory(name: "Technologie", image: "ingenierie", specialisations: ["Linemen", "Sheet Metal Worker", "Pipefitter", "Stucco Mason", "Terrazzo"]),
-        ExperienceCategory(name: "Intérêt Général", image: "boulanger", specialisations: ["Plasterers", "Sheet Metal Worker", "Terrazzo", "Electrician", "Sheet Metal Worker"]),
-        ExperienceCategory(name: "Travaux", image: "coiffeur", specialisations: ["Charpentier", "Plombier", "Peintre", "Carreleur", "Ouvrier polyvalent"]),
-        ExperienceCategory(name: "Science", image: "hotellerie", specialisations: ["Technicien de laboratoire", "Infirmier", "Aide soignante"]),
-        ExperienceCategory(name: "Transport", image: "bricolage", specialisations: ["Brickmason", "Plasterers", "Carpenter", "Carpenter", "Plasterers"]),
-        ExperienceCategory(name: "Alimentaire", image: "chocolatier_confiseur", specialisations: ["Restauration", "Pâtissierie", "Boulangerie"])
-    ]
+        ExperienceCategory(name: "Ingénieur", image: "ingenierie", specialisations: "Ingénieur"),
+        ExperienceCategory(name: "Boulanger", image: "boulanger", specialisations: "Boulanger"),
+        ExperienceCategory(name: "Fleuriste", image: "fleuriste", specialisations: "Fleuriste"),
+        ExperienceCategory(name: "Hôtellerie", image: "hotellerie", specialisations: "Hôtesse d'Accueil"),
+        ExperienceCategory(name: "Coiffeur", image: "coiffeur", specialisations: "Coiffeur"),
+        ExperienceCategory(name: "Vétérinaire", image: "veterinaire", specialisations: "Vétérinaire"),
+        ExperienceCategory(name: "Art", image: "artistique", specialisations: "Peintre"),
+        ExperienceCategory(name: "Architecte", image: "architecture", specialisations: "Architecte"),
+        ExperienceCategory(name: "Pompier", image: "pompiers", specialisations: "Sapeur Pompier"),
+        ExperienceCategory(name: "Photographe", image: "photographie", specialisations: "Photographe")
 
 

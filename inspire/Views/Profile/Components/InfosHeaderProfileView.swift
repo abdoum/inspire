@@ -15,23 +15,39 @@ struct InfosHeaderProfileView: View {
     let isPro: Bool
     
     var body: some View {
-        HStack {
-            ImageProfile(withURL: imageName)
-                .padding(.leading)
-            Spacer()
-            VStack (alignment: .leading){
-                Text(fullName)
-                    .font(.title)
-                    .bold()
-                if isPro {
-                    Text(job)
-                        .font(.subheadline)
-                        .padding(.top, 1)
-                    RatingLine(averageRating: 4.89, commentsCount: 328, color: .customPrimary)
-                        .padding(.top, 10)
+        if isPro {
+            VStack {
+                HStack {
+                    ImageProfileView(imageName: imageName)
+                        .padding(.leading)
+                    Spacer()
+                    VStack (alignment: .leading){
+                        Text(fullName)
+                            .font(.title)
+                            .bold()
+                        
+                        Text(job)
+                            .font(.subheadline)
+                            .padding(.top, 1)
+                        RatingLine(averageRating: 4.89, commentsCount: 328, color: .customPrimary)
+                            .padding(.top, 10)
+                    }
+                }
+                LoginButton(label: "Créer une expérience", action: {
+                    //add some code...
+                })
+            }
+        } else {
+            HStack {
+                ImageProfile(withURL: imageName)
+                    .padding(.leading)
+                Spacer()
+                VStack (alignment: .leading){
+                    Text(fullName)
+                        .font(.title)
+                        .bold()
                 }
             }
-            .offset(x: -40)
         }
     }
 }
@@ -40,7 +56,7 @@ struct InfosHeaderProfileView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             InfosHeaderProfileView(imageName: "maria_lopez", fullName: "Maria Lopez", job: "Serveuse", isPro: true)
-            InfosHeaderProfileView(imageName: "maria_lopez", fullName: "Maria Lopez", job: "Serveuse", isPro: false)
+            InfosHeaderProfileView(imageName: "https://i.pravatar.cc/100?img=20", fullName: "Maria Lopez", job: "Serveuse", isPro: false)
         }
     }
 }

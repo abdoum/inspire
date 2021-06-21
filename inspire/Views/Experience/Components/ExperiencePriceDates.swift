@@ -8,68 +8,59 @@
 import SwiftUI
 
 struct ExperiencePriceDates: View {
+    
+    let experiences: Experience
+    
     var body: some View {
         VStack {
             ZStack {
                 Rectangle()
                     .foregroundColor(.black)
                     .opacity(0.6)
-                    .frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
-                
+                    .frame(height: 100)
                 VStack {
-                    
                     HStack {
                         VStack {
-                            Text("Price €")
+                            Text("\(experiences.price.description) €")
                                 .font(.title)
                                 .fontWeight(.bold)
                                 .foregroundColor(.white)
                                 .opacity(1)
-                            
-                            
                             Text("par personne")
                                 .foregroundColor(.white)
                                 .opacity(0.5)
-                            
                         }
                         .padding()
                         Spacer()
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 8)
-                                .frame(width: 200.0, height: 60.0)
-                                .foregroundColor(.white)
-                                .padding()
-                            HStack {
-                                Button(action: {}) {
+                        Button(action: {
+                            //Giovanni's VIEW...
+                        }) {
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 8)
+                                    .frame(width: 200.0, height: 60.0)
+                                    .foregroundColor(.white)
+                                    .padding()
+                                HStack {
                                     Image(systemName: "calendar")
                                         .foregroundColor(.black)
                                         .opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
-
+                                    Text("Voir les dates \n  disponibles")
+                                        .foregroundColor(.black)
+                                    
                                 }
-                                Text("Voir les dates")
-                                
                             }
-                            .padding()
-                            
                         }
-                        
                     }
+                    .padding()
                 }
-                
             }
         }
-        .padding(.bottom)
-        
-        
-        
-        
-        
-        
+        .padding()
     }
 }
 
 struct ExperiencePriceDates_Previews: PreviewProvider {
     static var previews: some View {
-        ExperiencePriceDates()
+        ExperiencePriceDates(experiences: MOCK_EXPERIENCES[0])
     }
 }

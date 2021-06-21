@@ -13,14 +13,22 @@ struct MasterView: View {
     
     var body: some View {
         TabView {
-            ExplorerView(showMap: .constant(false), showQuiz: $showQuiz )
-                .tabItem { Image(systemName: "house") }
-            FavorisView()
-                .tabItem { Image(systemName: "heart") }
-            UserHistoryView()
-                .tabItem { Image(systemName: "latch.2.case") }
+            ExplorerView(experiences: experiencesCategories[0], experience: MOCK_EXPERIENCES, showQuiz: $showQuiz)
+                .tabItem { Image(systemName: "house")
+                    Text("Accueil")
+                }
+            FavorisView(experienceCategory: experiencesCategories[0])
+                .tabItem { Image(systemName: "heart")
+                    Text("Favoris")
+                }
+            UserHistoryView(experienceCategory: MOCK_EXPERIENCES[0])
+                .tabItem { Image(systemName: "latch.2.case")
+                    Text("Expériences")
+                }
             MasterLogin()
-                .tabItem { Image(systemName: "person") }
+                .tabItem { Image(systemName: "person")
+                    Text("Profile")
+                }
         }
     }
 }

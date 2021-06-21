@@ -12,8 +12,8 @@ struct PasswordTextFieldView: View {
     
     var body: some View {
         VStack {
-            Text("Mot de passe")
             SecureField("Mot de passe", text: $password)
+                .cornerRadius(8)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .autocapitalization(.none)
                 .disableAutocorrection(true)

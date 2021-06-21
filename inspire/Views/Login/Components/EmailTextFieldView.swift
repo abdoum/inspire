@@ -14,7 +14,6 @@ struct EmailTextFieldView: View {
     var body: some View {
         HStack {
             VStack {
-                Text("Adresse Email")
             TextField("Email", text: $email) { changed in
                 print(changed)
             } onCommit: {
@@ -22,6 +21,7 @@ struct EmailTextFieldView: View {
             }.onChange(of: email, perform: { value in
                 isValidate = isValidEmail(email)
             })
+            .cornerRadius(8)
             .textFieldStyle(RoundedBorderTextFieldStyle())
             .autocapitalization(.none)
             .disableAutocorrection(true)
@@ -40,9 +40,9 @@ struct EmailTextFieldView: View {
     }
     
     func isValidEmail(_ email: String) -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let regex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         
-        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", regex)
         return emailPred.evaluate(with: email)
     }
 }
