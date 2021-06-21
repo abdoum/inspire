@@ -13,11 +13,11 @@ struct MasterView: View {
     
     var body: some View {
         TabView {
-            ExplorerView(experiences: experiencesCategories[0], experience: MOCK_EXPERIENCES, showQuiz: $showQuiz)
+            ExplorerView(showQuiz: $showQuiz)
                 .tabItem { Image(systemName: "house")
                     Text("Accueil")
                 }
-            FavorisView(experienceCategory: experiencesCategories[0])
+            FavorisView()
                 .tabItem { Image(systemName: "heart")
                     Text("Favoris")
                 }

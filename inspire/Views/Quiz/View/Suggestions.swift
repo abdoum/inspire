@@ -21,7 +21,7 @@ struct Suggestions: View {
                 HStack {
                     ForEach(experiences, id:\.id) {experience in
                         NavigationLink(
-                            destination: ExperienceDetails()
+                            destination: ExperienceDetails(experience: sharedExperiences.experiences[2])
                                 .navigationBarBackButtonHidden(true)
                                 .navigationBarHidden(true),
                             label: {

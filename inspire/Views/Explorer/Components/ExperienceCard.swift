@@ -10,76 +10,76 @@ import SwiftUI
 struct ExperienceCard: View {
     
     @State var isFavorite: Bool = false
-    let experienceCategory: Experience
-
+    let experience: Experience
+    
     var body: some View {
-        VStack {
-            ZStack {
-                Image(experienceCategory.category.image)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 180, height: 220)
-                    .clipShape(RoundedCorners(tl: 20, tr: 20, bl: 0, br: 0))
-                VStack{
+        NavigationLink(destination: ExperienceDetails(experience: experience)) {
+            VStack {
+                ZStack {
+                    Image(experience.category.image)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 180, height: 150)
+                        .clipShape(RoundedCorners(tl: 20, tr: 20, bl: 0, br: 0))
+                    VStack{
+                        Spacer()
+                    }
+                    .frame(width: 160, height: 150)
+                    
+                }
+                HStack(alignment: .center) {
+                    Image(systemName: "star.fill")
+                        .foregroundColor(.black)
+                        .opacity(0.8)
+                    Text("\(experience.averageRate, specifier: "%.1f")")
+                        .fontWeight(.bold)
+                        .foregroundColor(.black)
+                        .opacity(0.8)
+                    Text("(\(experience.reviews.compactMap({$0.comment}).count))")
+                        .foregroundColor(Color.gray)
+                        .underline()
+                    Spacer()
+                    Text("Paris")
+                        .foregroundColor(Color.gray)
+                }
+                .font(.subheadline)
+                .frame(width: 160, height: 20)
+                HStack {
+                    Text(experience.category.specialisation)
+                        .fontWeight(.thin)
+                        .foregroundColor(Color.black)
+                        .opacity(0.8)
+                        .multilineTextAlignment(.leading)
                     Spacer()
                 }
-                .frame(width: 160, height: 220)
+                .padding([.top, .bottom, .trailing])
+                .frame(width: 160, height: 20)
                 
+                Divider()
+                    .frame(width: 180)
+                
+                HStack(alignment: .top) {
+                    PriceView(price: experience.price, color: .customPrimary)
+                    Spacer()
+                    Image(systemName: "video")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 16, height: 16)
+                        .foregroundColor(.customSecondary)
+                }
+                
+                .frame(width: 140, height: 20)
+                .padding(.bottom)
             }
-            HStack(alignment: .center) {
-                Image(systemName: "star.fill")
-                    .foregroundColor(.black)
-                    .opacity(0.8)
-                Text(experienceCategory.rate)
-                    .fontWeight(.bold)
-                    .foregroundColor(.black)
-                    .opacity(0.8)
-                Text("(49)")
-                    .foregroundColor(Color.gray)
-                    .underline()
-                Spacer()
-                Text("Paris")
-                    .foregroundColor(Color.gray)
-            }
-            .font(.subheadline)
-            .frame(width: 160, height: 20)
-            HStack {
-                Text(experienceCategory.category.name)
-                    .font(.title3)
-                    .foregroundColor(Color.black)
-                    .opacity(0.8)
-                    .multilineTextAlignment(.leading)
-                Spacer()
-            }
-            .padding([.top, .bottom, .trailing])
-            .frame(width: 160, height: 20)
-            
-            Divider()
-                .frame(width: 180)
-            
-            HStack(alignment: .top) {
-                PriceView(price: Double(experienceCategory.price), color: .black)
-                Spacer()
-                Image(systemName: "video")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 20.0, height: 20.0)
-                    .foregroundColor(.gray)
-            }
-            .frame(width: 140, height: 20)
-            .font(.body)
-            .multilineTextAlignment(.leading)
-            .padding(.bottom)
-            
-        }
-        .overlay(RoundedRectangle(cornerRadius: 20)
-                    .stroke(Color.gray, lineWidth: 2))
+            .overlay(RoundedRectangle(cornerRadius: 20)
+                        .stroke(Color.customSecondaryLight, lineWidth: 2))
+        }.navigationBarHidden(true)
     }
 }
 
 struct ExperienceCard_Previews: PreviewProvider {
     static var previews: some View {
-        ExperienceCard(experienceCategory: MOCK_EXPERIENCES[0])
+        ExperienceCard(experience: MOCK_EXPERIENCES[0])
     }
 }
 

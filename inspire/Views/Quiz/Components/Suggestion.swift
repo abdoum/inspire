@@ -29,7 +29,7 @@ struct Suggestion: View {
                         .fixedSize(horizontal: false, vertical: true)
                     RatingLine(averageRating: experience.averageRate, commentsCount: 328, color: .white)
                         .padding(.vertical, 2)
-                    DurationLine(duration: experience.duration, color: .white)
+//                    DurationLine(duration: experience, color: .white)
                         .padding(.vertical, 2)
                     PriceView(price: experience.price, color: .white)
                         .padding(.vertical, 2)

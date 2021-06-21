@@ -110,7 +110,7 @@
 		13DCA7CD26737320000F3E76 /* Profile.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Profile.xcassets; sourceTree = "<group>"; };
 		13F18E942678F4660095B184 /* InfosProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfosProfileView.swift; sourceTree = "<group>"; };
 		13F18E962678F5780095B184 /* DescriptionProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionProfileView.swift; sourceTree = "<group>"; };
-		2128AA532680717300ABFCAD /* FilterTagModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FilterTagModel.swift; path = inspire/Model/FilterTagModel.swift; sourceTree = "<group>"; };
+		2128AA532680717300ABFCAD /* FilterTagModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTagModel.swift; sourceTree = "<group>"; };
 		21B6EBF6267C907500EC2F9E /* MasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MasterView.swift; path = Views/Quiz/View/MasterView.swift; sourceTree = "<group>"; };
 		21B6EBFC267C929600EC2F9E /* FavorisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavorisView.swift; sourceTree = "<group>"; };
 		21B6EBFF267C932E00EC2F9E /* PriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceView.swift; sourceTree = "<group>"; };
@@ -358,6 +358,7 @@
 			children = (
 				2BE1E87326777DA100E4C55D /* ExperienceCategories.swift */,
 				2BE1E881267782DC00E4C55D /* Experience.swift */,
+				2128AA532680717300ABFCAD /* FilterTagModel.swift */,
 				2BE1E8842677866900E4C55D /* Review.swift */,
 				2BE1E887267786C700E4C55D /* User.swift */,
 				2BE1E89026778A9300E4C55D /* Session.swift */,
@@ -487,7 +488,6 @@
 		2BED7522267258D300C49853 = {
 			isa = PBXGroup;
 			children = (
-				2128AA532680717300ABFCAD /* FilterTagModel.swift */,
 				2BED752D267258D300C49853 /* inspire */,
 				2BED752C267258D300C49853 /* Products */,
 			);
@@ -642,7 +642,6 @@
 				383D1F0F267A029C0079823A /* ExperiencePriceDates.swift in Sources */,
 				13CCEBF726807B1B002E7DD1 /* ExpFavList.swift in Sources */,
 				2BE1E88E267789E300E4C55D /* Address.swift in Sources */,
-				38B042BD267B23E800A0765D /* EssaiExp.swift in Sources */,
 				2128AA542680717300ABFCAD /* FilterTagModel.swift in Sources */,
 				2B90CC562677D4D000B5EC2E /* StepTwo.swift in Sources */,
 				2BE1E882267782DC00E4C55D /* Experience.swift in Sources */,
