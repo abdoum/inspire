@@ -38,16 +38,16 @@ struct ExplorerView: View {
                             VStack  (alignment: .leading) {
                                 SearchView(searchText: $searchText, inSearchmode: $inSearchmode)
                                     .padding(.trailing).padding(.leading)
-                                ScrollView(.horizontal, showsIndicators: false) {
-                                    HStack {
-                                        ForEach(categoryArray, id: \.self) { _ in
-                                            CategoryFilter()
-                                                .padding(.leading).padding(.top, 6)
-                                        }
-                                    }
-                                }
-                                CategoryFilter()
-                                    .padding(.leading).padding(.top, 5)
+                                //                                ScrollView(.horizontal, showsIndicators: false) {
+                                //                                    HStack {
+                                //                                        ForEach(categoryArray, id: \.self) { _ in
+                                //                                            CategoryFilters(tag: )
+                                //                                                .padding(.leading).padding(.top, 6)
+                                //                                        }
+                                //                                    }
+                                //                                }
+                                //                                CategoryFilters()
+                                //                                    .padding(.leading).padding(.top, 5)
                                 Divider()
                                 SegmentedControlView(selectorIndex: $selectedCategory)
                                 Divider()
@@ -76,67 +76,31 @@ struct ExplorerView: View {
                             } else {
                                 MapView()
                             }
-//                                ScrollView(.horizontal, showsIndicators: false) {
-//                                    HStack {
-//                                        ForEach(mainCategories, id: \.self) { tag in
-//                                            CategoryFilters(tag: mainCategories[tag])
-//                                                .padding(.leading).padding(.top, 6)
-//                                        }
-//                                    }
-//                                }
-                                //                                CategoryFilters()
-                                //                                    .padding(.leading).padding(.top, 5)
-                                Divider().padding(.top)
-                            }
-                            HStack {
-                                SectionTitle(content: "Les plus réservées")
-                                    .font(.title3).padding(.leading)
-                                Spacer()
-                                SeeMoreButton()
-                                    .padding(.trailing)
-                            }
-                            
-                            Text("is editing: \(String(inSearchmode))")
-                            ScrollView(.horizontal, showsIndicators: false) {
-                                HStack {
-                                    let searchResults = search(searchText: searchText)
-                                    if searchResults.isEmpty && inSearchmode {
-                                        Text("aucun résultat disponible pour \(searchText)")
-                                    }
-                                    else if !searchResults.isEmpty && inSearchmode {
-                                        ForEach(searchResults, id: \.self) { result in
-                                            ExperienceCard(experienceCategory: result ?? experiencesCategories[0])
-                                                .padding(.leading).padding(.top, 6)
-                                        }
-                                    }
-                                    else if !inSearchmode {
-                                        ForEach(experiencesCategories, id: \.self) { experience in
-                                            ExperienceCard(experienceCategory: experience)
-                                                .padding(.leading).padding(.top, 6)
-                                        }
-                                    }
-                                }
-                            }.padding()
-                            
-                            HStack {
-                                SectionTitle(content: "Nouveautés de la semaine")
-                                    .font(.title3).padding(.leading)
-                                Spacer()
-                                SeeMoreButton()
-                                    .padding(.trailing)
-                            }
-                            
-                            ScrollView(.horizontal, showsIndicators: false) {
-                                HStack {
-                                    ForEach(experiencesCategories, id: \.self) { _ in
-                                        ExperienceCard(experienceCategory: experiencesCategories[0])
-                                            .padding(.leading).padding(.top, 6)
-                                    }
-                                }
-                            }.padding()
+                            Divider().padding(.top)
                         }
+                        
+                        //                        Text("is editing: \(String(inSearchmode))")
+                        //                        ScrollView(.horizontal, showsIndicators: false) {
+                        //                            HStack {
+                        //                                let searchResults = search(searchText: searchText)
+                        //                                if searchResults.isEmpty && inSearchmode {
+                        //                                    Text("aucun résultat disponible pour \(searchText)")
+                        //                                }
+                        //                                else if !searchResults.isEmpty && inSearchmode {
+                        //                                    ForEach(searchResults, id: \.self) { result in
+                        //                                        ExperienceCard(experienceCategory: result ?? experiencesCategories[0])
+                        //                                            .padding(.leading).padding(.top, 6)
+                        //                                    }
+                        //                                }
+                        //                                else if !inSearchmode {
+                        //                                    ForEach(experiencesCategories, id: \.self) { experience in
+                        //                                        ExperienceCard(experienceCategory: experience)
+                        //                                            .padding(.leading).padding(.top, 6)
+                        //                                    }
+                        //                                }
+                        //                            }
+                        //                        }.padding()
                     }
-                    MapButton(showMap: false).offset(y: -30)
                 }
             }
         }

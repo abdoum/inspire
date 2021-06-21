@@ -44,7 +44,7 @@ struct ExperiencePriceDates: View {
                                     Image(systemName: "calendar")
                                         .foregroundColor(.black)
                                         .opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
-                                    Text("Voir les dates")
+                                    Text("Voir les dates \n  disponibles")
                                         .foregroundColor(.black)
                                     
                                 }

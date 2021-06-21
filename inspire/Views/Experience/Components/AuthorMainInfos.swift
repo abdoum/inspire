@@ -47,12 +47,6 @@ struct AuthorMainInfos: View {
                     HStack {
                         Text(specialisation)
                         Spacer()
-                        Button(action: {}) {
-                            Image(systemName: "heart")
-                                .foregroundColor(.black)
-                                .opacity(0.8)
-                                .font(.system(size: 30))
-                        }
                     }.frame(width: 260)
                     .padding(.top)
                 }.padding(.leading)

@@ -26,52 +26,6 @@ struct FavorisView: View {
                             SearchView(searchText: $searchText, inSearchmode: $inSearchmode)
                                 .padding()
                         }
-                        HStack {
-                            SectionTitle(content: "Mes listes")
-                                .font(.title3).padding(.leading).padding()
-                            Spacer()
-                            SeeMoreButton()
-                                .padding(.trailing)
-                        }
-                        //add files
-                        
-                        HStack {
-                            SectionTitle(content: "Mes catégories")
-                                .font(.title3).padding(.leading).padding()
-                            Spacer()
-                            SeeMoreButton().padding(.trailing)
-                        }
-                        
-                        //only images...
-                        ScrollView (.horizontal, showsIndicators: false)  {
-                            HStack {
-                                ForEach(experiencesCategories, id: \.self) { _ in
-                                    Image(experienceCategory.image)
-                                        .resizable()
-                                        .scaledToFill()
-                                        .frame(width: 180, height: 220)
-                                        .cornerRadius(25)
-                                        .padding(.leading)
-                                }
-                            }
-                        }
-                        HStack {
-                            SectionTitle(content: "Derniers ajouts")
-                                .font(.title3).padding(.leading).padding()
-                            Spacer()
-                            SeeMoreButton()
-                                .padding(.trailing)
-                        }
-                        
-                        SectionTitle(content: "Mots-clés").font(.title3).padding(.leading).padding()
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack {
-                                ForEach(categoryArray, id: \.self) { _ in
-                                    CategoryFilters(tag: $tag)
-                                        .padding(.leading).padding(.top, 6)
-                                }
-                            }
-                        }
                     }
                 }
             }

@@ -12,12 +12,9 @@ struct MapView: View {
     
     @State private var searchText = ""
     @State private var inSearchmode = false
-    
-    @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 48.8013, longitude:  2.6076), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
     @State private var tag = FilterTag(text: "", isSelected: false)
-     var places: [Location] = [
-        Location(coordinate: CLLocationCoordinate2D(latitude: 48.8548, longitude:  2.6287))
-    ]
+    @StateObject var location: LocationHelper = LocationHelper(CLLocation(latitude: 48.9066, longitude: 2.4522))
+    var placeItems: Experience
     
     var body: some View {
         VStack  (alignment: .leading) {
@@ -35,9 +32,11 @@ struct MapView: View {
 //            CategoryFilters()
 //                .padding(.leading).padding(.top, 5)
             Divider().padding(.top)
-            Map(coordinateRegion: $region, annotationItems: places, annotationContent: { place in
-                MapPin(coordinate: place.coordinate)
-            }).frame(height: 590)
+//            Map(coordinateRegion: $location.coordinates, interactionModes: .all, showsUserLocation: true, userTrackingMode: .none, annotationItems: placeItems.location) { place in
+//                MapAnnotation(coordinate: place.placeItems.location, anchorPoint: CGPoint(x: 0.5, y: 0.5)) {
+//                    HomePageMapPin(experience: placeItems.price.description)
+//                }
+//            }
         }
     }
 }
@@ -48,6 +47,6 @@ struct Location: Identifiable {
 }
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
-        MapView()
+        MapView(placeItems: MOCK_EXPERIENCES[0])
     }
 }

@@ -11,13 +11,21 @@ struct MasterView: View {
     var body: some View {
         TabView {
             ExplorerView(experiences: experiencesCategories[0], experience: MOCK_EXPERIENCES)
-                .tabItem { Image(systemName: "house") }
+                .tabItem { Image(systemName: "house")
+                    Text("Accueil")
+                }
             FavorisView(experienceCategory: experiencesCategories[0])
-                .tabItem { Image(systemName: "heart") }
+                .tabItem { Image(systemName: "heart")
+                    Text("Favoris")
+                }
             UserHistoryView(experienceCategory: MOCK_EXPERIENCES[0])
-                .tabItem { Image(systemName: "latch.2.case") }
+                .tabItem { Image(systemName: "latch.2.case")
+                    Text("Expériences")
+                }
             MasterLogin()
-                .tabItem { Image(systemName: "person") }
+                .tabItem { Image(systemName: "person")
+                    Text("Profile")
+                }
         }
     }
 }

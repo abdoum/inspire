@@ -21,8 +21,8 @@ struct UserHistoryView: View {
                 ScrollView {
                     VStack (alignment: .leading) {
                         VStack  (alignment: .leading) {
-                            SearchView()
-                                .padding()
+//                            SearchView()
+//                                .padding()
                             UpComingExperiences()
                         }
                     }
@@ -31,7 +31,7 @@ struct UserHistoryView: View {
                     ThirdItem()
                 }
             }
-            .navigationTitle("Mes expériences")
+            .navigationBarTitle("Mes expériences", displayMode: .inline)
         }
     }
 }
