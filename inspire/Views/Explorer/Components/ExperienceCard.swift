@@ -67,6 +67,7 @@ struct ExperienceCard: View {
                         .frame(width: 16, height: 16)
                         .foregroundColor(.customSecondary)
                 }
+                .frame(width: 160, height: 220)
                 
                 .frame(width: width - 40, height: 20)
                 .padding(.bottom)

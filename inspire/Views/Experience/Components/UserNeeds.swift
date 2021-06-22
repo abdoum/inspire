@@ -14,28 +14,6 @@ struct UserNeeds: View {
         "Cet ouvrage, très populaire pendant la Renaissance, est un traité sur la théorie de l'éthique. Les premières lignes du Lorem Ipsum, -Lorem ipsum dolor sit amet...-, proviennent de la section 1.10.32.-, ",
         "On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même"]
     
-    @State private var isSelectedNeed: Bool = false
-    @State private var isSelectedNeed1: Bool = false
-    @State private var isSelectedNeed2: Bool = false
-    
-    func buttonSelected(items: [String], index: Int, color: Bool, action: @escaping () -> Void) -> some View {
-        Button(action: action) {
-            HStack {
-                Image(systemName:color ? "checkmark.circle" : "xmark.circle")
-                    .foregroundColor(color ? .green : .red)
-                    .opacity(0.5)
-                    .font(.system(size: 30))
-                Text(items[index])
-                Spacer()
-            }
-        }
-        .padding()
-        .overlay(
-            RoundedRectangle(cornerRadius: 16)
-                .stroke(Color.black, lineWidth: 2)
-                .opacity(0.3))
-    }
-    
     var body: some View {
         VStack {
             HStack {
@@ -45,15 +23,36 @@ struct UserNeeds: View {
                     .padding(.vertical)
                 Spacer()
             }
-            buttonSelected(items: items, index: 0, color: isSelectedNeed, action: {isSelectedNeed.toggle()})
-            buttonSelected(items: items, index: 1, color: isSelectedNeed1, action: {isSelectedNeed1.toggle()})
-            buttonSelected(items: items, index: 2, color: isSelectedNeed2, action: {isSelectedNeed2.toggle()})
+            ForEach(items, id: \.self) {
+                ButtonSelected(description: $0)
+            }
         }
         .padding()
     }
 }
 
-
+struct ButtonSelected: View {
+    let description: String
+    @State var isSelected: Bool = false
+    var body: some View {
+        Button(action: {isSelected.toggle()}) {
+            HStack {
+                Image(systemName: isSelected ? "checkmark.circle" : "xmark.circle")
+                    .foregroundColor(isSelected ? .green : .red)
+                    .opacity(0.5)
+                    .font(.system(size: 30))
+                Text(description)
+                    .foregroundColor(.black)
+                Spacer()
+            }
+        }
+        .padding()
+        .overlay(
+            RoundedRectangle(cornerRadius: 16)
+                .stroke(Color.black, lineWidth: 2)
+                .opacity(0.3))
+    }
+}
 
 struct UserNeeds_Previews: PreviewProvider {
     static var previews: some View {

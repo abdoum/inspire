@@ -32,6 +32,6 @@ struct UserHistoryList: View {
 
 struct UserHistoryList_Previews: PreviewProvider {
     static var previews: some View {
-        UserHistoryList(experiences: MOCK_EXPERIENCES)
+        UserHistoryList(experiences: MOCK_EXPERIENCES).environmentObject(FavorisManager())
     }
 }

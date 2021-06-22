@@ -12,55 +12,50 @@ struct ExperiencePriceDates: View {
     let experiences: Experience
     
     var body: some View {
-        VStack {
-            ZStack {
-                Rectangle()
-                    .foregroundColor(.black)
-                    .opacity(0.6)
-                    .frame(height: 100)
-                VStack {
-                    HStack {
-                        VStack {
-                            Text("\(experiences.price.description) €")
-                                .font(.title)
-                                .fontWeight(.bold)
-                                .foregroundColor(.white)
-                                .opacity(1)
-                            Text("par personne")
-                                .foregroundColor(.white)
-                                .opacity(0.5)
-                        }
+        HStack {
+            VStack {
+                Text("\(experiences.price.description) €")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                    .opacity(1)
+                Text("par personne")
+                    .foregroundColor(.white)
+                    .opacity(0.5)
+            }
+            Spacer()
+            Button(action: {
+            }) {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 8)
+                        .frame(width: 200.0, height: 60.0)
+                        .foregroundColor(.white)
                         .padding()
-                        Spacer()
-                        Button(action: {
-                            //Giovanni's VIEW...
-                        }) {
-                            ZStack {
-                                RoundedRectangle(cornerRadius: 8)
-                                    .frame(width: 200.0, height: 60.0)
-                                    .foregroundColor(.white)
-                                    .padding()
-                                HStack {
-                                    Image(systemName: "calendar")
-                                        .foregroundColor(.black)
-                                        .opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
-                                    Text("Voir les dates \n  disponibles")
-                                        .foregroundColor(.black)
-                                    
-                                }
-                            }
-                        }
+                    HStack {
+                        Image(systemName: "calendar")
+                            .foregroundColor(.black)
+                            .opacity(0.8)
+                        Text("Voir les dates \n  disponibles")
+                            .foregroundColor(.black)
+                        
                     }
-                    .padding()
                 }
             }
         }
-        .padding()
+        .ignoresSafeArea([])
+        .padding(.horizontal)
+        .padding(.bottom)
+        .background(Color.black.opacity(0.6))
     }
 }
 
+
 struct ExperiencePriceDates_Previews: PreviewProvider {
     static var previews: some View {
-        ExperiencePriceDates(experiences: MOCK_EXPERIENCES[0])
+        VStack {
+            Spacer()
+            ExperiencePriceDates(experiences: MOCK_EXPERIENCES[0])
+        }
+        .ignoresSafeArea(.all)
     }
 }

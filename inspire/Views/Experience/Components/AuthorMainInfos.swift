@@ -44,11 +44,8 @@ struct AuthorMainInfos: View {
                             .font(.title2)
                             .fontWeight(.bold)
                     }
-                    HStack {
-                        Text(specialisation)
-                        Spacer()
-                    }.frame(width: 260)
-                    .padding(.top)
+                    Text(specialisation)
+                        .padding(.top)
                 }.padding(.leading)
                 Spacer()
             }
@@ -70,7 +67,7 @@ struct AuthorMainInfos: View {
                             .underline()
                     }
                     Spacer()
-                }.frame(width: UIScreen.main.bounds.width)
+                }.frame(maxWidth: .infinity)
                 ZStack {
                     RoundedRectangle(cornerRadius: 8)
                         .frame(width: 150.0, height: 30.0)
@@ -92,7 +89,7 @@ struct AuthorMainInfos: View {
                 Spacer(minLength: 2)
                 //--------RATE-------
                 
-
+                
                 
             }.frame(height: 130)
             Divider()

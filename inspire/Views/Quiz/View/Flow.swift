@@ -44,6 +44,7 @@ struct Flow: View {
                         MasterView()
                             .transition(slide)
                     }
+                    Spacer()
                 }
                 .overlay(
                     VStack {

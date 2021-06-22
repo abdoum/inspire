@@ -11,6 +11,9 @@ struct ExplorerView: View {
     
     @EnvironmentObject var sharedExperiences: SharedExperiences
     @State private var selectedCategory: Int = 0
+    let experiencesCategory: ExperienceCategory
+    //    let experience: [Experience]
+    
     @State private var searchText = ""
     @State private var inSearchmode = false
     @State private var mainCategories = experiencesCategories

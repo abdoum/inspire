@@ -9,14 +9,13 @@ import SwiftUI
 
 struct SeeMoreButton: View {
     var body: some View {
-        
-        //code...
-        //        }) {
-        Text("Voir tout")
-            .fontWeight(.semibold)
-            .foregroundColor(.gray)
-            .underline()
-            .font(/*@START_MENU_TOKEN@*/.subheadline/*@END_MENU_TOKEN@*/)
+        Button(action: {}){
+            Text("Voir tout")
+                .fontWeight(.semibold)
+                .foregroundColor(.gray)
+                .underline()
+                .font(/*@START_MENU_TOKEN@*/.subheadline/*@END_MENU_TOKEN@*/)
+        }
     }
 }
 
