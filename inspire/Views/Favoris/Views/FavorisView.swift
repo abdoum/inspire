@@ -19,10 +19,9 @@ struct FavorisView: View {
         NavigationView {
             VStack {
                 ScrollView {
-                    VStack (alignment: .leading) {
-                        VStack  (alignment: .leading) {
+                    VStack  {
+                        VStack   {
                             SearchView(searchText: $searchText, inSearchmode: $inSearchmode)
-                                .padding()
                             VStack {
                                 ForEach(favorisManager.favoris) {
                                     PopupHomepage(experience: $0)

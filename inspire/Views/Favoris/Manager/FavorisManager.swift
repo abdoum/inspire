@@ -8,7 +8,7 @@
 import SwiftUI
 
 class FavorisManager: ObservableObject {
-    @Published var favoris: [Experience] = []
+    @Published var favoris: [Experience] = [SharedExperiences().experiences[0],SharedExperiences().experiences[2]]
     
     func addFavoris(experience: Experience) {
         favoris.append(experience)
@@ -21,11 +21,4 @@ class FavorisManager: ObservableObject {
             favoris.remove(at: index)
         }
     }
-    
-//    func removeFavoris2(experience: Experience) {
-//        guard let index = favoris.firstIndex(where: { $0.id == experience.id}) else {
-//            return
-//        }
-//        favoris.remove(at: index)
-//    }
 }

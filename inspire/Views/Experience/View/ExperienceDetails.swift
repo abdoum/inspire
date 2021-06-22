@@ -67,20 +67,25 @@ struct FavorisButton: View {
         isLike = favorisManager.isLike(experience: experience)
     }
     var body: some View {
-        Button(action: toggle) {
+        Button(action:
+            withAnimation(.spring()){
+                toggle
+            }
+        , label: {
             Circle()
                 .frame(width: 50, height: 30)
                 .foregroundColor(.white)
                 .overlay(
-                    Image(systemName:"heart")
-                        .foregroundColor(isLike ? .red : .black)
+                    Image(systemName: isLike ? "heart.fill" : "heart")
+                        .foregroundColor(isLike ? .customPrimary : .customSecondary)
                 )
-        }
+        })
     }
 }
 
-struct ExperienceDetails_Previews: PreviewProvider {
+struct FavorisButton_Previews: PreviewProvider {
     static var previews: some View {
-        ExperienceDetails(experience: MOCK_EXPERIENCES[0]).environmentObject(FavorisManager())
+        FavorisButton(experience: MOCK_EXPERIENCES[0], isLike: true)
+            .previewLayout(.sizeThatFits).environmentObject(FavorisManager())
     }
 }

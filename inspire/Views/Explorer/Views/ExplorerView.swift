@@ -18,42 +18,77 @@ struct ExplorerView: View {
     @State private var tags = SharedExperiences().experiences[0].category.mainCategoriesTags
     @State private var selectedTags = SharedExperiences().experiences[0].category.selectedTags
     var searchResults : [Experience] { sharedExperiences.search(searchText: searchText) }
-    
+    @State private var showSearch = false
     var body: some View {
         NavigationView {
             VStack {
                 //HEADER
-                VStack {
-                    SearchView(searchText: $searchText, inSearchmode: $inSearchmode)
-                        .padding(.trailing).padding(.leading)
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack {
-                            ForEach(tags.indices, id: \.self) { idx in
-                                CategoryFilter(tag: $tags[idx], searchText: $searchText)
-                                    .padding(2)
+                ZStack{
+                    
+                    HStack {
+                        Spacer()
+                        Button(action: {
+                            withAnimation(.easeInOut){
+                                showSearch.toggle()
+                            }
+                        }, label: {
+                            if !showSearch {
+                                Image(systemName: "magnifyingglass.circle.fill")
+                                    .resizable()
+                                    .foregroundColor(.customSecondary)
+                                    .frame(width: 30, height: 30)
+                                    .padding(.horizontal)
+                            } else {
+                                Image(systemName: "minus.magnifyingglass")
+                                    .resizable()
+                                    .foregroundColor(.customSecondary)
+                                    .frame(width: 30, height: 30)
+                                    .padding(.horizontal)
+                            }
+                        })
+                        
+                    }
+                }
+                SegmentedControlView(selectorIndex: $selectedCategory)
+                if showSearch {
+                    VStack {
+                        SearchView(searchText: $searchText, inSearchmode: $inSearchmode)
+                            .padding(.trailing).padding(.leading)
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack {
+                                ForEach(tags.indices, id: \.self) { idx in
+                                    CategoryFilter(tag: $tags[idx], searchText: $searchText)
+                                        .padding(.horizontal, 2)
+                                }
                             }
                         }
+                        .padding(.leading)
+                        
                     }
-                    .padding(.leading).padding(.top, 5)
-                    Divider()
-                    SegmentedControlView(selectorIndex: $selectedCategory)
-                    Divider()
                 }
+                
+                
                 if selectedCategory == 0 {
                     ScrollView {
-                        HStack {
-                            SectionTitle(content: "\(searchResults.count) \(searchResults.count > 1 ? "résultats" : "résultat") \( searchResults.count > 1 ? "trouvés": "trouvé")")
+                        
+                        if !searchText.isEmpty {
+                            SectionTitle(content: "\(searchResults.count) \(searchResults.count > 1 ? "expériences" : "expérience") \( searchResults.count > 1 ? "trouvées": "trouvée")")
                                 .font(.title3).padding(.leading)
                             Spacer()
-                            SeeMoreButton()
-                                .padding(.trailing)
+                            HStack {
+                                if !searchResults.isEmpty && (inSearchmode || !selectedTags.isEmpty){
+                                    ExperienceList(experiences: searchResults)
+                                }
+                                else if !inSearchmode {
+                                    ExperienceList(experiences: searchResults)
+                                }
+                                
+                            }
+                        } else {
+                            EmptyView()
                         }
-                        if !searchResults.isEmpty && (inSearchmode || !selectedTags.isEmpty){
-                            ExperienceList(experiences: searchResults)
-                        }
-                        else if !inSearchmode {
-                            ExperienceList(experiences: searchResults)
-                        }
+                        
+                        
                         HStack {
                             SectionTitle(content: "Les plus réservées")
                                 .font(.title3).padding(.leading)
@@ -61,7 +96,7 @@ struct ExplorerView: View {
                             SeeMoreButton()
                                 .padding(.trailing)
                         }
-                        ExperienceList(experiences: sharedExperiences.experiences)
+                        ExperienceList(experiences: sharedExperiences.experiences.shuffled())
                             .padding(.trailing)
                         
                         HStack {
@@ -71,7 +106,7 @@ struct ExplorerView: View {
                             SeeMoreButton()
                                 .padding(.trailing)
                         }
-                        ExperienceList(experiences: sharedExperiences.experiences)
+                        ExperienceList(experiences: sharedExperiences.experiences.shuffled())
                         if searchResults.isEmpty && (inSearchmode) {
                             HStack {
                                 VStack{
@@ -88,11 +123,11 @@ struct ExplorerView: View {
                 } else {
                     MapView()
                 }
-            }
+            }.navigationTitle("Explorer")
         }
-                .fullScreenCover(isPresented: $quiz.params.skipQuiz, content: {
-                        Flow()
-                    })
+        .fullScreenCover(isPresented: $quiz.params.skipQuiz, content: {
+            Flow()
+        })
     }
 }
 

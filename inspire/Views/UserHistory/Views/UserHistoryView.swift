@@ -21,8 +21,6 @@ struct UserHistoryView: View {
                 ScrollView {
                     VStack (alignment: .leading) {
                         VStack  (alignment: .leading) {
-//                            SearchView()
-//                                .padding()
                             UpComingExperiences()
                         }
                     }
@@ -44,8 +42,6 @@ struct FirstItem: View {
                     .font(.title2)
                     .padding(.leading)
                 Spacer()
-                SeeMoreButton()
-                    .padding(.trailing)
             }
             UserHistoryList(experiences: MOCK_EXPERIENCES)
         }
@@ -59,8 +55,6 @@ struct SecondItem: View {
                     .font(.title2)
                     .padding(.leading)
                 Spacer()
-                SeeMoreButton()
-                    .padding(.trailing)
             }
             UserHistoryList(experiences: MOCK_EXPERIENCES)
         }

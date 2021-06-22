@@ -14,8 +14,10 @@ struct ResetPassword: View {
     
     var body: some View {
         VStack {
-            TitleScreen(content: "Récupérer mot de passe")
-                .offset(y: -45)
+            TitleScreen(content: "Réinitialisatioin du mot de passe")
+                .frame(maxWidth: 280)
+                .fixedSize(horizontal: false, vertical: true)
+                .multilineTextAlignment(.center)
             VStack {
                 EmailTextFieldView(email: $signUpUser.email)
                     .padding(.bottom)
@@ -28,5 +30,14 @@ struct ResetPassword: View {
             }
             .padding()
         }
+    }
+}
+
+struct ResetPassword_Previews: PreviewProvider {
+    static var previews: some View {
+        
+        ResetPassword(signUpUser: SignUpUser.empty, signIn: .constant(true))
+            .environmentObject(Quiz())
+            .environmentObject(SharedExperiences())
     }
 }

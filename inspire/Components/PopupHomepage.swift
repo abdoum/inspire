@@ -89,6 +89,10 @@ struct PopupHomepage: View {
             }
             .frame(width: 230, height: 50)
         }
+        .overlay(
+            RoundedRectangle(cornerRadius: 20)
+                .stroke(Color.customPrimary.opacity(0.7), lineWidth: 0.8)
+        )
         .background(Color.white)
         .clipShape(RoundedRectangle(cornerRadius: 20))
     }

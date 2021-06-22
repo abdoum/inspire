@@ -12,7 +12,7 @@ struct UserHistoryList: View {
     @State private var isPresented: Bool = false
     
     var body: some View {
-        ScrollView(.horizontal) {
+        ScrollView(.horizontal, showsIndicators: false) {
             HStack {
                 ForEach(experiences) { experience in
                     Button(action: {

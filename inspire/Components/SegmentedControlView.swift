@@ -12,12 +12,14 @@ struct SegmentedControlView: View {
     @Binding var selectorIndex: Int
     
     var body: some View {
-        VStack {
-            Picker("Views", selection: $selectorIndex) {
-                Text("Liste").tag(0)
-                Text("Carte").tag(1)
-            }
-            .pickerStyle(SegmentedPickerStyle())
+        HStack {
+            CustomSegmentedPicker(currentTab: $selectorIndex)
         }
+    }
+}
+
+struct SegmentedControlView_Previews: PreviewProvider {
+    static var previews: some View {
+        SegmentedControlView(selectorIndex: .constant(1))
     }
 }

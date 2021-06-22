@@ -20,7 +20,7 @@ struct UpComingExperiences: View {
                 Rectangle()
                     .foregroundColor(.black)
                     .opacity(0.6)
-                    .frame(height: 260)
+                    .frame(maxHeight: 260)
                 VStack {
                     HStack {
                         //Text("Nombre d'expériences à venir")
@@ -37,13 +37,15 @@ struct UpComingExperiences: View {
                         Spacer()
                     }
                     .padding([.top, .leading])
-                        PopupHomepage(experience: MOCK_EXPERIENCES[4])
-                            .padding(.horizontal)
-                            .fullScreenCover(isPresented: $showDetails) {
-                                ExperienceDetails(experience: MOCK_EXPERIENCES[4])
-                            }.onTapGesture {
-                                showDetails.toggle()
-                            }
+                    PopupHomepage(experience: MOCK_EXPERIENCES[4])
+                        .padding(.horizontal)
+                        .fullScreenCover(isPresented: $showDetails) {
+                            ExperienceDetails(experience: MOCK_EXPERIENCES[4])
+                        }.onTapGesture {
+                            showDetails.toggle()
+                        }
+                    HStack {
+                        Spacer(minLength: 1)
                         Button(action: {
                             showCanceled.toggle()
                         }) {
@@ -63,13 +65,17 @@ struct UpComingExperiences: View {
                                     print("Annuler")
                                 })
                                 )})
-                        .padding(10.0)
+                        .padding(8)
                         .overlay(
                             RoundedRectangle(cornerRadius: 16)
                                 .stroke(Color.white, lineWidth: 1)
                                 .opacity(1)
                         )
-                        Spacer()
+                        .padding(.bottom, 5)
+                        .padding(.trailing, 18)
+                        
+                    }
+                    Spacer()
                 }
                 .padding(.top, -7.0)
             }
@@ -80,26 +86,7 @@ struct UpComingExperiences: View {
 
 struct UpComingExperiences_Previews: PreviewProvider {
     static var previews: some View {
-        UpComingExperiences().environmentObject(FavorisManager())
+        UpComingExperiences()
+            .environmentObject(FavorisManager())
     }
 }
-
-
-
-//Button(action: {
-//                        }) {
-//                            Image(systemName: "questionmark.circle")
-//                                .foregroundColor(.white)
-//                                .opacity(1)
-//                                .font(.system(size: 25))
-//                            Text("Un problème")
-//                                .font(.subheadline)
-//                                .fontWeight(.bold)
-//                                .foregroundColor(.white)
-//                        }
-//                        .padding(10.0)
-//                        .overlay(
-//                            RoundedRectangle(cornerRadius: 16)
-//                                .stroke(Color.white, lineWidth: 1)
-//                                .opacity(1)
-//                        )

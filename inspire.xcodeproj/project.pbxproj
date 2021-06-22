@@ -53,6 +53,7 @@
 		21B6EC41267C9F2700EC2F9E /* ExperienceCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B6EC40267C9F2700EC2F9E /* ExperienceCard.swift */; };
 		21B6EC45267CA07000EC2F9E /* UserHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B6EC44267CA07000EC2F9E /* UserHistoryView.swift */; };
 		21B6EC47267CA20900EC2F9E /* DurationLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B6EC46267CA20900EC2F9E /* DurationLine.swift */; };
+		21F975022682109800D67CED /* CustomSegmentedPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F975012682109800D67CED /* CustomSegmentedPicker.swift */; };
 		2B1E500F26776612002B7E43 /* Colors+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E500E26776612002B7E43 /* Colors+.swift */; };
 		2B26141B2678915F00C48BC2 /* StepThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B26141A2678915F00C48BC2 /* StepThree.swift */; };
 		2B26141E267892CB00C48BC2 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B26141D267892CB00C48BC2 /* BackButton.swift */; };
@@ -139,6 +140,7 @@
 		21B6EC40267C9F2700EC2F9E /* ExperienceCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceCard.swift; sourceTree = "<group>"; };
 		21B6EC44267CA07000EC2F9E /* UserHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHistoryView.swift; sourceTree = "<group>"; };
 		21B6EC46267CA20900EC2F9E /* DurationLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationLine.swift; sourceTree = "<group>"; };
+		21F975012682109800D67CED /* CustomSegmentedPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedPicker.swift; sourceTree = SOURCE_ROOT; };
 		2B1E500E26776612002B7E43 /* Colors+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Colors+.swift"; sourceTree = "<group>"; };
 		2B26141A2678915F00C48BC2 /* StepThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepThree.swift; sourceTree = SOURCE_ROOT; };
 		2B26141D267892CB00C48BC2 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 		21B6EC18267C964800EC2F9E /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				21F975012682109800D67CED /* CustomSegmentedPicker.swift */,
 				21B6EC19267C966C00EC2F9E /* SearchBar.swift */,
 				21B6EC40267C9F2700EC2F9E /* ExperienceCard.swift */,
 				21B6EC1B267C968200EC2F9E /* SearchView.swift */,
@@ -644,6 +647,7 @@
 				21B6EBFD267C929600EC2F9E /* FavorisView.swift in Sources */,
 				2BE1E8852677866900E4C55D /* Review.swift in Sources */,
 				21B6EC28267C975500EC2F9E /* LoginButton.swift in Sources */,
+				21F975022682109800D67CED /* CustomSegmentedPicker.swift in Sources */,
 				2B1E500F26776612002B7E43 /* Colors+.swift in Sources */,
 				13783ACB267CDB9400FF0AE1 /* ExperienceList.swift in Sources */,
 				2BE1E86B2677712500E4C55D /* Category.swift in Sources */,
