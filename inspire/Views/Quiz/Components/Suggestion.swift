@@ -8,59 +8,62 @@
 import SwiftUI
 
 struct Suggestion: View {
+    @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var quiz : Quiz
     var experience : Experience
     var body: some View {
         
-        ZStack {
-            Image(experience.category.image)
-                .resizable()
-                .scaledToFill()
-                .frame(width: 270, height: 460, alignment: .center)
-                .overlay(Color.black.opacity(0.3))
-                .cornerRadius(14)
-                .shadow(radius: 10)
-                
-            VStack(alignment: .leading){
-                Text(experience.title)
-                    .font(.title)
-                    .fontWeight(.heavy)
-                    .foregroundColor(.white)
-                RatingLine(averageRating: experience.averageRate, commentsCount: 328, color: .white)
-                    .padding(.vertical, 2)
-//                DurationLine(duration: experience.duration, color: .white)
-                    .padding(.vertical, 2)
-                PriceView(price: Double(experience.price), color: .white)
-                    .padding(.vertical, 2)
-                NavigationLink(destination:
-                                // TODO: implement navigation to a specific experience
-                                ExperienceDetails(experience: experience)
-                               , label: {
-                                RoundedRectangle(cornerRadius: 14)
-                                    .frame(width: 90, height: 46, alignment: .center)
-                                    .foregroundColor(.white)
-                                    .overlay(
-                                        Button(action: {
-                                            quiz.params.skipQuiz = false
-                                        }, label: {
-                                            Text("Voir")
-                                                .font(.system(size: 14))
-                                                .fontWeight(.bold)
-                                                .foregroundColor(.customPrimary)
-                                                .padding()
-                                        })
-                                        
-                                    )
-                               })
-            }
-            .alignmentGuide(HorizontalAlignment.leading) { _ in  80 }
-        }
+        Image(experience.category.image)
+            .resizable()
+            .scaledToFill()
+            .frame(width: 270, height: 460, alignment: .center)
+            .overlay(Color.black.opacity(0.3))
+            .cornerRadius(14)
+            .shadow(radius: 10)
+            .overlay(
+                VStack(alignment: .leading){
+                    Text(experience.title)
+                        .font(.title)
+                        .fontWeight(.heavy)
+                        .foregroundColor(.white)
+                        .fixedSize(horizontal: false, vertical: true)
+                    RatingLine(averageRating: experience.averageRate, commentsCount: 328, color: .white)
+                        .padding(.vertical, 2)
+//                    DurationLine(duration: experience, color: .white)
+                        .padding(.vertical, 2)
+                    PriceView(price: experience.price, color: .white)
+                        .padding(.vertical, 2)
+                    RoundedRectangle(cornerRadius: 14)
+                        .frame(width: 90, height: 46)
+                        .foregroundColor(.white)
+                        .overlay(
+                            
+                            Text("Voir")
+                                .font(.system(size: 14))
+                                .fontWeight(.bold)
+                                .foregroundColor(.customPrimary)
+                                .padding()
+                            
+                            
+                            //                                    })
+                            
+                        )
+                        
+                        .padding(.vertical)
+                    
+                }
+                .alignmentGuide(HorizontalAlignment.leading) { _ in  80 }
+            )
+        
     }
+    
 }
+
 
 struct Suggestion_Previews: PreviewProvider {
     static var previews: some View {
-        Suggestion(experience: MOCK_EXPERIENCES[2])
+        Suggestion(experience: MOCK_EXPERIENCES[6])
             .environmentObject(Quiz())
+            .environmentObject(SharedExperiences())
     }
 }

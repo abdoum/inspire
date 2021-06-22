@@ -11,6 +11,9 @@ import MapKit
 struct MapView: View {
     
     @State private var showDetails: Experience? = nil
+    @State private var searchText = ""
+    @State private var inSearchmode = false
+    @State private var tag = FilterTagModel(text: "", isSelected: false)
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 48.8013, longitude:  2.6076), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
     
     var body: some View {

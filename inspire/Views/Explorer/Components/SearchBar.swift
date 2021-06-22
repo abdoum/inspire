@@ -14,26 +14,41 @@ struct SearchBar: View {
     
     var body: some View {
         HStack {
-            TextField("Choisissez un lieu, un mot-clé...", text: $text)
-                .padding(8)
+            TextField("Recherchez un lieu, un mot-clé...", text: $text)
+                .textCase(.lowercase)
+                .padding(.vertical, 8)
                 .padding(.horizontal, 24)
                 .background(Color(.systemGray6))
                 .cornerRadius(8)
-            
-            Button(action: {
-                isEditing = false
-                text = ""
-                UIApplication.shared.endEditing()
-            }, label: {
-                Text("Cancel")
-                    .foregroundColor(.black)
-            })
-            .padding(.trailing, 8)
-            .transition(.move(edge: .trailing))
-            .animation(.default)
+                .overlay(
+                    
+                    Button(action: {
+                        isEditing = false
+                        text = ""
+                        UIApplication.shared.endEditing()
+                    }, label: {
+//                        if !text.isEmpty() {
+                        Image(systemName: isEditing ? "xmark.circle.fill" : "")
+                                .foregroundColor(.customPrimary.opacity(0.9))
+                                .font(.system(size: 20))
+                                .padding(7)
+//                        }
+                    })
+                    .transition(.move(edge: .trailing))
+                    .animation(.default)
+                    
+                    , alignment: .trailing
+                )
         }
+        .padding()
         .onTapGesture {
-             isEditing = true
+            isEditing = true
         }
+    }
+}
+
+struct SearchBar_Previews: PreviewProvider {
+    static var previews: some View {
+        SearchBar(text: .constant("choco"), isEditing: .constant(true))
     }
 }

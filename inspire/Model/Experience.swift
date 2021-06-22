@@ -22,7 +22,7 @@ struct Experience : Identifiable {
     var reviews : [Review] = []
     var rate: String
     var averageRate : Double {
-        Double(reviews.compactMap({$0.rate}).reduce(0, +) / reviews.count)
+        Double(reviews.compactMap({$0.rate}).reduce(0, +) / reviews.count).rounded()
     }
     var location: CLLocationCoordinate2D
     // TODO: retreive coordinates using coreLocation
@@ -30,6 +30,38 @@ struct Experience : Identifiable {
 
 class SharedExperiences: ObservableObject {
     @Published var experiences = MOCK_EXPERIENCES
+    
+    func search(searchText: String) -> [Experience] {
+        let selectedTags = ExperienceCategory(name: "any", image: "boulanger", specialisation: "").selectedTags.map({$0.text})
+        let searchText = searchText.trimmingCharacters(in: .whitespaces)
+        var results : [Optional<Experience>] = experiences.filter(
+            { searchText.isEmpty ? true :
+                $0.title.contains(searchText)
+                || $0.description.contains(searchText)
+                || $0.category.name.contains(searchText)
+                || $0.category.specialisation.contains(searchText)
+                
+            })
+        
+        if !selectedTags.isEmpty {
+            for tag in selectedTags{
+         let tagSearchResults : [Experience] = experiences.filter(
+                {
+                    $0.title.contains(tag)
+                    || $0.description.contains(tag)
+                    || $0.category.name.contains(tag)
+                    || $0.category.specialisation.contains(tag)
+                })
+                    results += tagSearchResults
+            }
+        }
+       
+        if  (!results.isEmpty) {
+            return results.compactMap({$0})
+        }else{
+            return []
+        }
+    }
 }
 
 var MOCK_EXPERIENCES: [Experience] = [

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PriceView: View {
-    let price : Double
+    let price : Int
     let color : Color
     var body: some View {
         HStack {
@@ -18,7 +18,7 @@ struct PriceView: View {
                 .foregroundColor(color)
         }
     }
-    func priceFormatter(_ price : Double) -> String {
+    func priceFormatter(_ price : Int) -> String {
         let formatter = NumberFormatter()
         formatter.locale = Locale.init(identifier: "fr")
         formatter.numberStyle = .currency

@@ -9,16 +9,19 @@ import SwiftUI
 
 struct StepTwo: View {
     @EnvironmentObject var quiz : Quiz
+    var bgColor : Color
     var body: some View {
         let choices = quiz.params.existingExperienceParticipationModes
-        
-        VStack(spacing: 20) {
+        VStack {
+            QuizPageTitle()
             ForEach(choices, id: \.self){mode in
                 Button(action: {
-                    quiz.params.preferedExperienceParticipationMode = ParticipationMode(rawValue: mode) ?? .all
-                    quiz.params.currentStep += 1
-                }, label: {
+                    withAnimation(.spring()) {
+                        quiz.params.preferedExperienceParticipationMode = ParticipationMode(rawValue: mode) ?? .all
+                        quiz.params.currentStep += 1
+                    }
                     
+                }, label: {
                     Label(
                         title: {
                             switch (mode){
@@ -27,7 +30,7 @@ struct StepTwo: View {
                             case "visio":
                                 Text("En ligne")
                             case "group":
-                                Text("En présenciel, groupe")
+                                Text("En présenciel, groupeEn présenciel, groupeEn présenciel, groupe")
                             default:
                                 Text("Tous")
                             }
@@ -38,26 +41,31 @@ struct StepTwo: View {
                                     .font(.system(size: 22))
                             }else{
                                 Circle()
-                                    .frame(width: 22, height: 22, alignment: .center)
+                                    .frame(maxWidth: 22, maxHeight: 22)
                                     .foregroundColor(.customSecondaryLight)
                             }
                         }
                     )
                     .foregroundColor((quiz.params.preferedExperienceParticipationMode != nil) && (quiz.params.preferedExperienceParticipationMode!.rawValue == mode) ? Color.customPrimary : Color.customSecondary)
-                    .frame(width: 335, height: 86, alignment: .center)
-                    .border((quiz.params.preferedExperienceParticipationMode != nil) && (quiz.params.preferedExperienceParticipationMode!.rawValue == mode) ?  Color.customPrimary : Color.customSecondary, width: 2)
+                    .overlay(
+                    RoundedRectangle(cornerRadius: 14)
+                        .stroke((quiz.params.preferedExperienceParticipationMode != nil) && (quiz.params.preferedExperienceParticipationMode!.rawValue == mode) ?  Color.customPrimary : Color.customSecondary, lineWidth: 2)
+                        .frame(minWidth: 300, minHeight: 86)
+                    )
+                    .frame(minWidth: 300, minHeight: 86)
                     .background((quiz.params.preferedExperienceParticipationMode != nil) && (quiz.params.preferedExperienceParticipationMode!.rawValue == mode) ? Color.customSecondaryLight : Color.white)
                     .cornerRadius(14)
                     
                 })
             }
-        }
+            Spacer()
+        }.background(bgColor.ignoresSafeArea())
     }
 }
 
 struct StepOne_Previews: PreviewProvider {
     static var previews: some View {
-        StepTwo()
+        StepTwo(bgColor: .blue)
             .environmentObject(Quiz())
     }
 }

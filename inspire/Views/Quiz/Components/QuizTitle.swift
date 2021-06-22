@@ -14,6 +14,7 @@ struct QuizTitle: View {
             .font(.system(size: 34))
             .fontWeight(.heavy)
             .foregroundColor(.customPrimary)
+            .fixedSize(horizontal: false, vertical: true)
     }
 }
 

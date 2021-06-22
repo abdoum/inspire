@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct MasterView: View {
+    
+    @Binding var showQuiz : Bool
+    
     var body: some View {
         TabView {
-            ExplorerView(experiencesCategory: experiencesCategories[0])
+            ExplorerView(showQuiz: $showQuiz)
                 .tabItem { Image(systemName: "house")
                     Text("Accueil")
                 }
-            FavorisView(experienceCategory: experiencesCategories[0])
+            FavorisView()
                 .tabItem { Image(systemName: "heart")
                     Text("Favoris")
                 }
@@ -33,7 +36,9 @@ struct MasterView: View {
 struct MasterView_Previews: PreviewProvider {
     static var previews: some View {
         MasterView()
+        MasterView(showQuiz: .constant(true))
+            .environmentObject(Quiz())
+            .environmentObject(SharedExperiences())
             .environmentObject(FavorisManager())
             .environmentObject(ImageLoader(urlString: ""))
-    }
 }

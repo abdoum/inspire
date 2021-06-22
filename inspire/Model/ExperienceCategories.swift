@@ -11,27 +11,30 @@ struct ExperienceCategory: Hashable , Identifiable {
     let id = UUID()
     let name : String
     let image : String
-    var specialisations: String
+    var specialisation: String
+    var mainCategoriesTags : [FilterTagModel] {
+        var tags = Array<FilterTagModel>()
+        for category in experiencesCategories {
+            tags.append(FilterTagModel(text: category.name, isSelected: false))
+        }
+        return tags
+    }
+    var selectedTags : [FilterTagModel] {
+        mainCategoriesTags.filter({$0.isSelected})
+    }
 }
 
 var experiencesCategories : [ExperienceCategory] =
     [
-        ExperienceCategory(name: "Ingénieur", image: "ingenierie", specialisations: "Ingénieur"),
-        ExperienceCategory(name: "Boulanger", image: "boulanger", specialisations: "Boulanger"),
-        ExperienceCategory(name: "Fleuriste", image: "fleuriste", specialisations: "Fleuriste"),
-        ExperienceCategory(name: "Hôtellerie", image: "hotellerie", specialisations: "Hôtesse d'Accueil"),
-        ExperienceCategory(name: "Coiffeur", image: "coiffeur", specialisations: "Coiffeur"),
-        ExperienceCategory(name: "Vétérinaire", image: "veterinaire", specialisations: "Vétérinaire"),
-        ExperienceCategory(name: "Art", image: "artistique", specialisations: "Peintre"),
-        ExperienceCategory(name: "Architecte", image: "architecture", specialisations: "Architecte"),
-        ExperienceCategory(name: "Pompier", image: "pompiers", specialisations: "Sapeur Pompier"),
-        ExperienceCategory(name: "Photographe", image: "photographie", specialisations: "Photographe")
-    ]
+        ExperienceCategory(name: "Ingénieur", image: "ingenierie", specialisation: "Ingénieur"),
+        ExperienceCategory(name: "Boulanger", image: "boulanger", specialisation: "Boulanger"),
+        ExperienceCategory(name: "Fleuriste", image: "fleuriste", specialisation: "Fleuriste"),
+        ExperienceCategory(name: "Hôtellerie", image: "hotellerie", specialisation: "Hôtesse d'Accueil"),
+        ExperienceCategory(name: "Coiffeur", image: "coiffeur", specialisation: "Coiffeur"),
+        ExperienceCategory(name: "Vétérinaire", image: "veterinaire", specialisation: "Vétérinaire"),
+        ExperienceCategory(name: "Art", image: "artistique", specialisation: "Peintre"),
+        ExperienceCategory(name: "Architecte", image: "architecture", specialisation: "Architecte"),
+        ExperienceCategory(name: "Pompier", image: "pompiers", specialisation: "Sapeur Pompier"),
+        ExperienceCategory(name: "Photographe", image: "photographie", specialisation: "Photographe")
+]
 
-var mainCategoriesTags : [FilterTag] {
-    var tags = [FilterTag]()
-    for category in experiencesCategories {
-        tags.append(FilterTag(text: category.name, isSelected: false))
-    }
-    return tags
-}

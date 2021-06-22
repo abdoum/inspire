@@ -25,7 +25,7 @@ struct InfosProfileView2: View {
             infos(imageName: "mappin", description: "  Paris, France")
             infos(imageName: "speaker.wave.2", description: user.author.spokenLanguages)
             if isLog {
-                infos(imageName: "latch.2.case", description: user.category.specialisations)
+                infos(imageName: "latch.2.case", description: user.category.specialisation)
             }
         }
         .frame(maxWidth: .infinity)

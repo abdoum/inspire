@@ -8,62 +8,106 @@
 import SwiftUI
 
 struct Flow: View {
+//     TODO: use @AppStorage for production
+    //    @State private var currentStep : Int = 1
+//            @AppStorage("currentStep") var currentStep = 1
+    @AppStorage("totalSteps") var totalSteps = 4
+    @State private var bgColors : [Color] = [Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)).opacity(0.4), Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)).opacity(0.7), Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)).opacity(1.0), Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)).opacity(0.9)]
+    let slide : AnyTransition = .asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading))
+    @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var sharedExperiences: SharedExperiences
     @EnvironmentObject var quiz : Quiz
-    @State private var showMap : Bool = false
+    @State private var showQuiz : Bool = false
+    var currentStep : Int {
+        quiz.params.currentStep
+    }
     var body: some View {
-        let steps : [String] = quiz.params.steps.keys.map({String($0)})
-        
         VStack {
-            if !quiz.params.skipQuiz {
-                
-                VStack{
-                    HStack {
-                        QuizTitle(content: quiz.params.steps[quiz.params.currentStep] ?? "")
-                            .padding()
-                            .frame(width: 220, height: 200, alignment: .leading)
-                        Spacer()
-                        if quiz.params.currentStep < 4 {
-                            QuizTitle(content: "\(quiz.params.currentStep)/\(steps.count - 1)")
-                                .padding()
+            if currentStep <= totalSteps {
+                ZStack {
+                    if currentStep == 1 {
+                        StepOne(bgColor: bgColors[currentStep - 1])
+                            .transition(slide)
+                    }
+                    
+                    if currentStep == 2 {
+                        
+                        StepTwo(bgColor: bgColors[currentStep - 1])
+                            .transition(slide)
+                    }
+                    if currentStep == 3 {
+                        StepThree(bgColor: bgColors[currentStep - 1])
+                            .transition(slide)
+                    }
+                    if currentStep == 4 {
+                        MasterView(showQuiz: $showQuiz)
+                            .transition(slide)
+                    }
+                    Spacer()
+                }
+                .overlay(
+                    VStack {
+                        if currentStep < totalSteps {
+                            VStack {
+                                Button(action: {
+                                withAnimation(.spring()){
+                                    
+                                    if currentStep == totalSteps {
+                                        presentationMode.wrappedValue.dismiss()
+                                    }
+                                    quiz.params.currentStep += 1
+                                }
+                            }, label: {
+                                Text("\(currentStep)/\(totalSteps)")
+                                    .font(.system(size:20, weight: .semibold))
+                                    .foregroundColor(currentStep < totalSteps - 1 ? .black : .white)
+                                    .frame(width: 60, height: 60)
+                                    .background(currentStep < totalSteps - 1 ? Color.white : .green.opacity(0.4))
+                                    .clipShape(Circle())
+                                    .overlay(
+                                        ZStack{
+                                            Circle()
+                                                .stroke(Color.black.opacity(0.1), lineWidth: 4)
+                                            Circle()
+                                                .trim(from: 0.0, to: CGFloat(currentStep) / CGFloat(totalSteps))
+                                                .stroke(Color.green, lineWidth: 4)
+                                                .rotationEffect(.init(degrees: -90))
+                                        }
+                                        .padding(-15)
+                                    )
+                            })
+                                .padding([.trailing, .top], 35)
+                        }
+                            
                         } else {
                             EmptyView()
                         }
                     }
-                    .frame(width: 380, height: 180, alignment: .center)
-                    
-                    switch (quiz.params.currentStep) {
-                    case 1:
-                        StepOne()
-                        Spacer()
-                        HStack {
-                            SkipQuizButton()
-                                .padding()
-                        }
-                    case 2:
-                        StepTwo()
-                        
-                    case 3:
-                        StepThree()
-                    case 4:
-                        Suggestions()
-                    default:
-                        ExplorerView(experiencesCategory: experiencesCategories[1])
-                    }
-                    Spacer()
-                }
-                .edgesIgnoringSafeArea(.all)
-            }else{
-                ExplorerView(experiencesCategory: experiencesCategories[1])
+                    , alignment: .topTrailing
+                )
+                
             }
-        }.ignoresSafeArea()
+        }
     }
 }
 
-struct Step_Previews: PreviewProvider {
+struct QuizPageTitle: View {
+    @EnvironmentObject var quiz : Quiz
+    var body: some View {
+        HStack {
+            QuizTitle(content: quiz.params.steps[quiz.params.currentStep] ?? "")
+                .padding()
+                .frame(width: 220, alignment: .leading)
+                .fixedSize(horizontal: false, vertical: true)
+            Spacer()
+        }
+                .frame( height: 180)
+    }
+}
+
+struct Flow_Previews: PreviewProvider {
     static var previews: some View {
         Flow()
             .environmentObject(Quiz())
-            .environmentObject(SharedExperiences())
     }
 }
