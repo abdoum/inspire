@@ -12,7 +12,7 @@ struct ExperienceList: View {
     let experiences: [Experience]
     
     var body: some View {
-        ScrollView(.horizontal) {
+        ScrollView(.horizontal, showsIndicators: false) {
             HStack {
                 ForEach(experiences, content: ExperienceListButton.init)
             }.padding(.horizontal, 16)

@@ -57,9 +57,9 @@ struct MasterView_Previews: PreviewProvider {
     static var previews: some View {
         
         MasterView()
-        MasterView(showQuiz: .constant(true))
             .environmentObject(Quiz())
             .environmentObject(SharedExperiences())
             .environmentObject(FavorisManager())
             .environmentObject(ImageLoader(urlString: ""))
+    }
 }

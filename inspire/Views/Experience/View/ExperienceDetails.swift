@@ -23,7 +23,7 @@ struct ExperienceDetails: View {
                             .aspectRatio(contentMode: .fit)
                             .listRowInsets(EdgeInsets())
                         VStack {
-                            AuthorMainInfos(imageName: experience.author.avatar, fullName: "\(experience.author.firstname) \(experience.author.lastname.uppercased())", specialisation: experience.category.specialisations, rate: experience.rate)
+                            AuthorMainInfos(imageName: experience.author.avatar, fullName: "\(experience.author.firstname) \(experience.author.lastname.uppercased())", specialisation: experience.category.specialisation, rate: experience.rate)
                             ExperienceContact(language: experience.author.spokenLanguages)
                                 .padding(.leading).padding(.trailing)
                             ExperienceProgram(experience.description, lineLimit: 6)

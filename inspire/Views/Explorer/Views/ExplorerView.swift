@@ -11,9 +11,6 @@ struct ExplorerView: View {
     
     @EnvironmentObject var sharedExperiences: SharedExperiences
     @State private var selectedCategory: Int = 0
-    let experiencesCategory: ExperienceCategory
-    //    let experience: [Experience]
-    
     @State private var searchText = ""
     @State private var inSearchmode = false
     @State private var mainCategories = experiencesCategories
@@ -44,22 +41,11 @@ struct ExplorerView: View {
                     SeeMoreButton()
                         .padding(.trailing)
                 }
-                ScrollView(.horizontal, showsIndicators: false) {
-                    
-                    HStack {
-                        if !searchResults.isEmpty && (inSearchmode || !selectedTags.isEmpty){
-                            ForEach(searchResults){experience in
-                                ExperienceCard(experience: experience)
-                                    .padding(.leading).padding(.top, 6)
-                            }
-                        }
-                        else if !inSearchmode {
-                            ForEach(searchResults) { experience in
-                                ExperienceCard(experience: experience)
-                                    .padding(.leading).padding(.top, 6)
-                            }
-                        }
-                    }
+                if !searchResults.isEmpty && (inSearchmode || !selectedTags.isEmpty){
+                    ExperienceList(experiences: searchResults)
+                }
+                else if !inSearchmode {
+                    ExperienceList(experiences: searchResults)
                 }
                 HStack {
                     SectionTitle(content: "Les plus réservées")
@@ -68,16 +54,8 @@ struct ExplorerView: View {
                     SeeMoreButton()
                         .padding(.trailing)
                 }
-                
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack {
-                        ForEach(sharedExperiences.experiences) { experience in
-                            ExperienceCard(experience: experience)
-                                .padding(.leading).padding(.top, 6)
-                        }
-                    }
-                }
-                .padding(.trailing)
+                ExperienceList(experiences: sharedExperiences.experiences)
+                    .padding(.trailing)
                 
                 HStack {
                     SectionTitle(content: "Nouveautés de la semaine")
@@ -86,15 +64,7 @@ struct ExplorerView: View {
                     SeeMoreButton()
                         .padding(.trailing)
                 }
-                
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack {
-                        ForEach(sharedExperiences.experiences) { experience in
-                            ExperienceCard(experience: experience)
-                                .padding(.leading).padding(.top, 6)
-                        }
-                    }
-                }
+                ExperienceList(experiences: sharedExperiences.experiences)
                 if searchResults.isEmpty && (inSearchmode) {
                     HStack {
                         VStack{

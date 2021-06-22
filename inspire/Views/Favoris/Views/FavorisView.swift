@@ -14,8 +14,8 @@ struct FavorisView: View {
     @EnvironmentObject var sharedExperiences: SharedExperiences
     @State var searchText = ""
     @State var inSearchmode = false
-    @State private var tag = FilterTag(text: "", isSelected: false)
     @EnvironmentObject var favorisManager: FavorisManager
+    @State private var tags = SharedExperiences().experiences[0].category.mainCategoriesTags
     
     var body: some View {
         
@@ -86,9 +86,9 @@ struct FavorisView: View {
                         SectionTitle(content: "Mots-clés").font(.title3).padding(.leading).padding()
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack {
-                                ForEach(categoryArray, id: \.self) { _ in
-                                    CategoryFilter(tag: $tag, searchText: $searchText)
-                                        .padding(.leading).padding(.top, 6)
+                                ForEach(tags.indices, id: \.self) { idx in
+                                    CategoryFilter(tag: $tags[idx], searchText: $searchText)
+                                        .padding(2)
                                 }
                             }
                         }
@@ -103,6 +103,8 @@ struct FavorisView: View {
 
 struct FavorisView_Previews: PreviewProvider {
     static var previews: some View {
-        FavorisView(experienceCategory: experiencesCategories[0]).environmentObject(FavorisManager())
+        FavorisView()
+            .environmentObject(FavorisManager())
+            .environmentObject(SharedExperiences())
     }
 }
