@@ -21,68 +21,78 @@ struct ExplorerView: View {
     
     var body: some View {
         NavigationView {
-            ScrollView {
-                SearchView(searchText: $searchText, inSearchmode: $inSearchmode)
-                    .padding(.trailing).padding(.leading)
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack {
-                        ForEach(tags.indices, id: \.self) { idx in
-                            CategoryFilter(tag: $tags[idx], searchText: $searchText)
-                                .padding(2)
+            VStack {
+                //HEADER
+                VStack {
+                    SearchView(searchText: $searchText, inSearchmode: $inSearchmode)
+                        .padding(.trailing).padding(.leading)
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack {
+                            ForEach(tags.indices, id: \.self) { idx in
+                                CategoryFilter(tag: $tags[idx], searchText: $searchText)
+                                    .padding(2)
+                            }
                         }
                     }
+                    .padding(.leading).padding(.top, 5)
+                    Divider()
+                    SegmentedControlView(selectorIndex: $selectedCategory)
+                    Divider()
                 }
-                .padding(.leading).padding(.top, 5)
-                Divider().padding(.top)
-                HStack {
-                    SectionTitle(content: "\(searchResults.count) \(searchResults.count > 1 ? "résultats" : "résultat") \( searchResults.count > 1 ? "trouvés": "trouvé")")
-                        .font(.title3).padding(.leading)
-                    Spacer()
-                    SeeMoreButton()
-                        .padding(.trailing)
-                }
-                if !searchResults.isEmpty && (inSearchmode || !selectedTags.isEmpty){
-                    ExperienceList(experiences: searchResults)
-                }
-                else if !inSearchmode {
-                    ExperienceList(experiences: searchResults)
-                }
-                HStack {
-                    SectionTitle(content: "Les plus réservées")
-                        .font(.title3).padding(.leading)
-                    Spacer()
-                    SeeMoreButton()
-                        .padding(.trailing)
-                }
-                ExperienceList(experiences: sharedExperiences.experiences)
-                    .padding(.trailing)
-                
-                HStack {
-                    SectionTitle(content: "Nouveautés de la semaine")
-                        .font(.title3).padding(.leading)
-                    Spacer()
-                    SeeMoreButton()
-                        .padding(.trailing)
-                }
-                ExperienceList(experiences: sharedExperiences.experiences)
-                if searchResults.isEmpty && (inSearchmode) {
-                    HStack {
-                        VStack{
-                            Image(systemName: "exclamationmark.icloud.fill")
-                                .font(.system(size: 42))
-                                .padding()
-                            Text("Aucun résultat disponible pour ”\(searchText)\"")
-                                .font(.callout)
-                            
-                        }.foregroundColor(.red.opacity(0.7))
+                if selectedCategory == 0 {
+                    ScrollView {
+                        HStack {
+                            SectionTitle(content: "\(searchResults.count) \(searchResults.count > 1 ? "résultats" : "résultat") \( searchResults.count > 1 ? "trouvés": "trouvé")")
+                                .font(.title3).padding(.leading)
+                            Spacer()
+                            SeeMoreButton()
+                                .padding(.trailing)
+                        }
+                        if !searchResults.isEmpty && (inSearchmode || !selectedTags.isEmpty){
+                            ExperienceList(experiences: searchResults)
+                        }
+                        else if !inSearchmode {
+                            ExperienceList(experiences: searchResults)
+                        }
+                        HStack {
+                            SectionTitle(content: "Les plus réservées")
+                                .font(.title3).padding(.leading)
+                            Spacer()
+                            SeeMoreButton()
+                                .padding(.trailing)
+                        }
+                        ExperienceList(experiences: sharedExperiences.experiences)
+                            .padding(.trailing)
+                        
+                        HStack {
+                            SectionTitle(content: "Nouveautés de la semaine")
+                                .font(.title3).padding(.leading)
+                            Spacer()
+                            SeeMoreButton()
+                                .padding(.trailing)
+                        }
+                        ExperienceList(experiences: sharedExperiences.experiences)
+                        if searchResults.isEmpty && (inSearchmode) {
+                            HStack {
+                                VStack{
+                                    Image(systemName: "exclamationmark.icloud.fill")
+                                        .font(.system(size: 42))
+                                        .padding()
+                                    Text("Aucun résultat disponible pour ”\(searchText)\"")
+                                        .font(.callout)
+                                    
+                                }.foregroundColor(.red.opacity(0.7))
+                            }
+                        }
                     }
+                } else {
+                    MapView()
                 }
             }
-            EmptyView()
+        }
                 .fullScreenCover(isPresented: $quiz.params.skipQuiz, content: {
-                    Flow()
-                })
-        }.navigationTitle("Accueil")
+                        Flow()
+                    })
     }
 }
 

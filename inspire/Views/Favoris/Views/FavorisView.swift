@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct FavorisView: View {
-    let categoryArray: [String] = [
-        "Artisanat", "Cuisine", "Informatique", "Ostéopathe"
-    ]
+
     @EnvironmentObject var sharedExperiences: SharedExperiences
     @State var searchText = ""
     @State var inSearchmode = false
@@ -18,7 +16,6 @@ struct FavorisView: View {
     @State private var tags = SharedExperiences().experiences[0].category.mainCategoriesTags
     
     var body: some View {
-        
         NavigationView {
             VStack {
                 ScrollView {
@@ -32,70 +29,9 @@ struct FavorisView: View {
                                 }
                             }
                         }
-                        HStack {
-                            SectionTitle(content: "Mes listes")
-                                .font(.title3).padding(.leading).padding()
-                            Spacer()
-                            SeeMoreButton()
-                                .padding(.trailing)
-                        }
-                        
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack {
-                                ForEach(sharedExperiences.experiences) { experience in
-                                    ExperienceCard(experience: experience)
-                                        .padding(.leading).padding(.top, 6)
-                                }
-                            }
-                        }
-                        
-                        HStack {
-                            SectionTitle(content: "Mes catégories")
-                                .font(.title3).padding(.leading).padding()
-                            Spacer()
-                            SeeMoreButton().padding(.trailing)
-                        }
-                        ScrollView (.horizontal, showsIndicators: false)  {
-                            HStack {
-                                ForEach(sharedExperiences.experiences) { experience in
-                                    Image(experience.category.image)
-                                        .resizable()
-                                        .scaledToFill()
-                                        .frame(width: 180, height: 220)
-                                        .cornerRadius(25)
-                                        .padding(.leading)
-                                }
-                            }
-                        }
-                        HStack {
-                            SectionTitle(content: "Derniers ajouts")
-                                .font(.title3).padding(.leading).padding()
-                            Spacer()
-                            SeeMoreButton()
-                                .padding(.trailing)
-                        }
-                        
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack {
-                                ForEach(sharedExperiences.experiences) { experience in
-                                    ExperienceCard(experience: experience)
-                                        .padding(.leading).padding(.top, 6)
-                                }
-                            }
-                        }
-                        SectionTitle(content: "Mots-clés").font(.title3).padding(.leading).padding()
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack {
-                                ForEach(tags.indices, id: \.self) { idx in
-                                    CategoryFilter(tag: $tags[idx], searchText: $searchText)
-                                        .padding(2)
-                                }
-                            }
-                        }
                     }
                 }
-            }
-            .navigationTitle("Favoris")
+            }.navigationTitle("Favoris")
         }
     }
 }
