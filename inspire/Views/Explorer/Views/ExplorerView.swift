@@ -74,6 +74,7 @@ struct ExplorerView: View {
                         }
                     }
                 }
+                .padding(.trailing)
                 
                 HStack {
                     SectionTitle(content: "Nouveautés de la semaine")

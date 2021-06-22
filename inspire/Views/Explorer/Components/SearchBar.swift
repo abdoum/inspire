@@ -27,10 +27,12 @@ struct SearchBar: View {
                         text = ""
                         UIApplication.shared.endEditing()
                     }, label: {
+//                        if !text.isEmpty() {
                         Image(systemName: isEditing ? "xmark.circle.fill" : "")
                                 .foregroundColor(.customPrimary.opacity(0.9))
                                 .font(.system(size: 20))
                                 .padding(7)
+//                        }
                     })
                     .transition(.move(edge: .trailing))
                     .animation(.default)
