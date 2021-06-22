@@ -10,7 +10,7 @@ import SwiftUI
 struct MasterView: View {
     var body: some View {
         TabView {
-            ExplorerView(experiences: experiencesCategories[0], experience: MOCK_EXPERIENCES)
+            ExplorerView(experiencesCategory: experiencesCategories[0])
                 .tabItem { Image(systemName: "house")
                     Text("Accueil")
                 }
@@ -33,5 +33,7 @@ struct MasterView: View {
 struct MasterView_Previews: PreviewProvider {
     static var previews: some View {
         MasterView()
+            .environmentObject(FavorisManager())
+            .environmentObject(ImageLoader(urlString: ""))
     }
 }

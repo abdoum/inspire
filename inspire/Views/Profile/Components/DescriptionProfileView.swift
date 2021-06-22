@@ -13,7 +13,7 @@ struct DescriptionProfileView: View {
     
     var body: some View {
         HStack {
-            VStack (alignment: .leading){
+            VStack(alignment: .leading) {
                 Text("Qui je suis")
                     .font(.title2)
                     .fontWeight(.bold)

@@ -10,12 +10,12 @@ import SwiftUI
 struct ExperienceCard: View {
     
     @State var isFavorite: Bool = false
-    let experienceCategory: Experience
+    let experience: Experience
 
     var body: some View {
         VStack {
             ZStack {
-                Image(experienceCategory.category.image)
+                Image(experience.category.image)
                     .resizable()
                     .scaledToFill()
                     .frame(width: 180, height: 220)
@@ -30,7 +30,7 @@ struct ExperienceCard: View {
                 Image(systemName: "star.fill")
                     .foregroundColor(.black)
                     .opacity(0.8)
-                Text(experienceCategory.rate)
+                Text(experience.rate)
                     .fontWeight(.bold)
                     .foregroundColor(.black)
                     .opacity(0.8)
@@ -44,7 +44,7 @@ struct ExperienceCard: View {
             .font(.subheadline)
             .frame(width: 160, height: 20)
             HStack {
-                Text(experienceCategory.category.name)
+                Text(experience.category.name)
                     .font(.title3)
                     .foregroundColor(Color.black)
                     .opacity(0.8)
@@ -58,7 +58,7 @@ struct ExperienceCard: View {
                 .frame(width: 180)
             
             HStack(alignment: .top) {
-                PriceView(price: Double(experienceCategory.price), color: .black)
+                PriceView(price: Double(experience.price), color: .black)
                 Spacer()
                 Image(systemName: "video")
                     .resizable()
@@ -79,7 +79,7 @@ struct ExperienceCard: View {
 
 struct ExperienceCard_Previews: PreviewProvider {
     static var previews: some View {
-        ExperienceCard(experienceCategory: MOCK_EXPERIENCES[0])
+        ExperienceCard(experience: MOCK_EXPERIENCES[0])
     }
 }
 

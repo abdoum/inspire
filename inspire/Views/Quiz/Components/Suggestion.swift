@@ -34,7 +34,7 @@ struct Suggestion: View {
                     .padding(.vertical, 2)
                 NavigationLink(destination:
                                 // TODO: implement navigation to a specific experience
-                                ExperienceDetails(experiences: experience)
+                                ExperienceDetails(experience: experience)
                                , label: {
                                 RoundedRectangle(cornerRadius: 14)
                                     .frame(width: 90, height: 46, alignment: .center)

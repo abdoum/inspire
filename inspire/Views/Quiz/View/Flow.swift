@@ -48,13 +48,13 @@ struct Flow: View {
                     case 4:
                         Suggestions()
                     default:
-                        ExplorerView(experiences: experiencesCategories[1], experience: MOCK_EXPERIENCES)
+                        ExplorerView(experiencesCategory: experiencesCategories[1])
                     }
                     Spacer()
                 }
                 .edgesIgnoringSafeArea(.all)
             }else{
-                ExplorerView(experiences: experiencesCategories[1], experience: MOCK_EXPERIENCES)
+                ExplorerView(experiencesCategory: experiencesCategories[1])
             }
         }.ignoresSafeArea()
     }

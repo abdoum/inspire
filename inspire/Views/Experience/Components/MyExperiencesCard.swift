@@ -9,23 +9,8 @@ import SwiftUI
 
 struct MyExperiencesCard: View {
     
-    @State var isFavorite: Bool = false
+    @EnvironmentObject var favorisManager: FavorisManager
     let experienceCategory: Experience
-    
-    func addFavorite(color: Color) -> some View {
-        Button(action: {
-            self.isFavorite.toggle()
-        }, label: {
-            ZStack {
-                Circle()
-                    .frame(width: 25, height: 25)
-                    .foregroundColor(.white)
-                Image(systemName: isFavorite ? "heart.fill" : "heart")
-                    .foregroundColor(color)
-                
-            }
-        })
-    }
     
     var body: some View {
         VStack {
@@ -38,7 +23,7 @@ struct MyExperiencesCard: View {
                 VStack{
                     HStack {
                         Spacer(minLength: 90)
-                        addFavorite(color: .red)
+                        FavorisButton(experience: experienceCategory, isLike: favorisManager.isLike(experience: experienceCategory))
                     }
                     .frame(width: 110, height: 30)
                     Spacer()
@@ -105,6 +90,6 @@ struct MyExperiencesCard: View {
 
 struct MyExperiencesCard_Previews: PreviewProvider {
     static var previews: some View {
-        MyExperiencesCard(experienceCategory: MOCK_EXPERIENCES[0])
+        MyExperiencesCard(experienceCategory: MOCK_EXPERIENCES[0]).environmentObject(FavorisManager())
     }
 }

@@ -15,6 +15,8 @@ struct inspireApp: App {
         WindowGroup {
             MasterView()
                 .environmentObject(UserManager())
+                .environmentObject(FavorisManager())
+                .environmentObject(ImageLoader(urlString: ""))
         }
     }
 }

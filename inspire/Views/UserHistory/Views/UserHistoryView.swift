@@ -49,7 +49,6 @@ struct FirstItem: View {
             }
             UserHistoryList(experiences: MOCK_EXPERIENCES)
         }
-        .frame(height: 300)
     }
 }
 struct SecondItem: View {
@@ -87,7 +86,7 @@ struct ThirdItem: View {
 struct UserHistoryView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            UserHistoryView(experienceCategory: MOCK_EXPERIENCES[0])
+            UserHistoryView(experienceCategory: MOCK_EXPERIENCES[0]).environmentObject(FavorisManager())
         }
     }
 }

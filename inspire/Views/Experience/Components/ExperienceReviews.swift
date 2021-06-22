@@ -29,16 +29,14 @@ struct ExperienceReviews: View {
                     .opacity(0.8)
                 Text("(reviewNb)")
                 Spacer()
-                Button(action: {}) {
-                    HStack {
-                        Spacer()
-                        Button(action: {}) {
-                            Text("Voir tout")
-                                .fontWeight(.bold)
-                                .foregroundColor(.black)
-                                .underline()
-                                .font(/*@START_MENU_TOKEN@*/.subheadline/*@END_MENU_TOKEN@*/)
-                        }
+                HStack {
+                    Spacer()
+                    Button(action: {}) {
+                        Text("Voir tout")
+                            .fontWeight(.bold)
+                            .foregroundColor(.black)
+                            .underline()
+                            .font(.subheadline)
                     }
                 }
             }
@@ -49,12 +47,10 @@ struct ExperienceReviews: View {
                     .frame(width: 60.0, height: 60.0)
                     .clipShape(Circle())
                     .shadow(radius: 10)
-                VStack {
-                    HStack {
-                        Text("Name")
-                    }
+                VStack(alignment: .leading) {
+                    Text("Name")
                     Text("Date")
-                }
+                }.padding(.horizontal, 16)
                 Spacer()
             }
             HStack {

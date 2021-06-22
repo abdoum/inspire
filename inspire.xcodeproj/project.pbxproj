@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		131111A1267F8A5400BAFE6E /* HomePageMapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131111A0267F8A5400BAFE6E /* HomePageMapPin.swift */; };
 		131111A3267F8C9C00BAFE6E /* PopupHomepage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131111A2267F8C9C00BAFE6E /* PopupHomepage.swift */; };
 		131111A5267F8E9300BAFE6E /* UpComingExperiences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131111A4267F8E9300BAFE6E /* UpComingExperiences.swift */; };
 		131111A8267F8EF200BAFE6E /* MyExperiencesCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131111A7267F8EF200BAFE6E /* MyExperiencesCard.swift */; };
@@ -17,7 +16,6 @@
 		13783ACB267CDB9400FF0AE1 /* ExperienceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13783ACA267CDB9400FF0AE1 /* ExperienceList.swift */; };
 		13CCEBF726807B1B002E7DD1 /* ExpFavList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CCEBF626807B1B002E7DD1 /* ExpFavList.swift */; };
 		13CCEBFC2680930F002E7DD1 /* FavorisManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CCEBFB2680930F002E7DD1 /* FavorisManager.swift */; };
-		13CCEBFF2680A6EC002E7DD1 /* Location+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CCEBFE2680A6EC002E7DD1 /* Location+.swift */; };
 		13DCA7CC26737304000F3E76 /* Experience.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13DCA7CB26737304000F3E76 /* Experience.xcassets */; };
 		13DCA7CE26737320000F3E76 /* Profile.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13DCA7CD26737320000F3E76 /* Profile.xcassets */; };
 		13F18E952678F4660095B184 /* InfosProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F18E942678F4660095B184 /* InfosProfileView.swift */; };
@@ -94,7 +92,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		131111A0267F8A5400BAFE6E /* HomePageMapPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageMapPin.swift; sourceTree = "<group>"; };
 		131111A2267F8C9C00BAFE6E /* PopupHomepage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupHomepage.swift; sourceTree = "<group>"; };
 		131111A4267F8E9300BAFE6E /* UpComingExperiences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpComingExperiences.swift; sourceTree = "<group>"; };
 		131111A7267F8EF200BAFE6E /* MyExperiencesCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExperiencesCard.swift; sourceTree = "<group>"; };
@@ -104,7 +101,6 @@
 		13783ACA267CDB9400FF0AE1 /* ExperienceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceList.swift; sourceTree = "<group>"; };
 		13CCEBF626807B1B002E7DD1 /* ExpFavList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpFavList.swift; sourceTree = "<group>"; };
 		13CCEBFB2680930F002E7DD1 /* FavorisManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavorisManager.swift; sourceTree = "<group>"; };
-		13CCEBFE2680A6EC002E7DD1 /* Location+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+.swift"; sourceTree = "<group>"; };
 		13DCA7CB26737304000F3E76 /* Experience.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Experience.xcassets; sourceTree = "<group>"; };
 		13DCA7CD26737320000F3E76 /* Profile.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Profile.xcassets; sourceTree = "<group>"; };
 		13F18E942678F4660095B184 /* InfosProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfosProfileView.swift; sourceTree = "<group>"; };
@@ -205,16 +201,9 @@
 			isa = PBXGroup;
 			children = (
 				131111AB267F997D00BAFE6E /* UserHistoryList.swift */,
+				131111A4267F8E9300BAFE6E /* UpComingExperiences.swift */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		13CCEBFD2680A6E0002E7DD1 /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-				13CCEBFE2680A6EC002E7DD1 /* Location+.swift */,
-			);
-			path = Manager;
 			sourceTree = "<group>";
 		};
 		13DCA7CA267372F1000F3E76 /* Resources */ = {
@@ -265,7 +254,6 @@
 		21B6EC0F267C95D000EC2F9E /* Explorer */ = {
 			isa = PBXGroup;
 			children = (
-				13CCEBFD2680A6E0002E7DD1 /* Manager */,
 				21B6EC18267C964800EC2F9E /* Components */,
 				21B6EC13267C960E00EC2F9E /* Views */,
 				21B6EC10267C95DE00EC2F9E /* Extensions */,
@@ -297,7 +285,6 @@
 				21B6EC40267C9F2700EC2F9E /* ExperienceCard.swift */,
 				21B6EC1B267C968200EC2F9E /* SearchView.swift */,
 				13783ACA267CDB9400FF0AE1 /* ExperienceList.swift */,
-				131111A0267F8A5400BAFE6E /* HomePageMapPin.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -328,7 +315,6 @@
 				383D1F042679FF9E0079823A /* ExperienceReviews.swift */,
 				38B042BE267B280100A0765D /* NeedsData.swift */,
 				383D1F0E267A029C0079823A /* ExperiencePriceDates.swift */,
-				131111A4267F8E9300BAFE6E /* UpComingExperiences.swift */,
 				131111A7267F8EF200BAFE6E /* MyExperiencesCard.swift */,
 			);
 			path = Components;
@@ -691,7 +677,6 @@
 				21B6EC36267C97EA00EC2F9E /* SignUpView.swift in Sources */,
 				2BE1E888267786C700E4C55D /* User.swift in Sources */,
 				21B6EC41267C9F2700EC2F9E /* ExperienceCard.swift in Sources */,
-				131111A1267F8A5400BAFE6E /* HomePageMapPin.swift in Sources */,
 				131111A8267F8EF200BAFE6E /* MyExperiencesCard.swift in Sources */,
 				21B6EC2E267C978700EC2F9E /* InfosPersonalTextFieldView.swift in Sources */,
 				21B6EC15267C962100EC2F9E /* ExplorerView.swift in Sources */,
@@ -706,7 +691,6 @@
 				383D1F052679FF9E0079823A /* ExperienceReviews.swift in Sources */,
 				21B6EC3E267C9D2000EC2F9E /* InfosHeaderProfileView.swift in Sources */,
 				2BED752F267258D300C49853 /* inspireApp.swift in Sources */,
-				13CCEBFF2680A6EC002E7DD1 /* Location+.swift in Sources */,
 				21B6EC2A267C976500EC2F9E /* EmailTextFieldView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

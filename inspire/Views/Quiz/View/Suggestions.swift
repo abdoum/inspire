@@ -22,7 +22,7 @@ struct Suggestions: View {
                         
                         //                        GeometryReader{reader in
                         NavigationLink(
-                            destination: ExplorerView(experiences: experiencesCategories[1], experience: MOCK_EXPERIENCES),
+                            destination: ExplorerView(experiencesCategory: experiencesCategories[1]),
                                             isActive: $shouldShowPurple
                                         ) {
                             Suggestion(experience: experience)
