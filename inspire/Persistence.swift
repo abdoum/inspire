@@ -13,9 +13,21 @@ struct PersistenceController {
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-        for _ in 0..<10 {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+        
+        for _ in 1...2 {
+            
+            let newUtilisateur = Utilisateur(context: viewContext)
+            
+            newUtilisateur.timestamp = Date()
+            newUtilisateur.nom = "Jean"
+            newUtilisateur.prenom = "Fouquet"
+            newUtilisateur.avatar = "boulanger"
+            
+            let exp = Exp(context: viewContext)
+            exp.author = newUtilisateur
+            exp.price = 50
+            exp.text = "Spécialiste en informatique, électronique ou télécoms. Intervention sur la programmation des composants informatiques et sur le design des circuits électroniques. Participation à la définition technique du matériel électronique puis à son développement. Le tout à partir de spécifications définies préalablement. Analyse et la programmation des systèmes de télécommunication en temps réel."
+            exp.titre = "Ingénieur"
         }
         do {
             try viewContext.save()

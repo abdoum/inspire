@@ -22,22 +22,24 @@ struct SignInView: View {
             VStack {
                 TitleScreen(content: "Identification")
                     .offset(y: -50)
-                HStack {
-                    Image(systemName: "person")
-                        .foregroundColor(.secondary)
-                    EmailTextFieldView(email: $signUpUser.email)
+                Group {
+                    HStack {
+                        Image(systemName: "person")
+                            .foregroundColor(.secondary)
+                        EmailTextFieldView(email: $signUpUser.email)
+                    }
+                    
+                    HStack {
+                        Image(systemName: "lock")
+                            .foregroundColor(.secondary)
+                        PasswordTextFieldView(password: $signUpUser.password)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 8)
+                                    .stroke(lineWidth: 1)
+                                    .foregroundColor(invalidAttempts == 0 ? Color.clear : Color.red)
+                            ).modifier(ShakeEffect(animatableData: CGFloat(invalidAttempts)))
+                    }
                 }
-                HStack {
-                    Image(systemName: "lock")
-                        .foregroundColor(.secondary)
-                    PasswordTextFieldView(password: $signUpUser.password)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 8)
-                                .stroke(lineWidth: 1)
-                                .foregroundColor(invalidAttempts == 0 ? Color.clear : Color.red)
-                        ).modifier(ShakeEffect(animatableData: CGFloat(invalidAttempts)))
-                }
-                
                 OtherLoginButton(label: "Mot de passe oublié ?", action: {signIn.toggle()})
                     .offset(x: 100)
                     .padding()
@@ -71,5 +73,14 @@ struct ShakeEffect: GeometryEffect {
     
     func effectValue(size: CGSize) -> ProjectionTransform {
         ProjectionTransform(CGAffineTransform(translationX: travailDistance * sin(animatableData * .pi * numOfShakes), y: 0))
+    }
+}
+
+struct SignInView_Previews: PreviewProvider {
+    static var previews: some View {
+        
+        SignInView(signUpUser: SignUpUser(firstname: "e", lastname: "f", email: "", password: "", confirmPassword: "", avatar: "", biography: "", spokenLanguages: "", role: .guest), isLog: .constant(false))
+            .environmentObject(Quiz())
+            .environmentObject(SharedExperiences())
     }
 }

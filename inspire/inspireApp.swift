@@ -9,13 +9,13 @@ import SwiftUI
 
 @main
 struct inspireApp: App {
+    
     let persistenceController = PersistenceController.shared
-    @EnvironmentObject var quiz : Quiz
     @AppStorage("totalSteps") var totalSteps = 4
     
     var body: some Scene {
         WindowGroup {
-            MasterView( showQuiz: .constant(false))
+            MasterView()
                 .environmentObject(UserManager())
                 .environmentObject(Quiz())
                 .environmentObject(SharedExperiences())

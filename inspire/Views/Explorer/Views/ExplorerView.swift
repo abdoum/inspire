@@ -15,7 +15,6 @@ struct ExplorerView: View {
     @State private var inSearchmode = false
     @State private var mainCategories = experiencesCategories
     @EnvironmentObject var quiz : Quiz
-    @Binding var showQuiz : Bool
     @State private var tags = SharedExperiences().experiences[0].category.mainCategoriesTags
     @State private var selectedTags = SharedExperiences().experiences[0].category.selectedTags
     var searchResults : [Experience] { sharedExperiences.search(searchText: searchText) }
@@ -25,16 +24,16 @@ struct ExplorerView: View {
             ScrollView {
                 SearchView(searchText: $searchText, inSearchmode: $inSearchmode)
                     .padding(.trailing).padding(.leading)
-                //                                ScrollView(.horizontal, showsIndicators: false) {
-                //                                    HStack {
-                //                                        ForEach(tags.indices, id: \.self) { idx in
-                //                                            CategoryFilter(tag: $tags[idx], searchText: $searchText)
-                //                                                .padding(2)
-                //                                        }
-                //                                    }
-                //                                }
-                //                                .padding(.leading).padding(.top, 5)
-                //                                Divider().padding(.top)
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack {
+                        ForEach(tags.indices, id: \.self) { idx in
+                            CategoryFilter(tag: $tags[idx], searchText: $searchText)
+                                .padding(2)
+                        }
+                    }
+                }
+                .padding(.leading).padding(.top, 5)
+                Divider().padding(.top)
                 HStack {
                     SectionTitle(content: "\(searchResults.count) \(searchResults.count > 1 ? "résultats" : "résultat") \( searchResults.count > 1 ? "trouvés": "trouvé")")
                         .font(.title3).padding(.leading)
@@ -43,7 +42,7 @@ struct ExplorerView: View {
                         .padding(.trailing)
                 }
                 ScrollView(.horizontal, showsIndicators: false) {
-                   
+                    
                     HStack {
                         if !searchResults.isEmpty && (inSearchmode || !selectedTags.isEmpty){
                             ForEach(searchResults){experience in
@@ -75,7 +74,6 @@ struct ExplorerView: View {
                         }
                     }
                 }
-                .padding(.trailing)
                 
                 HStack {
                     SectionTitle(content: "Nouveautés de la semaine")
@@ -92,7 +90,7 @@ struct ExplorerView: View {
                                 .padding(.leading).padding(.top, 6)
                         }
                     }
-                }.padding()
+                }
                 if searchResults.isEmpty && (inSearchmode) {
                     HStack {
                         VStack{
@@ -107,7 +105,7 @@ struct ExplorerView: View {
                 }
             }
             EmptyView()
-                .fullScreenCover(isPresented: $showQuiz, content: {
+                .fullScreenCover(isPresented: $quiz.params.skipQuiz, content: {
                     Flow()
                 })
         }.navigationTitle("Accueil")
@@ -118,7 +116,7 @@ struct ExplorerView: View {
 struct ExplorerView_Preiews: PreviewProvider {
     
     static var previews: some View {
-        ExplorerView(showQuiz: .constant(false))
+        ExplorerView()
             .environmentObject(Quiz())
             .environmentObject(SharedExperiences())
     }
