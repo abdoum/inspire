@@ -45,7 +45,8 @@ struct CreateExperience: View {
             HStack {
                 Text("Price")
                     .foregroundColor(.black)
-                    .opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)                    .frame(width: 120 , height: 15)
+                    .opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
+                    .frame(width: 120 , height: 15)
                     .font(.title3)
                 
                 Spacer(minLength: 30)
@@ -80,8 +81,8 @@ struct CreateExperience: View {
                 Spacer()
             }
         }
-    .frame(width: 400)
-    . navigationBarTitle ( Text ( "Créer une expérience" ).font(.title3))
+    .navigationBarTitle ( Text ( "Créer une expérience" ))
+    .listStyle(PlainListStyle())
     }
 }
 
