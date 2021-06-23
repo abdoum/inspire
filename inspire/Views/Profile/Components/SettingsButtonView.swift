@@ -17,10 +17,9 @@ struct SettingsButtonView: View {
         Button (
             action: action
             , label: {
-                ZStack {
-                    Capsule()
-                        .frame(height: 50)
-                        .foregroundColor(Color.customSecondary)
+                RoundedRectangle(cornerRadius: 25.0)
+                    .foregroundColor(.customSecondary)
+                    .overlay(
                     HStack {
                         Image(systemName: imageName)
                             .foregroundColor(.black)
@@ -34,10 +33,14 @@ struct SettingsButtonView: View {
                             .font(.subheadline)
                             .underline()
                     }.padding([.leading, .trailing], 30)
-                }
-                .padding(.leading)
-                .padding(.trailing)
-            }
-            
-        )}
+                   )
+                    .frame(height: 50)
+            })
+            .padding(.horizontal)
+        }
+}
+struct SettingsButtonView_Previews: PreviewProvider {
+    static var previews: some View {
+        SettingsButtonView(imageName: "checkmark.shield", label: " Mon compte est vérifié", editName: "Modifier", action: {})
+    }
 }

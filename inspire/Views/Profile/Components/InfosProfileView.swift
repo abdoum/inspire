@@ -21,15 +21,15 @@ struct InfosProfileView2: View {
     let isLog: Bool
     
     var body: some View {
-        List {
+        VStack {
             infos(imageName: "mappin", description: "  Paris, France")
             infos(imageName: "speaker.wave.2", description: user.author.spokenLanguages)
             if isLog {
                 infos(imageName: "latch.2.case", description: user.category.specialisation)
             }
         }
-        .frame(maxWidth: .infinity)
-        .frame(height: 150)
+//        .frame(maxWidth: .infinity)
+//        .frame(maxHeight: 100)
     }
 }
 
@@ -37,7 +37,7 @@ struct InfosProfileView2_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             InfosProfileView2(user: MOCK_EXPERIENCES[0], isLog: false)
-            InfosProfileView2(user: MOCK_EXPERIENCES[0], isLog: true)
+                .previewLayout(.sizeThatFits)
         }
     }
 }

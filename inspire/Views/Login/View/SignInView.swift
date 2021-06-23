@@ -100,7 +100,6 @@ struct ClassicLoginScreen: View {
             }
             LoginButton(label: "Connexion", action: {
             login()
-                print("login")
             }
             
             ).disabled(signUpUser.email.isEmpty || signUpUser.password.isEmpty)
