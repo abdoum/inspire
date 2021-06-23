@@ -10,7 +10,7 @@ import SwiftUI
 struct Flow: View {
 //     TODO: use @AppStorage for production
     //    @State private var currentStep : Int = 1
-//            @AppStorage("currentStep") var currentStep = 1
+            @AppStorage("currentStep") var currentStep = 1
     @AppStorage("totalSteps") var totalSteps = 4
     @State private var bgColors : [Color] = [Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)).opacity(0.4), Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)).opacity(0.7), Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)).opacity(1.0), Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)).opacity(0.9)]
     let slide : AnyTransition = .asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading))
@@ -19,9 +19,9 @@ struct Flow: View {
     @EnvironmentObject var quiz : Quiz
     @State private var showQuiz : Bool = true
     
-    var currentStep : Int {
-        quiz.params.currentStep
-    }
+//    var currentStep : Int {
+//        quiz.params.currentStep
+//    }
     var body: some View {
         VStack {
 //            if quiz.params.currentStep <= totalSteps {
