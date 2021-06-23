@@ -29,6 +29,7 @@ struct CreateExpField: View {
                                 .stroke(Color.gray, lineWidth: 2))
             }
         }
+        .frame(height: 100)
         .padding(.vertical)
         
     }
