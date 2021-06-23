@@ -22,15 +22,15 @@ struct CreateExpField: View {
             
             Spacer(minLength: 30)
             
-            ScrollView {
+
                 TextField(topic, text: $topic)
                     .frame(width: 150 , height: 50).padding()
                     .overlay(RoundedRectangle(cornerRadius: 20)
                                 .stroke(Color.gray, lineWidth: 2))
-            }
+
         }
         .frame(height: 100)
-        .padding(.vertical)
+    //    .padding(.vertical)
         
     }
 }
