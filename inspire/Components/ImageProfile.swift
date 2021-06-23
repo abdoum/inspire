@@ -56,7 +56,7 @@ struct ImageProfileView: View {
     var body: some View {
         Image(imageName)
             .resizable()
-            .aspectRatio(contentMode: .fit)
+            .aspectRatio(contentMode: .fill)
             .frame(width:100, height:100)
             .clipShape(Circle())
     }

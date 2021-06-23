@@ -18,11 +18,9 @@ struct InfosHeaderProfileView: View {
     @State private var showCreatExperience: Bool = false
     
     var body: some View {
-        NavigationView {
+        
             VStack(alignment: .leading) {
                 if isPro {
-                    
-                    
                     HStack(spacing: 20) {
                         ImageProfileView(imageName: imageName)
                             .padding(.leading)
@@ -60,7 +58,7 @@ struct InfosHeaderProfileView: View {
                                 .font(.title)
                                 .bold()
                         }
-                    }
+                    
                 }
             }
         }

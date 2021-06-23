@@ -16,9 +16,13 @@ struct MapView: View {
     @State private var tag = FilterTagModel(text: "", isSelected: false)
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 48.8013, longitude:  2.6076), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
     @State private var isPresented : Bool = false
+    @Binding var selectedCategory: Int
     
     var body: some View {
         ZStack {
+            
+            
+//            CustomSegmentedPicker(currentTab: .constant(1))
             Map(coordinateRegion: $region, annotationItems: MOCK_EXPERIENCES, annotationContent: { experience in
                 MapAnnotation(coordinate: experience.location, anchorPoint: CGPoint(x: 0.5, y: 0.5)) {
                     Button(action: {
@@ -39,6 +43,9 @@ struct MapView: View {
             }).onTapGesture {
                 showDetails = nil
             }
+            SegmentedControlView(selectorIndex: $selectedCategory)
+                                        .padding(.top, 10)
+                .position(x:200,y:120)
             if let experience = showDetails {
                 PopupHomepage(experience: experience)
                     .padding(.bottom, 90)
@@ -54,6 +61,6 @@ struct MapView: View {
 }
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
-        MapView().environmentObject(FavorisManager())
+        MapView(selectedCategory: .constant(1)).environmentObject(FavorisManager())
     }
 }

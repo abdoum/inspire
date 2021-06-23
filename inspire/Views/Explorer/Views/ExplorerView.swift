@@ -23,16 +23,6 @@ struct ExplorerView: View {
         NavigationView {
            
                 VStack {
-                    //HEADER
-                    //                    ZStack{
-                    //
-                    //                        HStack {
-                    //                            Spacer()
-                    //
-                    //
-                    //                        }
-                    //                    }
-                    
                     if showSearch {
                         VStack {
                             SearchView(searchText: $searchText, inSearchmode: $inSearchmode)
@@ -49,8 +39,10 @@ struct ExplorerView: View {
                             
                         }
                     }else{
+                        if selectedCategory == 0 {
                         SegmentedControlView(selectorIndex: $selectedCategory)
                             .padding(.top, 10)
+                        }
                     }
                     
                     
@@ -102,7 +94,7 @@ struct ExplorerView: View {
                             }
                         }
                     } else {
-                        MapView()
+                        MapView(selectedCategory: $selectedCategory)
                     }
                 }.navigationTitle("Explorer")
                 .navigationBarTitleDisplayMode(.inline)

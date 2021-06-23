@@ -19,7 +19,6 @@ struct CreateExperience: View {
     @Binding var showCreatExperience: Bool
     
     var body: some View {
-        NavigationView {
             VStack {
 //                HStack {
 //                    Text("Créer une expérience")
@@ -90,9 +89,7 @@ struct CreateExperience: View {
                 }
             }
             .frame(width: 400)
-            . navigationBarTitle ( Text ( "Créer une expérience" ).font(.title3))
-        }
-        
+            . navigationBarTitle ( Text ( "Créer une expérience" ).font(.title3))        
         
     }
 }

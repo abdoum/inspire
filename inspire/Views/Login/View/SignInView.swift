@@ -13,7 +13,6 @@ struct SignInView: View {
     @State var signUpUser: SignUpUser
     @State var signUp: Bool = false
     @State var signIn: Bool = false
-    @State var invalidAttempts = 0
     @Binding var isLog: Bool
     @State var classicLogin = false
     
@@ -23,7 +22,7 @@ struct SignInView: View {
                 LoginButton(label: "Connexion", action: {
                                 classicLogin.toggle()})
                     .sheet(isPresented: $classicLogin, content: {
-                        ClassicLoginScreen(signUpUser: signUpUser, isLog: $isLog)
+                        ClassicLoginScreen(signUpUser: signUpUser, isLog: $isLog, classicLogin: $classicLogin)
                     })
                 
                 OtherLoginButton(label: "Créer un compte", action: {signUp.toggle()})
@@ -67,7 +66,7 @@ struct ClassicLoginScreen: View {
     @State var signIn: Bool = false
     @State var invalidAttempts = 0
     @Binding var isLog: Bool
-    @State var classicLogin = false
+    @Binding var classicLogin : Bool
     
     var body: some View {
         Group {
@@ -96,10 +95,10 @@ struct ClassicLoginScreen: View {
                     .padding()
                     .sheet(isPresented: $signIn, content: {
                         ResetPassword(signUpUser: .empty, signIn: $signIn)
-                })
+                    })
             }
             LoginButton(label: "Connexion", action: {
-            login()
+                login()
             }
             
             ).disabled(signUpUser.email.isEmpty || signUpUser.password.isEmpty)
@@ -107,8 +106,12 @@ struct ClassicLoginScreen: View {
     }
     func login() {
         isLog = userManager.login(email: signUpUser.email, password: signUpUser.password)
-        withAnimation(.default) {
-            self.invalidAttempts += 1
+        if !isLog{
+            withAnimation(.default) {
+                self.invalidAttempts += 1
+            }
+        }else{
+            classicLogin = false
         }
     }
 }

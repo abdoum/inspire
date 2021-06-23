@@ -21,13 +21,19 @@ struct InfosProfileView2: View {
     let isLog: Bool
     
     var body: some View {
-        VStack {
-            infos(imageName: "mappin", description: "  Paris, France")
-            infos(imageName: "speaker.wave.2", description: user.author.spokenLanguages)
-            if isLog {
-                infos(imageName: "latch.2.case", description: user.category.specialisation)
+        HStack {
+            VStack(alignment: .leading) {
+                infos(imageName: "mappin", description: "  Paris, France")
+                Divider()
+                infos(imageName: "speaker.wave.2", description: user.author.spokenLanguages)
+                Divider()
+                if isLog {
+                    infos(imageName: "latch.2.case", description: user.category.specialisation)
+                    Divider()
+                }
             }
-        }
+            Spacer()
+        }.padding()
 //        .frame(maxWidth: .infinity)
 //        .frame(maxHeight: 100)
     }
