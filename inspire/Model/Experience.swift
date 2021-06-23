@@ -22,7 +22,7 @@ struct Experience : Identifiable {
     var reviews : [Review] = []
     var rate: String
     var averageRate : Double {
-        Double(reviews.compactMap({$0.rate}).reduce(0, +) / reviews.count).rounded()
+        Double(reviews.compactMap({$0.rate}).reduce(0, +) / reviews.count)
     }
     var location: CLLocationCoordinate2D
     // TODO: retreive coordinates using coreLocation

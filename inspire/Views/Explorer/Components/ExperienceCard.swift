@@ -30,7 +30,7 @@ struct ExperienceCard: View {
                 Image(systemName: "star.fill")
                     .foregroundColor(.black)
                     .opacity(0.8)
-                Text("\(experience.averageRate, specifier: "%.1f")")
+                Text("\(experience.rate)")
                     .fontWeight(.bold)
                     .foregroundColor(.black)
                     .opacity(0.8)

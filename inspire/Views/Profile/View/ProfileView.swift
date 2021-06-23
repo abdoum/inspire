@@ -47,7 +47,7 @@ let previewUser = User(firstname: "Valentin", lastname: "Jizhaki", email: "test1
 struct ProfileView_Previews: PreviewProvider {
    
     static var previews: some View {
-        ProfileView(isLog: .constant(true), experience: MOCK_EXPERIENCES[0])
+        ProfileView(isLog: .constant(true), experience: MOCK_EXPERIENCES[2])
             .environmentObject(UserManager())
             .environmentObject(ImageLoader(urlString: ""))
     }

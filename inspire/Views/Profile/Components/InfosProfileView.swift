@@ -28,7 +28,7 @@ struct InfosProfileView2: View {
                 infos(imageName: "speaker.wave.2", description: user.author.spokenLanguages)
                 Divider()
                 if isLog {
-                    infos(imageName: "latch.2.case", description: user.category.specialisation)
+                    infos(imageName: "latch.2.case", description: user.category.name)
                     Divider()
                 }
             }
