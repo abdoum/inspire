@@ -20,9 +20,6 @@ struct MapView: View {
     
     var body: some View {
         ZStack {
-            
-            
-//            CustomSegmentedPicker(currentTab: .constant(1))
             Map(coordinateRegion: $region, annotationItems: MOCK_EXPERIENCES, annotationContent: { experience in
                 MapAnnotation(coordinate: experience.location, anchorPoint: CGPoint(x: 0.5, y: 0.5)) {
                     Button(action: {
@@ -45,7 +42,7 @@ struct MapView: View {
             }
             SegmentedControlView(selectorIndex: $selectedCategory)
                                         .padding(.top, 10)
-                .position(x:200,y:120)
+                .position(x: UIScreen.main.bounds.width / 2 , y:120)
             if let experience = showDetails {
                 PopupHomepage(experience: experience)
                     .padding(.bottom, 90)

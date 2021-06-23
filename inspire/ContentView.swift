@@ -10,8 +10,7 @@ import CoreData
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
-    @StateObject var quiz = Quiz()
-    @StateObject var experiences = SharedExperiences()
+   
     
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Utilisateur.timestamp, ascending: true)],

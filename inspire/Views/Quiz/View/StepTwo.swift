@@ -9,7 +9,8 @@ import SwiftUI
 
 struct StepTwo: View {
     @EnvironmentObject var quiz : Quiz
-    var bgColor : Color
+    @Binding var currentStep : Int
+    
     var body: some View {
         let choices = quiz.params.existingExperienceParticipationModes
         VStack {
@@ -18,7 +19,7 @@ struct StepTwo: View {
                 Button(action: {
                     withAnimation(.spring()) {
                         quiz.params.preferedExperienceParticipationMode = ParticipationMode(rawValue: mode) ?? .all
-                        quiz.params.currentStep += 1
+                        currentStep += 1
                     }
                     
                 }, label: {
@@ -59,13 +60,13 @@ struct StepTwo: View {
                 })
             }
             Spacer()
-        }.background(bgColor.ignoresSafeArea())
+        }
     }
 }
 
 struct StepOne_Previews: PreviewProvider {
     static var previews: some View {
-        StepTwo(bgColor: .blue)
+        StepTwo(currentStep: .constant(2))
             .environmentObject(Quiz())
     }
 }

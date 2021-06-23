@@ -13,7 +13,7 @@ struct QuizParams   {
     let existingExperienceCategories =  experiencesCategories
     var preferedExperienceCategorie : String? = nil
     var skipQuiz : Bool = false
-    var isPresented : Bool = true
+    var isPresented : Bool = false
     var currentStep : Int = 1
     let existingExperienceLocationModes : [String] = LocationMode.allLocationModes
     var preferedExperienceLocationMode : LocationMode? = nil

@@ -9,8 +9,8 @@ import SwiftUI
 
 struct StepThree: View {
     @EnvironmentObject var quiz : Quiz
-    var bgColor : Color
-    @Environment(\.presentationMode) var presentationMode
+    @AppStorage("isPresented") var isPresented = true
+    @Binding var currentStep : Int
     
     var body: some View {
         let choices = quiz.params.existingExperienceLocationModes
@@ -21,12 +21,13 @@ struct StepThree: View {
             ForEach(choices, id: \.self){mode in
                 Button(action: {
                     withAnimation(.spring()) {
-                        presentationMode.wrappedValue.dismiss()
                         quiz.params.preferedExperienceLocationMode = LocationMode(rawValue: mode) ?? .all
                         quiz.params.currentStep += 1
-                        
+                        quiz.params.isPresented = false
+                        currentStep += 1
+                        isPresented = false
+//                        presentationMode.wrappedValue.dismiss()
                     }
-                    
                 }, label: {
                     Label(
                         title: {
@@ -63,13 +64,13 @@ struct StepThree: View {
                 })
             }
             Spacer()
-        }.background(bgColor.ignoresSafeArea())
+        }
     }
 }
 
 struct StepThree_Previews: PreviewProvider {
     static var previews: some View {
-        StepThree(bgColor: .red)
+        StepThree(currentStep: .constant(4))
             .environmentObject(Quiz())
     }
 }

@@ -12,6 +12,8 @@ struct inspireApp: App {
     
     let persistenceController = PersistenceController.shared
     @AppStorage("totalSteps") var totalSteps = 4
+    @StateObject var quiz = Quiz()
+    @StateObject var experiences = SharedExperiences()
     
     var body: some Scene {
         WindowGroup {

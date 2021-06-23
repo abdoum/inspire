@@ -10,18 +10,19 @@ import SwiftUI
 struct ExplorerView: View {
     
     @EnvironmentObject var sharedExperiences: SharedExperiences
+    @EnvironmentObject var quiz : Quiz
     @State private var selectedCategory: Int = 0
     @State private var searchText = ""
     @State private var inSearchmode = false
     @State private var mainCategories = experiencesCategories
-    @EnvironmentObject var quiz : Quiz
     @State private var tags = SharedExperiences().experiences[0].category.mainCategoriesTags
     @State private var selectedTags = SharedExperiences().experiences[0].category.selectedTags
     var searchResults : [Experience] { sharedExperiences.search(searchText: searchText) }
     @State private var showSearch = false
+    
+    
     var body: some View {
         NavigationView {
-           
                 VStack {
                     if showSearch {
                         VStack {
@@ -119,11 +120,10 @@ struct ExplorerView: View {
                                             }
                                         })
                 )
-                .fullScreenCover(isPresented: $quiz.params.skipQuiz, content: {
+                .fullScreenCover(isPresented: $quiz.params.isPresented, content: {
                     Flow()
                 })
         }
-       
     }
 }
 
