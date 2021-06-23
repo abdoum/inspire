@@ -23,12 +23,12 @@ struct ExperienceDetails: View {
                             .aspectRatio(contentMode: .fit)
                             .listRowInsets(EdgeInsets())
                         VStack {
-                            AuthorMainInfos(imageName: experience.author.avatar, fullName: "\(experience.author.firstname) \(experience.author.lastname.uppercased())", specialisation: experience.category.specialisation, rate: experience.rate)
+                            AuthorMainInfos(author: experience.author, experience: experience)
                             ExperienceContact(language: experience.author.spokenLanguages)
                                 .padding(.leading).padding(.trailing)
                             ExperienceProgram(experience.description, lineLimit: 6)
                             UserNeeds()
-                            ExperienceReviews()
+                            ExperienceReviews(reviews: experience.reviews)
                         }.padding(.horizontal, 8)
                     }
                 }
@@ -74,18 +74,18 @@ struct FavorisButton: View {
         , label: {
             Circle()
                 .frame(width: 50, height: 30)
-                .foregroundColor(.white)
+                .foregroundColor( .white)
                 .overlay(
                     Image(systemName: isLike ? "heart.fill" : "heart")
-                        .foregroundColor(isLike ? .customPrimary : .customSecondary)
+                        .foregroundColor(isLike ? Color(#colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)) : .customPrimary)
                 )
         })
     }
 }
 
-struct FavorisButton_Previews: PreviewProvider {
+struct ExperienceDetails_Previews: PreviewProvider {
     static var previews: some View {
-        FavorisButton(experience: MOCK_EXPERIENCES[0], isLike: true)
+        ExperienceDetails(experience: MOCK_EXPERIENCES[0])
             .previewLayout(.sizeThatFits).environmentObject(FavorisManager())
     }
 }

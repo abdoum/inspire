@@ -9,10 +9,8 @@ import SwiftUI
 
 struct AuthorMainInfos: View {
     
-    let imageName: String
-    let fullName: String
-    let specialisation: String
-    let rate: String
+    let author: User
+    let experience: Experience
     
     func button(imageName: String, action: Void) -> some View {
         Button(action: {
@@ -31,7 +29,7 @@ struct AuthorMainInfos: View {
         VStack(alignment: .leading) {
             //------------HEAD------------------
             HStack {
-                Image(imageName)
+                Image(author.avatar)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 80.0, height: 80.0)
@@ -40,11 +38,11 @@ struct AuthorMainInfos: View {
                 
                 VStack(alignment: .leading) {
                     HStack {
-                        Text(fullName)
+                        Text("\(author.firstname) \(author.lastname)")
                             .font(.title2)
                             .fontWeight(.bold)
                     }
-                    Text(specialisation)
+                    Text(experience.category.specialisation)
                         .padding(.top)
                 }.padding(.leading)
                 Spacer()
@@ -55,28 +53,27 @@ struct AuthorMainInfos: View {
                     Image(systemName: "star.fill")
                         .foregroundColor(.black)
                         .opacity(0.8)
-                    Text(" \(rate)")
+                    Text(" \(experience.rate)")
                         .font(.title3)
                         .fontWeight(.bold)
                         .foregroundColor(.black)
                         .opacity(0.8)
                     Button(action: {}) {
-                        Text(" (Nb Avis)")
+                        Text("(\(experience.reviews.count))")
                             .font(.headline)
                             .foregroundColor(Color.gray)
-                            .underline()
                     }
-                    Spacer()
-                }.frame(maxWidth: .infinity)
-                ZStack {
                     RoundedRectangle(cornerRadius: 8)
-                        .frame(width: 150.0, height: 30.0)
-                        .foregroundColor(.black)
-                        .opacity(0.5)
-                    Text("Category")
-                        .foregroundColor(.white)
+                        .frame(height: 30.0)
+                        .foregroundColor(.black.opacity(0.5))
+                        
+                        .overlay(
+                            Text(experience.category.specialisation)
+                                .foregroundColor(.white)
+                        )
+                        .padding()
                 }
-                Spacer(minLength: 2)
+                .padding(.bottom, 10)
                 //Solo ---- Group ---- Visio
                 HStack(alignment: .center) {
                     button(imageName: "person", action: ())
@@ -86,31 +83,27 @@ struct AuthorMainInfos: View {
                     button(imageName: "video", action: ())
                 }
                 .padding([.horizontal, .trailing], 40)
-                Spacer(minLength: 2)
-                //--------RATE-------
-                
-                
-                
-            }.frame(height: 130)
+            }
+ //--------RATE-------
             Divider()
             VStack {
                 HStack {
                     Image(systemName: "map")
                         .foregroundColor(.black)
                         .opacity(0.5)
-                    Text(" Town, Country")
+                    Text(" Paris, France")
                         .font(.headline)
                         .foregroundColor(Color.gray)
                 }
             }
             Divider()
         }
-        .padding(.leading, 20)
+        .padding(.horizontal, 20)
     }
 }
 
 struct AuthorMainInfos_Previews: PreviewProvider {
     static var previews: some View {
-        AuthorMainInfos(imageName: "profilepompier", fullName: "Test BLABLABLA", specialisation: "Test", rate: "0.0/5")
+        AuthorMainInfos(author: MOCK_EXPERIENCES[0].author, experience: MOCK_EXPERIENCES[0])
     }
 }
