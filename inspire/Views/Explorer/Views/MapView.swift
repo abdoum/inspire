@@ -15,54 +15,45 @@ struct MapView: View {
     @State private var inSearchmode = false
     @State private var tag = FilterTagModel(text: "", isSelected: false)
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 48.8013, longitude:  2.6076), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
-    var experience: Experience
-    let annotations = MOCK_EXPERIENCES
+    @State private var isPresented : Bool = false
     
     var body: some View {
-        VStack  (alignment: .leading) {
-            SearchView(searchText: $searchText, inSearchmode: $inSearchmode)
-                .padding(.trailing).padding(.leading)
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack {
-                    ForEach(experiencesCategories, id: \.self) { experience in
-                        
-                        CategoryFilter(tag: $tag, searchText: $searchText)
-                            .padding(.leading).padding(.top, 6)
-                    }
-                }
-            }
-            //            CategoryFilters()
-            //                .padding(.leading).padding(.top, 5)
-            //            , interactionModes: .all, showsUserLocation: true, userTrackingMode: .none
-            Divider().padding(.top)
-            Map(coordinateRegion: $region, annotationItems: annotations) {
-                MapAnnotation(coordinate: $0.location, anchorPoint: CGPoint(x: 0.5, y: 0.5)) {
+        ZStack {
+            Map(coordinateRegion: $region, annotationItems: MOCK_EXPERIENCES, annotationContent: { experience in
+                MapAnnotation(coordinate: experience.location, anchorPoint: CGPoint(x: 0.5, y: 0.5)) {
                     Button(action: {
-                        //code...
-                    }) {
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 30)
-                                .frame(width: 60.0, height: 30.0)
-                                .foregroundColor(.white)
-                            
-                            Text("\(experience.price.description) €")
-                                .font(.subheadline)
-                                .foregroundColor(.black)
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+                            showDetails = experience
                         }
+                    }) {
+                        RoundedRectangle(cornerRadius: 30)
+                            .frame(width: 60.0, height: 30.0)
+                            .foregroundColor(.white)
+                            .overlay(
+                                Text("\(experience.price)€")
+                                    .font(.subheadline)
+                                    .foregroundColor(.black))
                     }
                     .shadow(color: .gray, radius: 10)
                 }
+            }).onTapGesture {
+                showDetails = nil
             }
-        }
+            if let experience = showDetails {
+                PopupHomepage(experience: experience)
+                    .padding(.bottom, 90)
+                    .onTapGesture {
+                        isPresented.toggle()
+                    }
+                    .fullScreenCover(isPresented: $isPresented, content: {
+                        ExperienceDetails(experience: experience)
+                    })
+            }
+        }.edgesIgnoringSafeArea(.all)
     }
-}
-
-struct Location: Identifiable {
-    let id = UUID()
-    var coordinate: CLLocationCoordinate2D
 }
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
-        MapView(experience: MOCK_EXPERIENCES[0])
+        MapView().environmentObject(FavorisManager())
     }
 }

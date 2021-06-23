@@ -11,69 +11,67 @@ struct ExperienceCard: View {
     
     @State var isFavorite: Bool = false
     let experience: Experience
-    
+    let width = CGFloat(160)
     var body: some View {
-        NavigationLink(destination: ExperienceDetails(experience: experience)) {
-            VStack {
-                ZStack {
-                    Image(experience.category.image)
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 180, height: 150)
-                        .clipShape(RoundedCorners(tl: 20, tr: 20, bl: 0, br: 0))
-                    VStack{
-                        Spacer()
-                    }
-                    .frame(width: 160, height: 150)
-                    
-                }
-                HStack(alignment: .center) {
-                    Image(systemName: "star.fill")
-                        .foregroundColor(.black)
-                        .opacity(0.8)
-                    Text("\(experience.averageRate, specifier: "%.1f")")
-                        .fontWeight(.bold)
-                        .foregroundColor(.black)
-                        .opacity(0.8)
-                    Text("(\(experience.reviews.compactMap({$0.comment}).count))")
-                        .foregroundColor(Color.gray)
-                        .underline()
-                    Spacer()
-                    Text("Paris")
-                        .foregroundColor(Color.gray)
-                }
-                .font(.subheadline)
-                .frame(width: 160, height: 20)
-                HStack {
-                    Text(experience.category.specialisation)
-                        .fontWeight(.thin)
-                        .foregroundColor(Color.black)
-                        .opacity(0.8)
-                        .multilineTextAlignment(.leading)
+        VStack {
+            ZStack {
+                Image(experience.category.image)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: width, height: 150)
+                    .clipShape(RoundedCorners(tl: 20, tr: 20, bl: 0, br: 0))
+                VStack{
                     Spacer()
                 }
-                .padding([.top, .bottom, .trailing])
-                .frame(width: 160, height: 20)
+                .frame(width: width - 20, height: 150)
                 
-                Divider()
-                    .frame(width: 180)
-                
-                HStack(alignment: .top) {
-                    PriceView(price: experience.price, color: .customPrimary)
-                    Spacer()
-                    Image(systemName: "video")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 16, height: 16)
-                        .foregroundColor(.customSecondary)
-                }
-                
-                .frame(width: 140, height: 20)
-                .padding(.bottom)
             }
-            .overlay(RoundedRectangle(cornerRadius: 20)
-                        .stroke(Color.customSecondaryLight, lineWidth: 2))
-        }.navigationBarHidden(true)
+            HStack(alignment: .center) {
+                Image(systemName: "star.fill")
+                    .foregroundColor(.black)
+                    .opacity(0.8)
+                Text("\(experience.averageRate, specifier: "%.1f")")
+                    .fontWeight(.bold)
+                    .foregroundColor(.black)
+                    .opacity(0.8)
+                Text("(\(experience.reviews.compactMap({$0.comment}).count))")
+                    .foregroundColor(Color.gray)
+                Spacer()
+                Text("Paris")
+                    .foregroundColor(Color.gray)
+            }
+            .font(.subheadline)
+            .frame(width: width - 20, height: 20)
+            HStack {
+                Text(experience.category.specialisation)
+                    .fontWeight(.thin)
+                    .foregroundColor(Color.black)
+                    .opacity(0.8)
+                    .multilineTextAlignment(.leading)
+                Spacer()
+            }
+            .padding([.top, .bottom, .trailing])
+            .frame(width: width - 20, height: 20)
+            
+            Divider()
+                .frame(width: width)
+            
+            HStack(alignment: .top) {
+                PriceView(price: experience.price, color: .customPrimary)
+                Spacer()
+                Image(systemName: "video")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 16, height: 16)
+                    .foregroundColor(.customSecondary)
+            }
+            .frame(width: width - 40 , height: 220)
+            
+            .frame(width: width - 40, height: 20)
+            .padding(.bottom)
+        }
+        .overlay(RoundedRectangle(cornerRadius: 20)
+                    .stroke(Color.customSecondaryLight, lineWidth: 2))
     }
 }
 

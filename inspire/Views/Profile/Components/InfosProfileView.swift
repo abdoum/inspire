@@ -9,7 +9,7 @@ import SwiftUI
 
 
 struct InfosProfileView2: View {
-    
+   
     func infos(imageName: String, description: String) -> some View {
         HStack {
             Image(systemName: imageName)
@@ -28,7 +28,7 @@ struct InfosProfileView2: View {
                 infos(imageName: "latch.2.case", description: user.category.specialisation)
             }
         }
-        .frame(width: UIScreen.main.bounds.width)
+        .frame(maxWidth: .infinity)
         .frame(height: 150)
     }
 }

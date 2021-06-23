@@ -9,34 +9,60 @@ import SwiftUI
 
 struct MasterView: View {
     
-    @Binding var showQuiz : Bool
+    @EnvironmentObject var quiz : Quiz
+    @State private var badgeCount: Int = 1
+    var badgePosition: CGFloat = 2
+    var tabsCount: CGFloat = 4
+    @EnvironmentObject var favorisManager : FavorisManager
     
     var body: some View {
-        TabView {
-            ExplorerView(showQuiz: $showQuiz)
-                .tabItem { Image(systemName: "house")
-                    Text("Accueil")
+        GeometryReader { geometry in
+            ZStack(alignment: .bottomLeading) {
+                TabView {
+                    ExplorerView()
+                        .tabItem { Image(systemName: "rectangle.stack.person.crop.fill")
+                            Text("Explorer").fontWeight(.bold)
+                        }
+                    FavorisView()
+                        .tabItem { Image(systemName: "heart")
+                            Text("Favoris").fontWeight(.bold)
+                        }
+                    
+                    UserHistoryView()
+                        .tabItem { Image(systemName: "face.dashed.fill")
+                            Text("Expériences").fontWeight(.bold)
+                        }
+                    MasterLogin()
+                        .tabItem { Image(systemName: "person.crop.circle.fill")
+                            Text("Compte").fontWeight(.bold)
+                        }
+                }.accentColor(.customPrimary)
+                // Badge View
+                if favorisManager.favoris.count > 0 {
+                ZStack {
+                    Circle()
+                        .foregroundColor(.customPrimary)
+                    
+                    Text("\(favorisManager.favoris.count)")
+                        .foregroundColor(.white)
+                        .font(Font.system(size: 12))
                 }
-            FavorisView()
-                .tabItem { Image(systemName: "heart")
-                    Text("Favoris")
+                .frame(width: 15, height: 15)
+                .offset(x: ( ( 2 * self.badgePosition) - 0.95 ) * ( geometry.size.width / ( 2 * self.tabsCount ) ) + 2, y: -25)
+                .opacity(1 == 0 ? 0 : 1.0)
                 }
-            UserHistoryView(experienceCategory: MOCK_EXPERIENCES[0])
-                .tabItem { Image(systemName: "latch.2.case")
-                    Text("Expériences")
-                }
-            MasterLogin()
-                .tabItem { Image(systemName: "person")
-                    Text("Profile")
-                }
+            }
         }
     }
 }
 
 struct MasterView_Previews: PreviewProvider {
     static var previews: some View {
-        MasterView(showQuiz: .constant(true))
+        
+        MasterView()
             .environmentObject(Quiz())
             .environmentObject(SharedExperiences())
+            .environmentObject(FavorisManager())
+            .environmentObject(ImageLoader(urlString: ""))
     }
 }

@@ -10,33 +10,32 @@ import SwiftUI
 struct ExperienceDetails: View {
     
     @Environment(\.presentationMode) var presentationMode
-    @State var active = true
+    @EnvironmentObject var favorisManager: FavorisManager
     let experience: Experience
     
     var body: some View {
         NavigationView {
-            ZStack {
-                VStack {
-                    ScrollView {
+            VStack(spacing: 0) {
+                ScrollView {
+                    VStack {
+                        Image(experience.category.image)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .listRowInsets(EdgeInsets())
                         VStack {
-                            Image(experience.category.image)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .listRowInsets(EdgeInsets())
-                            VStack {
-                                AuthorMainInfos(imageName: experience.author.avatar, fullName: "\(experience.author.firstname) \(experience.author.lastname.uppercased())", specialisation: experience.category.specialisation, rate: experience.rate)
-                                ExperienceContact(language: experience.author.spokenLanguages)
-                                    .padding(.leading).padding(.trailing)
-                                ExperienceProgram(experience.description, lineLimit: 6)
-                                UserNeeds()
-                                ExperienceReviews()
-                            }
-                            .padding()
-                        }
+                            AuthorMainInfos(imageName: experience.author.avatar, fullName: "\(experience.author.firstname) \(experience.author.lastname.uppercased())", specialisation: experience.category.specialisation, rate: experience.rate)
+                            ExperienceContact(language: experience.author.spokenLanguages)
+                                .padding(.leading).padding(.trailing)
+                            ExperienceProgram(experience.description, lineLimit: 6)
+                            UserNeeds()
+                            ExperienceReviews()
+                        }.padding(.horizontal, 8)
                     }
-                    ExperiencePriceDates(experiences: MOCK_EXPERIENCES[0])
                 }
-            }.navigationBarItems(leading:
+                ExperiencePriceDates(experiences: experience)
+                    .frame(maxWidth: .infinity)
+            }.edgesIgnoringSafeArea(.all)
+            .navigationBarItems(leading:
                                     Button(action: {
                                         presentationMode.wrappedValue.dismiss()
                                     }, label: {
@@ -48,24 +47,45 @@ struct ExperienceDetails: View {
                                                     .foregroundColor(.black)
                                             )
                                     }), trailing:
-                                        Button(action: {
-                                            //add to FavorisView
-                                        }, label: {
-                                            Circle()
-                                                .frame(width: 50, height: 30)
-                                                .foregroundColor(.white)
-                                                .overlay(
-                                                    Image(systemName: "heart")
-                                                        .foregroundColor(.black)
-                                                )
-                                        }) )
-            .edgesIgnoringSafeArea(.all)
+                                        FavorisButton(experience: experience, isLike: favorisManager.isLike(experience: experience))
+            )
         }
     }
 }
 
-struct ExperienceDetails_Previews: PreviewProvider {
+struct FavorisButton: View {
+    
+    let experience: Experience
+    @EnvironmentObject var favorisManager: FavorisManager
+    @State var isLike: Bool
+    func toggle() {
+        if isLike {
+            favorisManager.removeFavoris(experience: experience)
+        } else {
+            favorisManager.addFavoris(experience: experience)
+        }
+        isLike = favorisManager.isLike(experience: experience)
+    }
+    var body: some View {
+        Button(action:
+            withAnimation(.spring()){
+                toggle
+            }
+        , label: {
+            Circle()
+                .frame(width: 50, height: 30)
+                .foregroundColor(.white)
+                .overlay(
+                    Image(systemName: isLike ? "heart.fill" : "heart")
+                        .foregroundColor(isLike ? .customPrimary : .customSecondary)
+                )
+        })
+    }
+}
+
+struct FavorisButton_Previews: PreviewProvider {
     static var previews: some View {
-        ExperienceDetails(experience: MOCK_EXPERIENCES[0])
+        FavorisButton(experience: MOCK_EXPERIENCES[0], isLike: true)
+            .previewLayout(.sizeThatFits).environmentObject(FavorisManager())
     }
 }

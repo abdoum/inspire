@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct UserHistoryList: View {
-    let experiences: [Experience]
-    @State private var isPresented: Bool = false
     
+    @State private var isPresented: Bool = false
+    @Binding var experiences : [Experience]
     var body: some View {
-        ScrollView(.horizontal) {
+        ScrollView(.horizontal, showsIndicators: false) {
             HStack {
                 ForEach(experiences) { experience in
                     Button(action: {
@@ -32,6 +32,8 @@ struct UserHistoryList: View {
 
 struct UserHistoryList_Previews: PreviewProvider {
     static var previews: some View {
-        UserHistoryList(experiences: MOCK_EXPERIENCES)
+        UserHistoryList(experiences: .constant(MOCK_EXPERIENCES))
+            .environmentObject(FavorisManager())
+            .environmentObject(SharedExperiences())
     }
 }

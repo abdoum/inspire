@@ -8,88 +8,29 @@
 import SwiftUI
 
 struct FavorisView: View {
-    let categoryArray: [String] = [
-        "Artisanat", "Cuisine", "Informatique", "Ostéopathe"
-    ]
+
     @EnvironmentObject var sharedExperiences: SharedExperiences
     @State var searchText = ""
     @State var inSearchmode = false
-    @State private var tag = FilterTagModel(text: "", isSelected: false)
+    @EnvironmentObject var favorisManager: FavorisManager
+    @State private var tags = SharedExperiences().experiences[0].category.mainCategoriesTags
     
     var body: some View {
-        
         NavigationView {
             VStack {
                 ScrollView {
-                    VStack (alignment: .leading) {
-                        VStack  (alignment: .leading) {
+                    VStack  {
+                        VStack   {
                             SearchView(searchText: $searchText, inSearchmode: $inSearchmode)
-                                .padding()
-                        }
-                        HStack {
-                            SectionTitle(content: "Mes listes")
-                                .font(.title3).padding(.leading).padding()
-                            Spacer()
-                            SeeMoreButton()
-                                .padding(.trailing)
-                        }
-                        
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack {
-                                ForEach(sharedExperiences.experiences) { experience in
-                                    ExperienceCard(experience: experience)
-                                        .padding(.leading).padding(.top, 6)
-                                }
-                            }
-                        }
-                        
-                        HStack {
-                            SectionTitle(content: "Mes catégories")
-                                .font(.title3).padding(.leading).padding()
-                            Spacer()
-                            SeeMoreButton().padding(.trailing)
-                        }
-                        ScrollView (.horizontal, showsIndicators: false)  {
-                            HStack {
-                                ForEach(sharedExperiences.experiences) { experience in
-                                    Image(experience.category.image)
-                                        .resizable()
-                                        .scaledToFill()
-                                        .frame(width: 180, height: 220)
-                                        .cornerRadius(25)
-                                        .padding(.leading)
-                                }
-                            }
-                        }
-                        HStack {
-                            SectionTitle(content: "Derniers ajouts")
-                                .font(.title3).padding(.leading).padding()
-                            Spacer()
-                            SeeMoreButton()
-                                .padding(.trailing)
-                        }
-                        
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack {
-                                ForEach(sharedExperiences.experiences) { experience in
-                                    ExperienceCard(experience: experience)
-                                        .padding(.leading).padding(.top, 6)
-                                }
-                            }
-                        }
-                        SectionTitle(content: "Mots-clés").font(.title3).padding(.leading).padding()
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack {
-                                ForEach(categoryArray, id: \.self) { _ in
-                                    CategoryFilter(tag: $tag, searchText: $searchText)
-                                        .padding(.leading).padding(.top, 6)
+                            VStack {
+                                ForEach(favorisManager.favoris) {
+                                    PopupHomepage(experience: $0)
                                 }
                             }
                         }
                     }
                 }
-            }
-            .navigationTitle("Favoris")
+            }.navigationTitle("Favoris")
         }
     }
 }
@@ -98,6 +39,7 @@ struct FavorisView: View {
 struct FavorisView_Previews: PreviewProvider {
     static var previews: some View {
         FavorisView()
+            .environmentObject(FavorisManager())
             .environmentObject(SharedExperiences())
     }
 }

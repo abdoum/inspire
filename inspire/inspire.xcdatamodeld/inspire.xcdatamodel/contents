@@ -1,9 +1,42 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20F71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Exp" representedClassName="Exp" syncable="YES" codeGenerationType="class">
+        <attribute name="averageRate" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="creationDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isFavorite" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="price" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="text" optional="YES" attributeType="String"/>
+        <attribute name="titre" optional="YES" attributeType="String"/>
+        <relationship name="author" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Utilisateur" inverseName="experiences" inverseEntity="Utilisateur"/>
+        <relationship name="categorie" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ExpCategorie" inverseName="exp" inverseEntity="ExpCategorie"/>
+        <relationship name="reviews" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Note" inverseName="experience" inverseEntity="Note"/>
+    </entity>
+    <entity name="ExpCategorie" representedClassName="ExpCategorie" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="image" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="specialisation" optional="YES" attributeType="String"/>
+        <relationship name="exp" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Exp" inverseName="categorie" inverseEntity="Exp"/>
+    </entity>
+    <entity name="Note" representedClassName="Note" syncable="YES" codeGenerationType="class">
+        <attribute name="comment" optional="YES" attributeType="String"/>
+        <attribute name="rate" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="experience" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Exp" inverseName="reviews" inverseEntity="Exp"/>
+    </entity>
+    <entity name="Utilisateur" representedClassName="Utilisateur" syncable="YES" codeGenerationType="class">
+        <attribute name="avatar" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="nom" optional="YES" attributeType="String"/>
+        <attribute name="prenom" optional="YES" attributeType="String"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="experiences" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Exp" inverseName="author" inverseEntity="Exp"/>
     </entity>
     <elements>
-        <element name="Item" positionX="-63" positionY="-18" width="128" height="44"/>
+        <element name="Note" positionX="-63" positionY="-18" width="128" height="89"/>
+        <element name="Utilisateur" positionX="-54" positionY="18" width="128" height="119"/>
+        <element name="Exp" positionX="-36" positionY="45" width="128" height="179"/>
+        <element name="ExpCategorie" positionX="-18" positionY="117" width="128" height="104"/>
     </elements>
 </model>

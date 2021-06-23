@@ -15,7 +15,7 @@ struct OtherLoginButton: View {
         Button(action: action, label: {
             Text(label)
                 .underline()
-                .foregroundColor(.black)
+                .foregroundColor(.customSecondary)
                 .font(.headline)
         })
     }

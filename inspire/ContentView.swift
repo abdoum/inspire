@@ -14,36 +14,33 @@ struct ContentView: View {
     @StateObject var experiences = SharedExperiences()
     
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
+        sortDescriptors: [NSSortDescriptor(keyPath: \Utilisateur.timestamp, ascending: true)],
         animation: .default)
-    private var items: FetchedResults<Item>
+    private var utilisateurs: FetchedResults<Utilisateur>
     
     
     var body: some View {
-        List {
-            ForEach(items) { item in
-                Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+        VStack {
+            List {
+                ForEach(utilisateurs) { utilisateur in
+                    Text("Utilisateur at \(utilisateur.timestamp!, formatter: utilisateurFormatter)")
+                }
+                .onDelete(perform: deleteUtilisateurs)
             }
-            .onDelete(perform: deleteItems)
-        }
-        .toolbar {
-            #if os(iOS)
-            EditButton()
-            #endif
-
-            Button(action: addItem) {
-                Label("Add Item", systemImage: "plus")
+            Button(action: addUtilisateur) {
+                Label("Add Utilisateur", systemImage: "plus")
             }
         }
+       
        
 //            Text("content view *do not remove this file*")
        
     }
     
-    private func addItem() {
+    private func addUtilisateur() {
         withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+            let newUtilisateur = Utilisateur(context: viewContext)
+            newUtilisateur.timestamp = Date()
             
             do {
                 try viewContext.save()
@@ -56,9 +53,9 @@ struct ContentView: View {
         }
     }
     
-    private func deleteItems(offsets: IndexSet) {
+    private func deleteUtilisateurs(offsets: IndexSet) {
         withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
+            offsets.map { utilisateurs[$0] }.forEach(viewContext.delete)
             
             do {
                 try viewContext.save()
@@ -72,7 +69,7 @@ struct ContentView: View {
     }
 }
 
-private let itemFormatter: DateFormatter = {
+private let utilisateurFormatter: DateFormatter = {
     let formatter = DateFormatter()
     formatter.dateStyle = .short
     formatter.timeStyle = .medium
@@ -155,10 +152,11 @@ private let itemFormatter: DateFormatter = {
 //}()
 //
 //
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-//            .environmentObject(Quiz())
-//            .environmentObject(SharedExperiences())
-//    }
-//}
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+            .environmentObject(Quiz())
+            .environmentObject(SharedExperiences())
+    }
+}

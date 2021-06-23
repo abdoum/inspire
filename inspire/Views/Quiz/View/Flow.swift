@@ -17,13 +17,14 @@ struct Flow: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var sharedExperiences: SharedExperiences
     @EnvironmentObject var quiz : Quiz
-    @State private var showQuiz : Bool = false
+    @State private var showQuiz : Bool = true
+    
     var currentStep : Int {
         quiz.params.currentStep
     }
     var body: some View {
         VStack {
-            if currentStep <= totalSteps {
+//            if quiz.params.currentStep <= totalSteps {
                 ZStack {
                     if currentStep == 1 {
                         StepOne(bgColor: bgColors[currentStep - 1])
@@ -40,9 +41,10 @@ struct Flow: View {
                             .transition(slide)
                     }
                     if currentStep == 4 {
-                        MasterView(showQuiz: $showQuiz)
+                        MasterView()
                             .transition(slide)
                     }
+                    Spacer()
                 }
                 .overlay(
                     VStack {
@@ -51,10 +53,10 @@ struct Flow: View {
                                 Button(action: {
                                 withAnimation(.spring()){
                                     
-                                    if currentStep == totalSteps {
-                                        presentationMode.wrappedValue.dismiss()
-                                    }
-                                    quiz.params.currentStep += 1
+//                                    if currentStep == totalSteps {
+//                                        presentationMode.wrappedValue.dismiss()
+//                                    }
+//                                    quiz.params.currentStep += 1
                                 }
                             }, label: {
                                 Text("\(currentStep)/\(totalSteps)")
@@ -85,7 +87,7 @@ struct Flow: View {
                     , alignment: .topTrailing
                 )
                 
-            }
+//            }
         }
     }
 }

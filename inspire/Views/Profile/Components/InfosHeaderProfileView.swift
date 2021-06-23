@@ -9,6 +9,7 @@ import SwiftUI
 
 struct InfosHeaderProfileView: View {
     
+    @EnvironmentObject var imageLoader: ImageLoader
     let imageName: String
     let fullName: String
     let job: String
@@ -61,7 +62,7 @@ struct InfosHeaderProfileView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             InfosHeaderProfileView(imageName: "maria_lopez", fullName: "Maria Lopez", job: "Serveuse", isPro: true)
-            InfosHeaderProfileView(imageName: "https://i.pravatar.cc/100?img=20", fullName: "Maria Lopez", job: "Serveuse", isPro: false)
+            InfosHeaderProfileView(imageName: "https://i.pravatar.cc/100?img=20", fullName: "Maria Lopez", job: "Serveuse", isPro: false).environmentObject(ImageLoader(urlString: ""))
         }
     }
 }
