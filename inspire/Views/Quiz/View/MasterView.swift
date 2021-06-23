@@ -14,6 +14,7 @@ struct MasterView: View {
     var badgePosition: CGFloat = 2
     var tabsCount: CGFloat = 4
     @EnvironmentObject var favorisManager : FavorisManager
+    
     var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: .bottomLeading) {
@@ -27,12 +28,12 @@ struct MasterView: View {
                             Text("Favoris").fontWeight(.bold)
                         }
                     
-                    UserHistoryView(experienceCategory: MOCK_EXPERIENCES[0])
+                    UserHistoryView()
                         .tabItem { Image(systemName: "face.dashed.fill")
                             Text("Expériences").fontWeight(.bold)
                         }
                     MasterLogin()
-                        .tabItem { Image(systemName: "person")
+                        .tabItem { Image(systemName: "person.crop.circle.fill")
                             Text("Compte").fontWeight(.bold)
                         }
                 }.accentColor(.customPrimary)

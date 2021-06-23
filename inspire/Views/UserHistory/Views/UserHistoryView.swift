@@ -13,7 +13,7 @@ struct UserHistoryView: View {
     let categoryArray: [String] = [
         "Artisanat", "Cuisine", "Informatique", "Ostéopathe"
     ]
-    let experienceCategory: Experience
+    @EnvironmentObject var sharedExperiences : SharedExperiences
     
     var body: some View {
         NavigationView {
@@ -35,6 +35,7 @@ struct UserHistoryView: View {
 }
 
 struct FirstItem: View {
+    @EnvironmentObject var sharedExperiences : SharedExperiences
     var body: some View {
         VStack {
             HStack {
@@ -43,11 +44,12 @@ struct FirstItem: View {
                     .padding(.leading)
                 Spacer()
             }
-            UserHistoryList(experiences: MOCK_EXPERIENCES)
+            UserHistoryList(experiences: $sharedExperiences.leftExperiences)
         }
     }
 }
 struct SecondItem: View {
+    @EnvironmentObject var sharedExperiences : SharedExperiences
     var body: some View {
         VStack {
             HStack {
@@ -56,11 +58,12 @@ struct SecondItem: View {
                     .padding(.leading)
                 Spacer()
             }
-            UserHistoryList(experiences: MOCK_EXPERIENCES)
+            UserHistoryList(experiences: $sharedExperiences.rightExperiences)
         }
     }
 }
 struct ThirdItem: View {
+    @EnvironmentObject var sharedExperiences : SharedExperiences
     var body: some View {
         VStack {
             HStack {
@@ -68,10 +71,8 @@ struct ThirdItem: View {
                     .font(.title2)
                     .padding(.leading)
                 Spacer()
-                SeeMoreButton()
-                    .padding(.trailing)
             }
-            UserHistoryList(experiences: MOCK_EXPERIENCES)
+            UserHistoryList(experiences: $sharedExperiences.leftExperiences)
         }
     }
 }
@@ -80,7 +81,9 @@ struct ThirdItem: View {
 struct UserHistoryView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            UserHistoryView(experienceCategory: MOCK_EXPERIENCES[0]).environmentObject(FavorisManager())
+            UserHistoryView()
+                .environmentObject(FavorisManager())
+                .environmentObject(SharedExperiences())
         }
     }
 }

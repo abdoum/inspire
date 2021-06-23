@@ -31,6 +31,7 @@ struct ExperienceListButton: View {
             isPresented.toggle()
         }, label: {
             ExperienceCard(experience: experience)
+                .padding(.bottom, 2)
         })
         .fullScreenCover(isPresented: $isPresented){
             ExperienceDetails(experience: experience)

@@ -36,7 +36,6 @@ struct ExperienceCard: View {
                     .opacity(0.8)
                 Text("(\(experience.reviews.compactMap({$0.comment}).count))")
                     .foregroundColor(Color.gray)
-                    .underline()
                 Spacer()
                 Text("Paris")
                     .foregroundColor(Color.gray)

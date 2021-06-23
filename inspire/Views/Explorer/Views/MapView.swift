@@ -15,6 +15,7 @@ struct MapView: View {
     @State private var inSearchmode = false
     @State private var tag = FilterTagModel(text: "", isSelected: false)
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 48.8013, longitude:  2.6076), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
+    @State private var isPresented : Bool = false
     
     var body: some View {
         ZStack {
@@ -40,6 +41,13 @@ struct MapView: View {
             }
             if let experience = showDetails {
                 PopupHomepage(experience: experience)
+                    .padding(.bottom, 90)
+                    .onTapGesture {
+                        isPresented.toggle()
+                    }
+                    .fullScreenCover(isPresented: $isPresented, content: {
+                        ExperienceDetails(experience: experience)
+                    })
             }
         }.edgesIgnoringSafeArea(.all)
     }

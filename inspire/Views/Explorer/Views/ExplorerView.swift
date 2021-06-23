@@ -21,113 +21,117 @@ struct ExplorerView: View {
     @State private var showSearch = false
     var body: some View {
         NavigationView {
-            VStack {
-                //HEADER
-                ZStack{
+           
+                VStack {
+                    //HEADER
+                    //                    ZStack{
+                    //
+                    //                        HStack {
+                    //                            Spacer()
+                    //
+                    //
+                    //                        }
+                    //                    }
                     
-                    HStack {
-                        Spacer()
-                        Button(action: {
-                            withAnimation(.easeInOut){
-                                showSearch.toggle()
+                    if showSearch {
+                        VStack {
+                            SearchView(searchText: $searchText, inSearchmode: $inSearchmode)
+                                .padding(.trailing).padding(.leading)
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack {
+                                    ForEach(tags.indices, id: \.self) { idx in
+                                        CategoryFilter(tag: $tags[idx], searchText: $searchText)
+                                            .padding(.horizontal, 2)
+                                    }
+                                }
                             }
-                        }, label: {
-                            if !showSearch {
-                                Image(systemName: "magnifyingglass.circle.fill")
-                                    .resizable()
-                                    .foregroundColor(.customSecondary)
-                                    .frame(width: 30, height: 30)
-                                    .padding(.horizontal)
-                            } else {
-                                Image(systemName: "minus.magnifyingglass")
-                                    .resizable()
-                                    .foregroundColor(.customSecondary)
-                                    .frame(width: 30, height: 30)
-                                    .padding(.horizontal)
-                            }
-                        })
-                        
+                            .padding(.leading)
+                            
+                        }
+                    }else{
+                        SegmentedControlView(selectorIndex: $selectedCategory)
+                            .padding(.top, 10)
                     }
-                }
-                SegmentedControlView(selectorIndex: $selectedCategory)
-                if showSearch {
-                    VStack {
-                        SearchView(searchText: $searchText, inSearchmode: $inSearchmode)
-                            .padding(.trailing).padding(.leading)
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack {
-                                ForEach(tags.indices, id: \.self) { idx in
-                                    CategoryFilter(tag: $tags[idx], searchText: $searchText)
-                                        .padding(.horizontal, 2)
-                                }
-                            }
-                        }
-                        .padding(.leading)
-                        
-                    }
-                }
-                
-                
-                if selectedCategory == 0 {
-                    ScrollView {
-                        
-                        if !searchText.isEmpty {
-                            SectionTitle(content: "\(searchResults.count) \(searchResults.count > 1 ? "expériences" : "expérience") \( searchResults.count > 1 ? "trouvées": "trouvée")")
-                                .font(.title3).padding(.leading)
-                            Spacer()
-                            HStack {
-                                if !searchResults.isEmpty && (inSearchmode || !selectedTags.isEmpty){
-                                    ExperienceList(experiences: searchResults)
-                                }
-                                else if !inSearchmode {
-                                    ExperienceList(experiences: searchResults)
-                                }
-                                
-                            }
-                        } else {
-                            EmptyView()
-                        }
-                        
-                        
-                        HStack {
-                            SectionTitle(content: "Les plus réservées")
-                                .font(.title3).padding(.leading)
-                            Spacer()
-                            SeeMoreButton()
-                                .padding(.trailing)
-                        }
-                        ExperienceList(experiences: sharedExperiences.experiences.shuffled())
-                            .padding(.trailing)
-                        
-                        HStack {
-                            SectionTitle(content: "Nouveautés de la semaine")
-                                .font(.title3).padding(.leading)
-                            Spacer()
-                            SeeMoreButton()
-                                .padding(.trailing)
-                        }
-                        ExperienceList(experiences: sharedExperiences.experiences.shuffled())
-                        if searchResults.isEmpty && (inSearchmode) {
-                            HStack {
-                                VStack{
-                                    Image(systemName: "exclamationmark.icloud.fill")
-                                        .font(.system(size: 42))
-                                        .padding()
-                                    Text("Aucun résultat disponible pour ”\(searchText)\"")
-                                        .font(.callout)
+                    
+                    
+                    if selectedCategory == 0 {
+                        ScrollView {
+                            
+                            if !searchText.isEmpty {
+                                SectionTitle(content: "\(searchResults.count) \(searchResults.count > 1 ? "expériences" : "expérience") \( searchResults.count > 1 ? "trouvées": "trouvée")")
+                                    .font(.title3).padding(.leading)
+                                Spacer()
+                                HStack {
+                                    if !searchResults.isEmpty && (inSearchmode || !selectedTags.isEmpty){
+                                        ExperienceList(experiences: searchResults)
+                                    }
+                                    else if !inSearchmode {
+                                        ExperienceList(experiences: searchResults)
+                                    }
                                     
-                                }.foregroundColor(.red.opacity(0.7))
+                                }
+                            } else {
+                                EmptyView()
+                            }
+                            
+                            
+                            HStack {
+                                SectionTitle(content: "Les plus réservées")
+                                    .font(.title3).padding(.leading)
+                                Spacer()
+                            }
+                            ExperienceList(experiences: sharedExperiences.leftExperiences)
+                            
+                            HStack {
+                                SectionTitle(content: "Nouveautés de la semaine")
+                                    .font(.title3).padding(.leading)
+                                Spacer()
+                            }
+                            ExperienceList(experiences: sharedExperiences.rightExperiences)
+                            if searchResults.isEmpty && (inSearchmode) {
+                                HStack {
+                                    VStack{
+                                        Image(systemName: "exclamationmark.icloud.fill")
+                                            .font(.system(size: 42))
+                                            .padding()
+                                        Text("Aucun résultat disponible pour ”\(searchText)\"")
+                                            .font(.callout)
+                                        
+                                    }.foregroundColor(.red.opacity(0.7))
+                                }
                             }
                         }
+                    } else {
+                        MapView()
                     }
-                } else {
-                    MapView()
-                }
-            }.navigationTitle("Explorer")
+                }.navigationTitle("Explorer")
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationBarItems(trailing:
+                                        Button(action: {
+                                            withAnimation(.easeInOut){
+                                                showSearch.toggle()
+                                            }
+                                        }, label: {
+                                            if !showSearch {
+                                                Image(systemName: "magnifyingglass.circle")
+                                                    .resizable()
+                                                    .foregroundColor(.customPrimary)
+                                                    .frame(width: 30, height: 30)
+                                                    .padding(.horizontal)
+                                            } else {
+                                                Image(systemName: "magnifyingglass.circle.fill")
+                                                    .resizable()
+                                                    .foregroundColor(.customPrimary)
+                                                    .frame(width: 30, height: 30)
+                                                    .padding(.horizontal)
+                                            }
+                                        })
+                )
+                .fullScreenCover(isPresented: $quiz.params.skipQuiz, content: {
+                    Flow()
+                })
         }
-        .fullScreenCover(isPresented: $quiz.params.skipQuiz, content: {
-            Flow()
-        })
+       
     }
 }
 

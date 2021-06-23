@@ -83,6 +83,7 @@ struct MyExperiencesCard: View {
         .overlay(RoundedRectangle(cornerRadius: 20)
                     .stroke(Color.gray, lineWidth: 1))
         .padding(.leading, 10)
+        .padding(.bottom, 2)
         
     }
     

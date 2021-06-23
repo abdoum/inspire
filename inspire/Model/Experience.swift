@@ -30,6 +30,8 @@ struct Experience : Identifiable {
 
 class SharedExperiences: ObservableObject {
     @Published var experiences = MOCK_EXPERIENCES
+    @Published var leftExperiences = MOCK_EXPERIENCES.shuffled().split().left
+    @Published var rightExperiences = MOCK_EXPERIENCES.shuffled().split().right
     
     func search(searchText: String) -> [Experience] {
         let selectedTags = ExperienceCategory(name: "any", image: "boulanger", specialisation: "").selectedTags.map({$0.text})
@@ -61,6 +63,16 @@ class SharedExperiences: ObservableObject {
         }else{
             return []
         }
+    }
+}
+
+extension Array {
+    func split() -> (left: [Element], right: [Element]) {
+        let ct = self.count
+        let half = ct / 2
+        let leftSplit = self[0 ..< half]
+        let rightSplit = self[half ..< ct]
+        return (left: Array(leftSplit), right: Array(rightSplit))
     }
 }
 

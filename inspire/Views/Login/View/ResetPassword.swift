@@ -14,7 +14,7 @@ struct ResetPassword: View {
     
     var body: some View {
         VStack {
-            TitleScreen(content: "Réinitialisatioin du mot de passe")
+            TitleScreen(content: "Réinitialisation du mot de passe")
                 .frame(maxWidth: 280)
                 .fixedSize(horizontal: false, vertical: true)
                 .multilineTextAlignment(.center)

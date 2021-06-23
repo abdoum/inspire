@@ -31,13 +31,6 @@ struct ExperienceReviews: View {
                 Spacer()
                 HStack {
                     Spacer()
-                    Button(action: {}) {
-                        Text("Voir tout")
-                            .fontWeight(.bold)
-                            .foregroundColor(.black)
-                            .underline()
-                            .font(.subheadline)
-                    }
                 }
             }
             HStack {

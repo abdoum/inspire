@@ -16,8 +16,8 @@ struct CustomSegmentedPicker: View {
         HStack{
             Text("Liste")
                 .fontWeight(.bold)
-                .padding(.vertical, 10)
-                .padding(.horizontal, 20)
+                .padding(.vertical, currentTab == 0 ? 6 :8)
+                .padding(.horizontal, 14)
                 .background(
                     ZStack{
                         if currentTab == 0 {
@@ -35,8 +35,8 @@ struct CustomSegmentedPicker: View {
                 }
             Text("Carte")
                 .fontWeight(.bold)
-                .padding(.vertical, 10)
-                .padding(.horizontal, 20)
+                .padding(.vertical, currentTab == 1 ? 6 :8)
+                .padding(.horizontal, 14)
                 .background(
                     ZStack{
                         if currentTab == 1 {
@@ -53,8 +53,8 @@ struct CustomSegmentedPicker: View {
                     }
                 }
         }
-        .padding(.horizontal,10)
-        .background(Color.customSecondary)
+        .padding(.horizontal,2)
+        .background(Color.customPrimary)
         .cornerRadius(19)
     }
 }

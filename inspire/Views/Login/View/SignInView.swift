@@ -98,7 +98,12 @@ struct ClassicLoginScreen: View {
                         ResetPassword(signUpUser: .empty, signIn: $signIn)
                 })
             }
-            LoginButton(label: "Connexion", action: login).disabled(signUpUser.email.isEmpty || signUpUser.password.isEmpty)
+            LoginButton(label: "Connexion", action: {
+            login()
+                print("login")
+            }
+            
+            ).disabled(signUpUser.email.isEmpty || signUpUser.password.isEmpty)
         }
     }
     func login() {
