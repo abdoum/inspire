@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ExperienceReviews: View {
+
+    let reviews : [Review]
+    
     var body: some View {
         VStack {
             HStack {
@@ -22,32 +25,33 @@ struct ExperienceReviews: View {
                 Image(systemName: "star.fill")
                     .foregroundColor(.black)
                     .opacity(0.8)
-                Text("Note")
+                Text("Note: \(reviews[0].rate)/5")
                     .font(.headline)
                     .fontWeight(.bold)
                     .foregroundColor(.black)
                     .opacity(0.8)
-                Text("(reviewNb)")
+                Text("(\(reviews.count))")
                 Spacer()
                 HStack {
                     Spacer()
                 }
             }
             HStack {
-                Image("SteveJobs")
+                Image(reviews[0].author.avatar)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 60.0, height: 60.0)
                     .clipShape(Circle())
                     .shadow(radius: 10)
                 VStack(alignment: .leading) {
-                    Text("Name")
-                    Text("Date")
+                    Text("\(reviews[0].author.firstname) \(reviews[0].author.lastname)")
+                    Text("12 Décembre 2021")
+                        .font(.footnote)
                 }.padding(.horizontal, 16)
                 Spacer()
             }
             HStack {
-                Text("Contrairement à une opinion répandue, le Lorem Ipsum n'est pas simplement du texte aléatoire. Il trouve ses racines dans une oeuvre de la littérature latine classique datant de 45 av. J.-C., le rendant vieux de 2000 ans. Un professeur du Hampden-Sydney College, en Virginie, s'est intéressé à un des mots latins les plus obscurs, consectetur, extrait d'un passage du Lorem Ipsum, et en étudiant tous les usages de ce mot dans la littérature classique, découvrit la source incontestable du Lorem Ipsum.")
+                Text("\(reviews[0].comment ?? "")")
                 Spacer()
             }
         }
@@ -58,6 +62,6 @@ struct ExperienceReviews: View {
 
 struct ExperienceReviews_Previews: PreviewProvider {
     static var previews: some View {
-        ExperienceReviews()
+        ExperienceReviews(reviews: MOCK_EXPERIENCES[0].reviews)
     }
 }
