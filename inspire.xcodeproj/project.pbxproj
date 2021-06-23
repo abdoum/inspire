@@ -91,6 +91,8 @@
 		383D1F0F267A029C0079823A /* ExperiencePriceDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383D1F0E267A029C0079823A /* ExperiencePriceDates.swift */; };
 		383D1F11267A02AD0079823A /* ExperienceProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383D1F10267A02AD0079823A /* ExperienceProgram.swift */; };
 		383D1F13267A02D40079823A /* UserNeeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383D1F12267A02D40079823A /* UserNeeds.swift */; };
+		387826AD2681EBB1007022D1 /* CreateExperience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387826AC2681EBB1007022D1 /* CreateExperience.swift */; };
+		387826AF268205AD007022D1 /* CreateExpField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387826AE268205AD007022D1 /* CreateExpField.swift */; };
 		38B042BF267B280100A0765D /* NeedsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B042BE267B280100A0765D /* NeedsData.swift */; };
 /* End PBXBuildFile section */
 
@@ -181,6 +183,8 @@
 		383D1F0E267A029C0079823A /* ExperiencePriceDates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperiencePriceDates.swift; sourceTree = "<group>"; };
 		383D1F10267A02AD0079823A /* ExperienceProgram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceProgram.swift; sourceTree = "<group>"; };
 		383D1F12267A02D40079823A /* UserNeeds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNeeds.swift; sourceTree = "<group>"; };
+		387826AC2681EBB1007022D1 /* CreateExperience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateExperience.swift; sourceTree = "<group>"; };
+		387826AE268205AD007022D1 /* CreateExpField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateExpField.swift; sourceTree = "<group>"; };
 		38B042BE267B280100A0765D /* NeedsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeedsData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -556,6 +560,8 @@
 			isa = PBXGroup;
 			children = (
 				383D1F08267A024E0079823A /* ExperienceDetails.swift */,
+				387826AC2681EBB1007022D1 /* CreateExperience.swift */,
+				387826AE268205AD007022D1 /* CreateExpField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -651,6 +657,7 @@
 				2BED7531267258D300C49853 /* ContentView.swift in Sources */,
 				21B6EBF7267C907500EC2F9E /* MasterView.swift in Sources */,
 				2B26141B2678915F00C48BC2 /* StepThree.swift in Sources */,
+				387826AF268205AD007022D1 /* CreateExpField.swift in Sources */,
 				21B6EC21267C96E200EC2F9E /* Button+.swift in Sources */,
 				2B2614212678933D00C48BC2 /* SkipQuizButton.swift in Sources */,
 				383D1F0B267A025A0079823A /* AuthorMainInfos.swift in Sources */,
@@ -696,6 +703,7 @@
 				2BE1E888267786C700E4C55D /* User.swift in Sources */,
 				21B6EC41267C9F2700EC2F9E /* ExperienceCard.swift in Sources */,
 				131111A1267F8A5400BAFE6E /* HomePageMapPin.swift in Sources */,
+				387826AD2681EBB1007022D1 /* CreateExperience.swift in Sources */,
 				131111A8267F8EF200BAFE6E /* MyExperiencesCard.swift in Sources */,
 				21B6EC2E267C978700EC2F9E /* InfosPersonalTextFieldView.swift in Sources */,
 				21B6EC15267C962100EC2F9E /* ExplorerView.swift in Sources */,

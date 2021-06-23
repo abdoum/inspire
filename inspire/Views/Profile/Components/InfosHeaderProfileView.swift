@@ -14,6 +14,8 @@ struct InfosHeaderProfileView: View {
     let job: String
     let isPro: Bool
     
+    @State private var showCreatExperience: Bool = false
+    
     var body: some View {
         if isPro {
             VStack {
@@ -33,9 +35,12 @@ struct InfosHeaderProfileView: View {
                             .padding(.top, 10)
                     }
                 }
-                LoginButton(label: "Créer une expérience", action: {
-                    //add some code...
-                })
+                NavigationLink(destination: CreateExperience(showCreatExperience: $showCreatExperience)) {
+                    LoginButton(label: "Créer une expérience", action: {
+                        showCreatExperience.toggle()
+                    })
+                }
+                
             }
         } else {
             HStack {
