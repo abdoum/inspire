@@ -19,80 +19,73 @@ struct CreateExperience: View {
     @Binding var showCreatExperience: Bool
     
     var body: some View {
-            VStack {
-//                HStack {
-//                    Text("Créer une expérience")
-//                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-//                        .fontWeight(.bold)
-//                        .padding(.leading)
-//                    Spacer()
-//                }
-                Spacer(minLength: 20)
-                HStack {
-                    Toggle("Mode Video proposé", isOn: $isVideo)
-                        .frame(width: 250, height: 20)
-                    Spacer(minLength: 20)
-                    Image(systemName: "video")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 25.0, height: 25.0)
-                        .opacity(0.7)
-                }
-                .frame(width: 300)
-                Spacer(minLength: 10)
-                Picker(selection: $experienceCategory, label: Text("Catégorie")) {
-                    ForEach(experienceCategory) {
-                        category in
-                        Text(category.name)
-                    }
-                }
-                
-                List {
-                    CreateExpField(title: "Description", topic: $description)
-                        .font(.title2)
-                        .multilineTextAlignment(.leading)
-                    
-                    HStack {
-                        Text("Price")
-                            .foregroundColor(.gray)
-                            .frame(width: 120 , height: 15)
-                            .font(.title3)
-                        
-                        Spacer(minLength: 30)
-                        
-                        TextField(price, text: $price)
-                            .frame(width: 150 , height: 10).padding()
-                            .overlay(RoundedRectangle(cornerRadius: 20)
-                                        .stroke(Color.gray, lineWidth: 2))
-                            .font(.title3)
-                    }
-                    .padding(.vertical)
-                    
-                    CreateExpField(title: "Prérequis 1", topic: $preriquisite1)
-                    CreateExpField(title: "Prérequis 2", topic: $preriquisite2)
-                    CreateExpField(title: "Prérequis 3", topic: $preriquisite3)
-                }
-                Spacer(minLength: 20)
-                
-                Button(action: {
-                    //code...
-                }) {
-                    RoundedRectangle(cornerRadius: 30)
-                        .frame(width: 200.0, height: 45.0)
-                        .foregroundColor(.gray)
-                        .padding()
-                        .overlay(
-                            Text("Validation")
-                                .font(.title3)
-                                .fontWeight(.bold)
-                                .foregroundColor(.white))
+        List {
+            Picker(selection: $experienceCategory, label: Text("Catégorie")) {
+                ForEach(experienceCategory) {
+                    category in
+                    Text(category.name)
                 }
             }
-            .frame(width: 400)
-            . navigationBarTitle ( Text ( "Créer une expérience" ).font(.title3))        
-        
+            Spacer(minLength: 20)
+            HStack {
+                Toggle("Mode Video proposé", isOn: $isVideo)
+                    .frame(width: 250, height: 20)
+                Spacer(minLength: 20)
+                Image(systemName: "video")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 25.0, height: 25.0)
+                    .opacity(0.7)
+            }
+            .frame(width: 300)
+            CreateExpField(title: "Description", topic: $description)
+                .font(.title2)
+                .multilineTextAlignment(.leading)
+            
+            HStack {
+                Text("Price")
+                    .foregroundColor(.black)
+                    .opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
+                    .frame(width: 120 , height: 15)
+                    .font(.title3)
+                
+                Spacer(minLength: 30)
+                
+                TextField(price, text: $price)
+                    .frame(width: 150 , height: 10).padding()
+                    .overlay(RoundedRectangle(cornerRadius: 20)
+                                .stroke(Color.gray, lineWidth: 2))
+                    .font(.title3)
+            }
+            .padding(.vertical)
+            
+            CreateExpField(title: "Prérequis 1", topic: $preriquisite1)
+            CreateExpField(title: "Prérequis 2", topic: $preriquisite2)
+            CreateExpField(title: "Prérequis 3", topic: $preriquisite3)
+            
+            HStack {
+                Spacer()
+                Button(action: {
+                //code...
+            }) {
+                RoundedRectangle(cornerRadius: 30)
+                    .frame(width: 200.0, height: 45.0)
+                    .foregroundColor(.gray)
+                    .padding()
+                    .overlay(
+                        Text("Validation")
+                            .font(.title3)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white))
+            }
+                Spacer()
+            }
+        }
+    .navigationBarTitle ( Text ( "Créer une expérience" ))
+    .listStyle(PlainListStyle())
     }
 }
+
 
 struct CreateExperience_Previews: PreviewProvider {
     static var previews: some View {

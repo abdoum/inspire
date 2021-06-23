@@ -15,7 +15,8 @@ struct CreateExpField: View {
     var body: some View {
         HStack {
             Text(title)
-                .foregroundColor(.gray)
+                .foregroundColor(.black)
+                .opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
                 .frame(width: 120 , height: 15)
                 .font(.title3)
             
@@ -27,11 +28,8 @@ struct CreateExpField: View {
                     .frame(width: 150 , height: 50).padding()
                     .overlay(RoundedRectangle(cornerRadius: 20)
                                 .stroke(Color.gray, lineWidth: 2))
-
         }
         .frame(height: 100)
-    //    .padding(.vertical)
-        
     }
 }
 
