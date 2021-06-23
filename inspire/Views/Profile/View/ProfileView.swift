@@ -17,7 +17,7 @@ struct ProfileView: View {
     
     var body: some View {
         NavigationView {
-//            if let user = userManager.currentUser {
+            if let user = userManager.currentUser {
                 ScrollView{
                     VStack {
                         InfosHeaderProfileView(imageName: user.avatar, fullName: "\(user.firstname)  \(user.lastname)", job: experience.title, isPro: true)
@@ -34,9 +34,9 @@ struct ProfileView: View {
                     .navigationBarTitle(Text("Compte"))
                     .navigationBarTitleDisplayMode(.inline)
                 }
-//            } else {
-//                Text("Veuillez vous connecter !")
-//            }
+            } else {
+                Text("Veuillez vous connecter !")
+            }
         }
     }
 }
