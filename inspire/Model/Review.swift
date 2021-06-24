@@ -15,7 +15,7 @@ struct Review {
 }
 
 var MOCK_REVIEWS = [
-    Review(comment: "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est. Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.", rate: 3, author: UserManager.mockAuthors[0]),
+    Review(comment: "Expérience incroyable, vécue en immersion totale avec une personne charismatique m'engageant à rejoindre cette corporation sans délai. Merci encore et à très vite !", rate: 5, author: UserManager.mockAuthors[0]),
     Review(comment: "Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat. Nulla nisl. Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus.", rate: 5, author: UserManager.mockAuthors[1]),
     Review(comment: "Etiam justo. Etiam pretium iaculis justo. In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus. Nulla ut erat id mauris vulputate elementum.", rate: 4, author: UserManager.mockAuthors[2]),
     Review(comment: "Proin risus. Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend.", rate: 5, author: UserManager.mockAuthors[3]),

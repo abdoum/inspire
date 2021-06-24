@@ -51,7 +51,8 @@ struct ExperienceReviews: View {
                 Spacer()
             }
             HStack {
-                Text("\(reviews[0].comment ?? "")")
+                Text("Expérience incroyable, vécue en immersion totale avec une personne charismatique m'engageant à rejoindre cette corporation sans délai. Merci encore et à très vite !")
+     //           Text("\(reviews[0].comment ?? "")")
                 Spacer()
             }
         }
