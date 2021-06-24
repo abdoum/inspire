@@ -35,6 +35,13 @@ var experiencesCategories : [ExperienceCategory] =
         ExperienceCategory(name: "Art", image: "artistique", specialisation: "Peintre"),
         ExperienceCategory(name: "Architecte", image: "architecture", specialisation: "Architecte"),
         ExperienceCategory(name: "Pompier", image: "pompiers", specialisation: "Sapeur Pompier"),
-        ExperienceCategory(name: "Photographe", image: "photographie", specialisation: "Photographe")
+        ExperienceCategory(name: "Photographe", image: "photographie", specialisation: "Photographe"),
+        ExperienceCategory(name: "Agriculture", image: "eleveur_betail", specialisation: "Eleveur de bétail"),
+        ExperienceCategory(name: "Ingénieurie", image: "usinewoman", specialisation: "Ingénieure automobile"),
+        ExperienceCategory(name: "Menuiserie", image: "menuiserie", specialisation: "Menuisier"),
+        ExperienceCategory(name: "Musique", image: "musique", specialisation: "Professeur de guitare"),
+        ExperienceCategory(name: "Arts", image: "photographie", specialisation: "Photographe urbain"),
+        ExperienceCategory(name: "Industrie", image: "soudureman", specialisation: "Ouvrier qualifié")
+        
 ]
 

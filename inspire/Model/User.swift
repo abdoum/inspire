@@ -86,9 +86,15 @@ class UserManager: ObservableObject {
         
         User(firstname: "Sophie", lastname: "Ventum", email: "test6@test.com", password: "123456", avatar: "profileveto", biography: "Durant ses études, Sophie Ventum a pris une année sabbatique de perfectionnement afin d’effectuer des stages et de suivre des cours à l’École Nationale Vétérinaire de Lyon en France. Cette année exceptionnelle, en plus de lui donner la chance de vivre une expérience culturelle enrichissante, lui a fourni l’occasion de perfectionner ses notions de médecine et de chirurgie dans le domaine des petits animaux. Durant cette année d’étude outre-mer, de multiples voyages (Tunisie, Turquie, Italie) lui ont apporté une vision multiculturelle du monde et lui ont également permis de parfaire ses connaissances médicales dans différentes institutions d’enseignement dont Tierärtzliche Hochschule, Université vétérinaire située à Hanovre en Allemagne.", spokenLanguages: "Francais",location: CLLocationCoordinate2D(latitude: -23.216667, longitude: 46.6666669), notificationsAccepted: true, role: .author, isLogged: false),
         
-        User(firstname: "Hélène", lastname: "Ly", email: "test7@test.com", password: "123456", avatar: "https://i.pravatar.cc/100?img=35", biography: "Mandatory even-keeled core", spokenLanguages: "Francais", location: CLLocationCoordinate2D(latitude: 56.4475016, longitude: 36.5587561), notificationsAccepted: true, role: .author, isLogged: true),
+        User(firstname: "Hélène", lastname: "Ly", email: "test7@test.com", password: "123456", avatar: "marie", biography: "Mandatory even-keeled core", spokenLanguages: "Francais", location: CLLocationCoordinate2D(latitude: 56.4475016, longitude: 36.5587561), notificationsAccepted: true, role: .author, isLogged: true),
         
-        User(firstname: "Frédérique", lastname: "Huston", email: "test7@test.com", password: "123456", avatar: "profilepompier", biography: "Né le 13 juillet 1965 à Montreuil, le général Frédérique Huston commande la brigade de sapeurs-pompiers de Paris, depuis le 30 novembre 2019. Après une scolarité à l’École militaire préparatoire d’Autun, il suit des études supérieures à l’université du Panthéon-Sorbonne (1983/1988), où il obtient un DEA d’économie publique et un DESS de sciences-politiques, tout en étant rédacteur/crédits entreprises dans une grande banque parisienne.", spokenLanguages: "Francais", location: CLLocationCoordinate2D(latitude: 56.4475016, longitude: 36.5587561), notificationsAccepted: true, role: .author, isLogged: true)
+        User(firstname: "Frédérique", lastname: "Huston", email: "test8@test.com", password: "123456", avatar: "profilepompier", biography: "Né le 13 juillet 1965 à Montreuil, le général Frédérique Huston commande la brigade de sapeurs-pompiers de Paris, depuis le 30 novembre 2019. Après une scolarité à l’École militaire préparatoire d’Autun, il suit des études supérieures à l’université du Panthéon-Sorbonne (1983/1988), où il obtient un DEA d’économie publique et un DESS de sciences-politiques, tout en étant rédacteur/crédits entreprises dans une grande banque parisienne.", spokenLanguages: "Francais", location: CLLocationCoordinate2D(latitude: 56.4475016, longitude: 36.5587561), notificationsAccepted: true, role: .author, isLogged: true),
+        
+        User(firstname: "Vernor", lastname: "Inott", email: "test9@test.com", password: "123456", avatar: "pensif", biography: "Mandatory even-keeled core", spokenLanguages: "Francais", location: CLLocationCoordinate2D(latitude: 56.4475016, longitude: 36.5587561), notificationsAccepted: true, role: .author, isLogged: true),
+        
+        User(firstname: "Jean", lastname: "Darbon", email: "test10@test.com", password: "123456", avatar: "monochromeman", biography: "Mandatory even-keeled core", spokenLanguages: "Francais", location: CLLocationCoordinate2D(latitude: 56.4475016, longitude: 36.5587561), notificationsAccepted: true, role: .author, isLogged: true),
+        
+        User(firstname: "Mark", lastname: "Charbon", email: "test11@test.com", password: "123456", avatar: "veloman", biography: "Mandatory even-keeled core", spokenLanguages: "Francais", location: CLLocationCoordinate2D(latitude: 56.4475016, longitude: 36.5587561), notificationsAccepted: true, role: .author, isLogged: true)
         
     ]
 
@@ -106,7 +112,11 @@ class UserManager: ObservableObject {
         
         User(firstname: "Laure", lastname: "Negri", email: "test14@test.com", password: "123456", avatar: "https://i.pravatar.cc/100?img=29", biography: "10 ans de métier en tant que coach sportif", spokenLanguages: "Francais", location: CLLocationCoordinate2D(latitude: 48.7528373, longitude: 2.5304644), notificationsAccepted: true, role: .guest, isLogged: true),
         
-        User(firstname: "Hélèna", lastname: "Buckam", email: "test20@test.com", password: "123456", avatar: "https://i.pravatar.cc/100?img=30", biography: "Aucune information...", spokenLanguages: "Francais", location: CLLocationCoordinate2D(latitude: 35.950418, longitude: 101.925248), notificationsAccepted: false, role: .guest, isLogged: true)
+        User(firstname: "Hélèna", lastname: "Buckam", email: "test20@test.com", password: "123456", avatar: "https://i.pravatar.cc/100?img=30", biography: "Aucune information...", spokenLanguages: "Francais", location: CLLocationCoordinate2D(latitude: 35.950418, longitude: 101.925248), notificationsAccepted: false, role: .guest, isLogged: true),
+        
+        User(firstname: "Ruò", lastname: "Shorte", email: "test20@test.com", password: "123456", avatar: "skiman", biography: "Aucune information...", spokenLanguages: "Francais", location: CLLocationCoordinate2D(latitude: 35.950418, longitude: 101.925248), notificationsAccepted: false, role: .guest, isLogged: true),
+        
+        User(firstname: "Lóng", lastname: "Feige", email: "test20@test.com", password: "123456", avatar: "veloman", biography: "Aucune information...", spokenLanguages: "Francais", location: CLLocationCoordinate2D(latitude: 35.950418, longitude: 101.925248), notificationsAccepted: false, role: .guest, isLogged: true)
     ]
 }
 

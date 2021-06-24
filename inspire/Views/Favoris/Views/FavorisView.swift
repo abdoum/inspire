@@ -30,8 +30,8 @@ struct FavorisView: View {
                         }
                     }
                 }
-            }
-        }.navigationTitle("Favoris")
+            }.navigationTitle("Favoris")
+        }
     }
 }
 

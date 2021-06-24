@@ -28,13 +28,13 @@ struct UpComingExperiences: View {
                         Text("(1)")
                             .font(.headline)
                             .fontWeight(.bold)
-                            .foregroundColor(Color.white)
+                            .foregroundColor(.white)
                         
                         //Text("Nombre d'expériences à venir")
                         Text("À venir")
                             .font(.headline)
                             .fontWeight(.bold)
-                            .foregroundColor(Color.white)
+                            .foregroundColor(.white)
                         Spacer()
                     }
                     .padding([.top, .leading])
@@ -60,10 +60,11 @@ struct UpComingExperiences: View {
                                 .foregroundColor(.white)
                         }
                         .alert(isPresented: $showCanceled, content: {
-                                Alert(title: Text("Annulation"), message: Text("Êtes-vous sûre de vouloir supprimer votre réservation ?"), primaryButton: Alert.Button.default(Text("Oui"), action: {
-                                    accepted.toggle()
-                                }), secondaryButton: .destructive(Text("Non"), action: {
-                                    print("Annuler")
+                                Alert(title: Text("Annulation"), message: Text("Êtes-vous sûre de vouloir supprimer votre réservation ?"), primaryButton: Alert.Button.default (Text("Non"), action: {
+                                }), secondaryButton:  .destructive(Text("Oui"), action: {
+                                    withAnimation(.spring()){
+                                        accepted.toggle()
+                                    }
                                 })
                                 )})
                         .padding(8)

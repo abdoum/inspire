@@ -47,10 +47,8 @@ struct ExplorerView: View {
                         }
                     }
                     
-                    
                     if selectedCategory == 0 {
                         ScrollView {
-                            
                             if !searchText.isEmpty {
                                 SectionTitle(content: "\(searchResults.count) \(searchResults.count > 1 ? "expériences" : "expérience") \( searchResults.count > 1 ? "trouvées": "trouvée")")
                                     .font(.title3).padding(.leading)
@@ -111,13 +109,13 @@ struct ExplorerView: View {
                                                     .resizable()
                                                     .foregroundColor(.customPrimary)
                                                     .frame(width: 30, height: 30)
-                                                    .padding(.horizontal)
+                                                    
                                             } else {
                                                 Image(systemName: "magnifyingglass.circle.fill")
                                                     .resizable()
                                                     .foregroundColor(.customPrimary)
                                                     .frame(width: 30, height: 30)
-                                                    .padding(.horizontal)
+                                                    
                                             }
                                         })
                 )

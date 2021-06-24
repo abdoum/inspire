@@ -23,6 +23,8 @@ struct ExperienceDetails: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .listRowInsets(EdgeInsets())
+                            .clipped()
+      
                         VStack {
                             AuthorMainInfos(author: experience.author, category: experience.category, rate: experience.rate, reviews: experience.reviews)
                             ExperienceContact(language: experience.author.spokenLanguages)
@@ -86,10 +88,10 @@ struct FavorisButton: View {
     }
 }
 
-//struct ExperienceDetails_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ExperienceDetails(experience: MOCK_EXPERIENCES[1])
-//            .previewLayout(.sizeThatFits)
-//            .environmentObject(FavorisManager())
-//    }
-//}
+struct ExperienceDetails_Previews: PreviewProvider {
+    static var previews: some View {
+        ExperienceDetails(experience: MOCK_EXPERIENCES[1])
+            .previewLayout(.sizeThatFits)
+            .environmentObject(FavorisManager())
+    }
+}

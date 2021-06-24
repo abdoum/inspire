@@ -36,7 +36,6 @@ struct SearchBar: View {
                     })
                     .transition(.move(edge: .trailing))
                     .animation(.default)
-                    
                     , alignment: .trailing
                 )
         }

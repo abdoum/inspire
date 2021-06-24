@@ -9,7 +9,7 @@ import Foundation
 
 struct QuizParams   {
     var isFirstTimeUser : Bool = true
-    var steps = [1 : "Que cherchez-vous ?", 2: "Vous préférez ?", 3: "Lieu ?", 4 : "Quelques suggestions"]
+    var steps = [1 : "Que cherchez-vous ?", 2: "Vous préférez ?", 3: "Lieu ?"]
     let existingExperienceCategories =  experiencesCategories
     var preferedExperienceCategorie : String? = nil
     var skipQuiz : Bool = false

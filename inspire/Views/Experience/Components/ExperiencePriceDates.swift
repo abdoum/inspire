@@ -14,14 +14,19 @@ struct ExperiencePriceDates: View {
     var body: some View {
         HStack {
             VStack {
-                Text("\(experiences.price.description) €")
-                    .font(.title)
+                Text("Participer")
+                    .font(.title3)
                     .fontWeight(.bold)
                     .foregroundColor(.white)
                     .opacity(1)
-                Text("par personne")
-                    .foregroundColor(.white)
-                    .opacity(0.5)
+//                Text("\(experiences.price.description) €")
+//                    .font(.title)
+//                    .fontWeight(.bold)
+//                    .foregroundColor(.white)
+//                    .opacity(1)
+//                Text("par personne")
+//                    .foregroundColor(.white)
+//                    .opacity(0.5)
             }
             Spacer()
             Button(action: {

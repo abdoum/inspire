@@ -36,18 +36,18 @@ struct PopupHomepage: View {
                 VStack {
                     HStack(alignment: .center){
                         Image(systemName: "star.fill")
-                            .foregroundColor(.black)
+                            .foregroundColor(.customPrimary)
                             .opacity(0.8)
                         
                         Text(experience.rate)
                             .fontWeight(.bold)
-                            .foregroundColor(.black)
+                            .foregroundColor(.customPrimary)
                             .opacity(0.8)
                         Text("(49)")
-                            .foregroundColor(Color.gray)
+                        .foregroundColor(.customSecondary)
                         Spacer()
                         Text("Lyon")
-                            .foregroundColor(Color.gray)
+                            .foregroundColor(.black)
                         Link(destination: URL(string: "https://us04web.zoom.us/j/74207452617?pwd=RWkvellndjgwK20xSHZWWXYrRExyQT09#success")!, label: {
                         Image(systemName: "video")
                             .resizable()
@@ -63,7 +63,7 @@ struct PopupHomepage: View {
                     HStack {
                         Text(experience.category.name)
                             .font(.headline)
-                            .foregroundColor(Color.black)
+                            .foregroundColor(.black)
                             .opacity(0.8)
                             .multilineTextAlignment(.leading)
                         Spacer()
@@ -74,17 +74,17 @@ struct PopupHomepage: View {
                         .padding(.vertical)
                         .frame(width: 220, height: 2)
                     HStack(alignment: .top) {
-                        Text("\(experience.price.description) €")
-                            .fontWeight(.bold)
-                            .multilineTextAlignment(.leading)
-                        Spacer()
+//                        Text("\(experience.price.description) €")
+//                            .fontWeight(.bold)
+//                            .multilineTextAlignment(.leading)
+                        
                         Image(systemName: "stopwatch")
                             .foregroundColor(.gray)
                             .opacity(1)
                         Text("4:00")
                             .foregroundColor(Color.gray)
                             .opacity(1)
-                        
+                        Spacer()
                     }
                     .padding(.bottom)
                     .frame(width: 200, height: 30)

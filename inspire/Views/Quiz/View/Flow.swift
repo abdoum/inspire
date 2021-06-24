@@ -11,7 +11,7 @@ struct Flow: View {
 //     TODO: use @AppStorage for production
 //    @AppStorage("quiz.params.currentStep") var currentStep = 1
 //    @AppStorage("isPresented") var isPresented = true
-    @AppStorage("totalSteps") var totalSteps = 4
+    @AppStorage("totalSteps") var totalSteps = 3
     let slide : AnyTransition = .asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading))
     @EnvironmentObject var sharedExperiences: SharedExperiences
     @EnvironmentObject var quiz : Quiz
@@ -19,13 +19,12 @@ struct Flow: View {
     var body: some View {
         
         VStack {
-            if quiz.params.currentStep < totalSteps {
+            if quiz.params.currentStep <= totalSteps {
                 ZStack {
                     if quiz.params.currentStep == 1 {
                         StepOne(currentStep: $quiz.params.currentStep)
                             .transition(slide)
                     }
-                    
                     if quiz.params.currentStep == 2 {
                         
                         StepTwo(currentStep: $quiz.params.currentStep)
@@ -43,13 +42,13 @@ struct Flow: View {
                 }
                 .overlay(
                     VStack {
-                        if quiz.params.currentStep < totalSteps {
+                        if quiz.params.currentStep <= totalSteps {
                             VStack {
                                 Text("\(quiz.params.currentStep)/\(totalSteps)")
                                     .font(.system(size:20, weight: .semibold))
-                                    .foregroundColor(quiz.params.currentStep < totalSteps - 1 ? .black : .white)
+                                    .foregroundColor(quiz.params.currentStep < totalSteps  ? .black : .white)
                                     .frame(width: 60, height: 60)
-                                    .background(quiz.params.currentStep < totalSteps - 1 ? Color.white : .green)
+                                    .background(quiz.params.currentStep < totalSteps ? Color.white : .customPrimary)
                                     .clipShape(Circle())
                                     .overlay(
                                         ZStack{
@@ -57,7 +56,7 @@ struct Flow: View {
                                                 .stroke(Color.black.opacity(0.1), lineWidth: 4)
                                             Circle()
                                                 .trim(from: 0.0, to: CGFloat(quiz.params.currentStep) / CGFloat(totalSteps))
-                                                .stroke(Color.green, lineWidth: 4)
+                                                .stroke(Color.customPrimary, lineWidth: 4)
                                                 .rotationEffect(.init(degrees: -90))
                                         }
                                         .padding(-15)

@@ -37,7 +37,7 @@ struct StepOne: View {
                 }, label: {
                     RandomCategory()
                 })
-            }.padding(.horizontal, 6)
+            }.padding(.horizontal, 10)
             Spacer()
         }
         }

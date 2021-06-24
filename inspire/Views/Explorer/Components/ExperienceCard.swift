@@ -58,7 +58,15 @@ struct ExperienceCard: View {
                 .frame(width: width)
             
             HStack(alignment: .top) {
-                PriceView(price: experience.price, color: .customPrimary)
+//                PriceView(price: experience.price, color: .customPrimary)
+                Button(action: {
+                }) {
+                    Image(systemName: "person")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 16, height: 16)
+                        .foregroundColor(.customSecondary)
+                }
                 Spacer()
                 Link(destination: URL(string: "https://us04web.zoom.us/j/74207452617?pwd=RWkvellndjgwK20xSHZWWXYrRExyQT09#success")!, label: {
                     Image(systemName: "video")

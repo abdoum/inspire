@@ -51,7 +51,7 @@ struct MyExperiencesCard: View {
             HStack {
                 ScrollView {
                     VStack(alignment: .leading, spacing: 20) {
-                        Text(experience.category.name)
+                        Text(experience.category.specialisation)
                             .foregroundColor(.black)
                             .font(.footnote)
                     }
@@ -63,10 +63,10 @@ struct MyExperiencesCard: View {
                 .frame(width: 100, height: 2)
             
             HStack(alignment: .top) {
-                Text("\(experience.price.description) €")
-                    .fontWeight(.bold)
-                    .foregroundColor(.black)
-                    .multilineTextAlignment(.leading)
+//                Text("\(experience.price.description) €")
+//                    .fontWeight(.bold)
+//                    .foregroundColor(.black)
+//                    .multilineTextAlignment(.leading)
                 Spacer()
                 Link(destination: URL(string: "https://us04web.zoom.us/j/74207452617?pwd=RWkvellndjgwK20xSHZWWXYrRExyQT09#success")!, label: {
                 Image(systemName: "video")

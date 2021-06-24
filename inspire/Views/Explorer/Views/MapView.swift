@@ -42,6 +42,7 @@ struct MapView: View {
             }
             SegmentedControlView(selectorIndex: $selectedCategory)
                                         .padding(.top, 10)
+                .transition(.opacity)
                 .position(x: UIScreen.main.bounds.width / 2 , y:115)
             if let experience = showDetails {
                 PopupHomepage(experience: experience)

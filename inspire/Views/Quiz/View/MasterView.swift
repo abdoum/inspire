@@ -28,7 +28,7 @@ struct MasterView: View {
                                 Text("Explorer").fontWeight(.bold)
                             }
                         FavorisView(experience: MOCK_EXPERIENCES)
-                            .tabItem { Image(systemName: "heart")
+                            .tabItem { Image(systemName:  "heart.fill")
                                 Text("Favoris").fontWeight(.bold)
                             }
                         

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct StepThree: View {
     @EnvironmentObject var quiz : Quiz
-    @AppStorage("isPresented") var isPresented = true
+//    @AppStorage("isPresented") var isPresented = true
     @Binding var currentStep : Int
     
     var body: some View {
@@ -25,8 +25,7 @@ struct StepThree: View {
                         quiz.params.currentStep += 1
                         quiz.params.isPresented = false
                         currentStep += 1
-                        isPresented = false
-//                        presentationMode.wrappedValue.dismiss()
+//                        isPresented = false
                     }
                 }, label: {
                     Label(

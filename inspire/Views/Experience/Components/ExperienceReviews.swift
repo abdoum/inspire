@@ -63,6 +63,6 @@ struct ExperienceReviews: View {
 
 struct ExperienceReviews_Previews: PreviewProvider {
     static var previews: some View {
-        ExperienceReviews(review: MOCK_EXPERIENCES[0].reviews[0], rate: 3.7)
+        ExperienceReviews(review: MOCK_EXPERIENCES[2].reviews[0], rate: 3.7)
     }
 }
