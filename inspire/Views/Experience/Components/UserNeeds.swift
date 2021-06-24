@@ -10,9 +10,10 @@ import SwiftUI
 struct UserNeeds: View {
     
     var items = [
-        "Il provient en fait des sections 1.10.32 et 1.10.33 du -De Finibus Bonorum et Malorum- (Des Suprêmes Biens et des Suprêmes Maux) de Cicéron.",
-        "Cet ouvrage, très populaire pendant la Renaissance, est un traité sur la théorie de l'éthique. Les premières lignes du Lorem Ipsum, -Lorem ipsum dolor sit amet...-, proviennent de la section 1.10.32.-, ",
-        "On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même"]
+        "Confirmer votre RDV 24 heures au plus tard avant l'horaire planifié",
+        "Consulter le site WEB de l'entreprise",
+        "Prendre connaissance des recommandations propres au site visité (voir message transmis lors de l'inscription)",
+        "Se présenter à l'accueil muni d'un masque de protection COVID"]
     
     var body: some View {
         VStack {
