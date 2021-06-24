@@ -10,8 +10,7 @@ import SwiftUI
 struct UserNeeds: View {
     
     var items = [
-        "Confirmer votre RV 24 heures au plus tard avant l'horaire planifié",
-        "Consulter le site WEB de l'entreprise",
+        "Confirmer votre RDV 24 heures au plus tard avant l'horaire planifié",
         "Prendre connaissance des recommandations propres au site visité (voir message transmis lors de l'inscription)",
         "Se présenter à l'accueil muni d'un masque de protection COVID"]
     
