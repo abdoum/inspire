@@ -13,6 +13,7 @@ struct UpComingExperiences: View {
     @State private var showCanceled: Bool = false
     @State private var showProblem: Bool = false
     @State private var showDetails: Bool = false
+    @Binding var accepted : Bool
     
     var body: some View {
         VStack {
@@ -60,7 +61,7 @@ struct UpComingExperiences: View {
                         }
                         .alert(isPresented: $showCanceled, content: {
                                 Alert(title: Text("Annulation"), message: Text("Êtes-vous sûre de vouloir supprimer votre réservation ?"), primaryButton: Alert.Button.default(Text("Oui"), action: {
-                                    print("OK !")
+                                    accepted.toggle()
                                 }), secondaryButton: .destructive(Text("Non"), action: {
                                     print("Annuler")
                                 })
@@ -86,7 +87,7 @@ struct UpComingExperiences: View {
 
 struct UpComingExperiences_Previews: PreviewProvider {
     static var previews: some View {
-        UpComingExperiences()
+        UpComingExperiences( accepted: .constant(false))
             .environmentObject(FavorisManager())
     }
 }

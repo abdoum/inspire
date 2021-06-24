@@ -48,11 +48,14 @@ struct PopupHomepage: View {
                         Spacer()
                         Text("Lyon")
                             .foregroundColor(Color.gray)
+                        Link(destination: URL(string: "https://us04web.zoom.us/j/74207452617?pwd=RWkvellndjgwK20xSHZWWXYrRExyQT09#success")!, label: {
                         Image(systemName: "video")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .frame(width: 15.0, height: 15.0)
                             .foregroundColor(.black)
+                        }
+                        )
                     }
                     .font(.subheadline)
                     .frame(width: 200, height: 20)

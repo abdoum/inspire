@@ -10,8 +10,9 @@ import SwiftUI
 struct AuthorMainInfos: View {
     
     let author: User
-    let experience: Experience
-    
+    let category : ExperienceCategory
+    let rate : String
+    let reviews: [Review]
     func button(imageName: String, action: Void) -> some View {
         Button(action: {
             action
@@ -42,7 +43,7 @@ struct AuthorMainInfos: View {
                             .font(.title2)
                             .fontWeight(.bold)
                     }
-                    Text(experience.category.specialisation)
+                    Text(category.specialisation)
                         .padding(.top)
                 }.padding(.leading)
                 Spacer()
@@ -53,13 +54,13 @@ struct AuthorMainInfos: View {
                     Image(systemName: "star.fill")
                         .foregroundColor(.black)
                         .opacity(0.8)
-                    Text(" \(experience.rate)")
+                    Text(" \(Double(rate) ?? 1.0, specifier: "%.1f")")
                         .font(.title3)
                         .fontWeight(.bold)
                         .foregroundColor(.black)
                         .opacity(0.8)
                     Button(action: {}) {
-                        Text("(\(experience.reviews.count))")
+                        Text("(\(reviews.count))")
                             .font(.headline)
                             .foregroundColor(Color.gray)
                     }
@@ -68,21 +69,21 @@ struct AuthorMainInfos: View {
                         .foregroundColor(.black.opacity(0.5))
                         
                         .overlay(
-                            Text(experience.category.specialisation)
+                            Text(category.specialisation)
                                 .foregroundColor(.white)
                         )
                         .padding()
                 }
-                .padding(.bottom, 10)
+//                .padding(.bottom, 10)
                 //Solo ---- Group ---- Visio
-                HStack(alignment: .center) {
-                    button(imageName: "person", action: ())
-                    Spacer()
-                    button(imageName: "person.3", action: ())
-                    Spacer()
-                    button(imageName: "video", action: ())
-                }
-                .padding([.horizontal, .trailing], 40)
+//                HStack(alignment: .center) {
+//                    button(imageName: "person", action: ())
+//                    Spacer()
+//                    button(imageName: "person.3", action: ())
+//                    Spacer()
+//                    button(imageName: "video", action: ())
+//                }
+//                .padding([.horizontal, .trailing], 40)
             }
  //--------RATE-------
             Divider()
@@ -104,6 +105,6 @@ struct AuthorMainInfos: View {
 
 struct AuthorMainInfos_Previews: PreviewProvider {
     static var previews: some View {
-        AuthorMainInfos(author: MOCK_EXPERIENCES[0].author, experience: MOCK_EXPERIENCES[0])
+        AuthorMainInfos(author: MOCK_EXPERIENCES[0].author, category: MOCK_EXPERIENCES[0].category, rate: MOCK_EXPERIENCES[0].rate, reviews: MOCK_EXPERIENCES[0].reviews)
     }
 }

@@ -10,23 +10,27 @@ import SwiftUI
 
 struct UserHistoryView: View {
     
-    let categoryArray: [String] = [
-        "Artisanat", "Cuisine", "Informatique", "Ostéopathe"
-    ]
     @EnvironmentObject var sharedExperiences : SharedExperiences
+    @State private var accepted : Bool = false
     
     var body: some View {
         NavigationView {
             VStack {
                 ScrollView {
-                    VStack (alignment: .leading) {
-                        VStack  (alignment: .leading) {
-                            UpComingExperiences()
+                    if !accepted {
+                        VStack (alignment: .leading) {
+                            VStack  (alignment: .leading) {
+                                UpComingExperiences(accepted: $accepted)
+                            }
                         }
+                        FirstItem()
+                        SecondItem()
+                        ThirdItem()
+                    } else {
+                        FirstItem()
+                        SecondItem()
+                        ThirdItem()
                     }
-                    FirstItem()
-                    SecondItem()
-                    ThirdItem()
                 }
             }
             .navigationBarTitle("Mes expériences", displayMode: .inline)
@@ -36,6 +40,7 @@ struct UserHistoryView: View {
 
 struct FirstItem: View {
     @EnvironmentObject var sharedExperiences : SharedExperiences
+    
     var body: some View {
         VStack {
             HStack {
@@ -44,7 +49,7 @@ struct FirstItem: View {
                     .padding(.leading)
                 Spacer()
             }
-            UserHistoryList(experiences: $sharedExperiences.leftExperiences)
+            UserHistoryList(experiences: sharedExperiences.leftExperiences)
         }
     }
 }
@@ -58,7 +63,7 @@ struct SecondItem: View {
                     .padding(.leading)
                 Spacer()
             }
-            UserHistoryList(experiences: $sharedExperiences.rightExperiences)
+            UserHistoryList(experiences: sharedExperiences.rightExperiences)
         }
     }
 }
@@ -72,7 +77,7 @@ struct ThirdItem: View {
                     .padding(.leading)
                 Spacer()
             }
-            UserHistoryList(experiences: $sharedExperiences.leftExperiences)
+            UserHistoryList(experiences: sharedExperiences.leftExperiences)
         }
     }
 }

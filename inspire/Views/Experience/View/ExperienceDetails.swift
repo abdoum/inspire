@@ -9,9 +9,10 @@ import SwiftUI
 
 struct ExperienceDetails: View {
     
+
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var favorisManager: FavorisManager
-    let experience: Experience
+    var experience: Experience
     
     var body: some View {
         NavigationView {
@@ -23,12 +24,12 @@ struct ExperienceDetails: View {
                             .aspectRatio(contentMode: .fit)
                             .listRowInsets(EdgeInsets())
                         VStack {
-                            AuthorMainInfos(author: experience.author, experience: experience)
+                            AuthorMainInfos(author: experience.author, category: experience.category, rate: experience.rate, reviews: experience.reviews)
                             ExperienceContact(language: experience.author.spokenLanguages)
                                 .padding(.leading).padding(.trailing)
                             ExperienceProgram(experience.description, lineLimit: 6)
                             UserNeeds()
-                            ExperienceReviews(reviews: experience.reviews)
+                            ExperienceReviews(review: experience.reviews[0], rate: experience.averageRate)
                         }.padding(.horizontal, 8)
                     }
                 }
@@ -58,14 +59,8 @@ struct FavorisButton: View {
     let experience: Experience
     @EnvironmentObject var favorisManager: FavorisManager
     @State var isLike: Bool
-    func toggle() {
-        if isLike {
-            favorisManager.removeFavoris(experience: experience)
-        } else {
-            favorisManager.addFavoris(experience: experience)
-        }
-        isLike = favorisManager.isLike(experience: experience)
-    }
+  
+    
     var body: some View {
         Button(action:
             withAnimation(.spring()){
@@ -81,11 +76,20 @@ struct FavorisButton: View {
                 )
         })
     }
-}
-
-struct ExperienceDetails_Previews: PreviewProvider {
-    static var previews: some View {
-        ExperienceDetails(experience: MOCK_EXPERIENCES[0])
-            .previewLayout(.sizeThatFits).environmentObject(FavorisManager())
+    func toggle() {
+        if isLike {
+            favorisManager.removeFavoris(experience: experience)
+        } else {
+            favorisManager.addFavoris(experience: experience)
+        }
+        isLike = favorisManager.isLike(experience: experience)
     }
 }
+
+//struct ExperienceDetails_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ExperienceDetails(experience: MOCK_EXPERIENCES[1])
+//            .previewLayout(.sizeThatFits)
+//            .environmentObject(FavorisManager())
+//    }
+//}

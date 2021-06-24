@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ExperienceReviews: View {
 
-    let reviews : [Review]
+    let review : Review
+    let rate : Double
     
     var body: some View {
         VStack {
@@ -25,33 +26,32 @@ struct ExperienceReviews: View {
                 Image(systemName: "star.fill")
                     .foregroundColor(.black)
                     .opacity(0.8)
-                Text("Note: \(reviews[0].rate)/5")
+                Text("Note: \(rate, specifier: "%.1f")")
                     .font(.headline)
                     .fontWeight(.bold)
                     .foregroundColor(.black)
                     .opacity(0.8)
-                Text("(\(reviews.count))")
                 Spacer()
                 HStack {
                     Spacer()
                 }
             }
             HStack {
-                Image(reviews[0].author.avatar)
+                Image(review.author.avatar)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 60.0, height: 60.0)
                     .clipShape(Circle())
                     .shadow(radius: 10)
                 VStack(alignment: .leading) {
-                    Text("\(reviews[0].author.firstname) \(reviews[0].author.lastname)")
+                    Text("\(review.author.firstname) \(review.author.lastname)")
                     Text("12 Décembre 2021")
                         .font(.footnote)
                 }.padding(.horizontal, 16)
                 Spacer()
             }
             HStack {
-                Text("\(reviews[0].comment ?? "")")
+                Text("\(review.comment ?? "")")
                 Spacer()
             }
         }
@@ -62,6 +62,6 @@ struct ExperienceReviews: View {
 
 struct ExperienceReviews_Previews: PreviewProvider {
     static var previews: some View {
-        ExperienceReviews(reviews: MOCK_EXPERIENCES[0].reviews)
+        ExperienceReviews(review: MOCK_EXPERIENCES[0].reviews[0], rate: 3.7)
     }
 }

@@ -27,13 +27,11 @@ struct StepTwo: View {
                         title: {
                             switch (mode){
                             case "solo":
-                                Text("En présenciel, seul")
-                            case "visio":
-                                Text("En ligne")
+                                Text("En solo")
                             case "group":
-                                Text("En présenciel, groupeEn présenciel, groupeEn présenciel, groupe")
+                                Text("En groupe")
                             default:
-                                Text("Tous")
+                                Text("Les deux")
                             }
                         },
                         icon: {

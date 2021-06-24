@@ -44,8 +44,3 @@ struct ExperienceList_Previews: PreviewProvider {
         ExperienceList(experiences: MOCK_EXPERIENCES)
     }
 }
-
-
-//        .sheet(isPresented: $isPresented){
-//            ExperienceDetails(experience: experience)
-//        }

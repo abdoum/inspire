@@ -45,6 +45,7 @@ struct ExperienceCard: View {
             HStack {
                 Text(experience.category.specialisation)
                     .fontWeight(.thin)
+                    .font(.system(size: 14))
                     .foregroundColor(Color.black)
                     .opacity(0.8)
                     .multilineTextAlignment(.leading)
@@ -59,11 +60,13 @@ struct ExperienceCard: View {
             HStack(alignment: .top) {
                 PriceView(price: experience.price, color: .customPrimary)
                 Spacer()
-                Image(systemName: "video")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 16, height: 16)
-                    .foregroundColor(.customSecondary)
+                Link(destination: URL(string: "https://us04web.zoom.us/j/74207452617?pwd=RWkvellndjgwK20xSHZWWXYrRExyQT09#success")!, label: {
+                    Image(systemName: "video")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 16, height: 16)
+                        .foregroundColor(.customSecondary)
+                })
             }
             .frame(width: width - 40 , height: 220)
             
@@ -77,7 +80,7 @@ struct ExperienceCard: View {
 
 struct ExperienceCard_Previews: PreviewProvider {
     static var previews: some View {
-        ExperienceCard(experience: MOCK_EXPERIENCES[0])
+        ExperienceCard(experience: MOCK_EXPERIENCES[7])
     }
 }
 

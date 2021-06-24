@@ -25,7 +25,7 @@ struct StepOne: View {
                         quiz.params.preferedExperienceCategorie = quiz.params.existingExperienceCategories[idx].name
                         currentStep += 1
                     }, label: {
-                        Category(title: quiz.params.existingExperienceCategories[idx].name, numberOfExistingExperiences: 113, image: quiz.params.existingExperienceCategories[idx].image)
+                        Category(title: quiz.params.existingExperienceCategories[idx].name, numberOfExistingExperiences: Int.random(in: 76..<143), image: quiz.params.existingExperienceCategories[idx].image)
                     })
                 }
                 Button(action: {

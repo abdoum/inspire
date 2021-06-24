@@ -8,7 +8,8 @@
 import Foundation
 
 enum ParticipationMode: String, CaseIterable {
-    case visio,
+    case 
+         group,
          solo,
          all
     

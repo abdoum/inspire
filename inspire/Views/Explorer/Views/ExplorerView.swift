@@ -22,6 +22,7 @@ struct ExplorerView: View {
     
     
     var body: some View {
+       
         NavigationView {
                 VStack {
                     if showSearch {
@@ -120,9 +121,6 @@ struct ExplorerView: View {
                                             }
                                         })
                 )
-                .fullScreenCover(isPresented: $quiz.params.isPresented, content: {
-                    Flow()
-                })
         }
     }
 }
